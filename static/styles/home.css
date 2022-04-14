@@ -146,10 +146,38 @@ aside .sidebar a{
 
 aside .sidebar a span{
     font-size: 1.6rem;
+    transition: all 200ms ease;
 }
 
 aside .sidebar a:last-child{
     position: absolute;
     bottom: 2rem;
     width:100%;
+}
+
+aside .sidebar a.active{
+    background: var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+}
+
+aside .sidebar a.active:before{
+    content: " ";
+    width:6px;
+    height:100%;
+    background: var(--color-primary);
+}
+
+aside .sidebar a.active span{
+    color: var(--color-primary);
+    margin-left:calc(1rem - 6px)
+}
+
+aside .sidebar a:hover{
+    color: var(--color-primary);
+}
+
+aside .sidebar a:hover span{
+    margin-left: 1rem;
+
 }
