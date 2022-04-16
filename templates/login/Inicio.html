@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+  </head>
+  <body>
+
+    <div class="login-box">
+      <img src="/static/assets/login.jpg" class="avatar" alt="Avatar Image">
+      <h1>Iniciar sesión</h1>
+      <form>
+        <!-- USERNAME INPUT -->
+        <label for="username">Nombre de usuario</label>
+        <input type="text" placeholder="Introduzca su nombre de usuario">
+        <!-- PASSWORD INPUT -->
+        <label for="password">Contraseña</label>
+        <input type="password" placeholder="Introduzca su Contraseña">
+        <input type="submit" value="Iniciar">
+      </form>
+    </div>
+  </body>
+</html>

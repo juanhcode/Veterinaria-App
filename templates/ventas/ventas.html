@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
+<h1 class="title-venta">Ventas</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Eliminar</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody id="data"></tbody>
+</table>
+{% endblock content %}
