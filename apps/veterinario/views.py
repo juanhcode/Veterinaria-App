@@ -7,3 +7,6 @@ class ListViewVeterinario(TemplateView):
 
 class ListViewVentas(TemplateView):
     template_name = 'ventas/ventas.html'
+
+class ListViewHistorial(TemplateView):
+    template_name = 'historial/historial.html'
