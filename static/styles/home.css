@@ -339,3 +339,18 @@ main .insights small{
     height:21%;
     margin-left: 42%;
 }
+
+.Titulo{
+    font-size:150px;
+    color: #363949;
+}
+.default{
+    border:2px solid black;
+    width:30%;
+    height:50%;
+}
+.boton-nombre{
+    margin: 30px;
+    padding:3%;
+    background-color:red;
+}
