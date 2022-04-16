@@ -1,13 +1,104 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    {% block content %}
-    {% endblock content %}
+<!--Material Icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+<div class="container">
+    <aside>
+        <div class="top">
+            <div class="logo">
+                <img src="/static/assets/logo.png" alt="">
+                <h2 class="title">VETERINARIA</h2>
+            </div>
+            <div class="close" id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <a href="#">
+                <span class="material-icons-sharp">
+                    grid_view
+                </span>
+                <h3>Inicio</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">
+                    history
+                </span>
+                <h3>Historial clinico</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">
+                    show_chart
+                </span>
+                <h3>Datos sistema</h3>
+            </a>
+            <a href="#" class="active">
+                <span class="material-icons-sharp">
+                    person
+                </span>
+                <h3>Clientes activos</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">
+                    pets
+                </span>
+                <h3>Mascotas activas</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">
+                    event_available
+                </span>
+                <h3>Citas</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">
+                    medical_services
+                </span>
+                <h3>Medicinas</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp">
+                    shopping_cart
+                </span>
+                <h3>Ventas</h3>
+            </a>
+
+
+            <a href="#">
+                <span class="material-icons-sharp">
+                    logout
+                </span>
+                <h3>Logout</h3>
+            </a>
+        </div>
+    </aside>
+    <!--MAIN-->
+    <main>
+        {% block content %}
+        
+        {% endblock content %}
+    </main>
+    <!--FINAL de MAIN-->
+    <div class="right">
+        <div class="top">
+            <button id="menu-btm">
+                <span class="material-icons-sharp">
+                    menu
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+<script src="/static/scripts/home.js"></script>
 </body>
 </html>
