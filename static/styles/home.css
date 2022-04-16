@@ -325,6 +325,8 @@ main .insights small{
 /*INICIO*/
 .sales{
     margin: auto;
+    width: 128%;
+    height: 101%;
 }
 .descripcion{
     margin:auto;
