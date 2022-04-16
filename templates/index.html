@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+    <!--Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-<!--Material Icons-->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
 <div class="container">
     <aside>
         <div class="top">
@@ -22,21 +22,20 @@
                 <span class="material-icons-sharp">close</span>
             </div>
         </div>
-
         <div class="sidebar">
-            <a href="#">
+            <a href="{% url 'veterinaria_app:home' %}">
                 <span class="material-icons-sharp">
                     grid_view
                 </span>
                 <h3>Inicio</h3>
             </a>
-            <a href="#">
+            <a href="{% url 'veterinaria_app:historial' %}" class="historial">
                 <span class="material-icons-sharp">
                     history
                 </span>
                 <h3>Historial clinico</h3>
             </a>
-            <a href="#">
+            <a href="#" class="datos">
                 <span class="material-icons-sharp">
                     show_chart
                 </span>
@@ -48,32 +47,30 @@
                 </span>
                 <h3>Clientes activos</h3>
             </a>
-            <a href="#">
+            <a href="#" class="mascota">
                 <span class="material-icons-sharp">
                     pets
                 </span>
                 <h3>Mascotas activas</h3>
             </a>
-            <a href="#">
+            <a href="#" class="citas">
                 <span class="material-icons-sharp">
                     event_available
                 </span>
                 <h3>Citas</h3>
             </a>
-            <a href="#">
+            <a href="#" class="medicinas">
                 <span class="material-icons-sharp">
                     medical_services
                 </span>
                 <h3>Medicinas</h3>
             </a>
-            <a href="#">
+            <a href="{% url 'veterinaria_app:ventas' %}" class="btn-ventas">
                 <span class="material-icons-sharp">
                     shopping_cart
                 </span>
                 <h3>Ventas</h3>
             </a>
-
-
             <a href="#">
                 <span class="material-icons-sharp">
                     logout
@@ -84,9 +81,13 @@
     </aside>
     <!--MAIN-->
     <main>
-        {% block content %}
-        
-        {% endblock content %}
+        <h1>Dashboard</h1>
+        <div class="insights">
+            <div class="sales">
+                {% block content %}
+                {% endblock content %}    
+            </div>
+        </div>
     </main>
     <!--FINAL de MAIN-->
     <div class="right">
@@ -95,10 +96,27 @@
                 <span class="material-icons-sharp">
                     menu
                 </span>
-            </button>
+            </button>         
+            <div class="theme-toggler">
+                <span class="material-icons-sharp active">
+                    light_mode
+                </span>
+                <span class="material-icons-sharp">
+                    dark_mode
+                </span>
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Hola,<b>Juan</b></p>
+                    <small class="text-muted">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="/static/assets/user.png" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<script src="/static/scripts/home.js"></script>
+<script src="{% static 'scripts/home.js' %}"></script>
 </body>
 </html>
