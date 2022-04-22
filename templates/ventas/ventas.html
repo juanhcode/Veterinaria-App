@@ -4,17 +4,67 @@
 {% endblock title %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
-<h1 class="title-venta">Ventas</h1>
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Eliminar</th>
-      <th>Editar</th>
-    </tr>
-  </thead>
-  <tbody id="data"></tbody>
-</table>
+<h1>VETERINARIA</h1>
+    <table>
+        <tr>
+          <th>ANIMAL</th>
+          <th>PROTETARIO</th>
+          <th>PRECIO</th>
+          <th>N° FACTURA</th>
+        </tr>
+      
+        <tr>
+          <td>gato</td>
+          <td>Sancho</td>
+          <td>1'200.000</td>
+          <td>0000111100000</td>
+        </tr>
+      
+        <tr>
+          <td>perro</td>
+          <td>Dagoberto</td>     
+          <td>500.000</td>
+          <td>0000122000000</td>
+        </tr>
+      
+        <tr>     
+          <td>conejo</td>
+          <td>Clementina</td>     
+          <td>800.000</td>     
+          <td>0000222200000</td>
+          <td>
+            <a class="button small warning" href="#">Editar</a>
+            <a class="button small alert" href="#">Eliminar</a>
+          </td>
+        </tr>
+      
+      </table>
+
+      <h1>VETERINARIA</h1>
+    <table>
+        <tr>
+          <th>ANIMAL</th>
+          <th>EDAD</th>
+          <th>ENFERMEDAD</th>
+        </tr>
+      
+        <tr>
+          <td>gato</td>
+          <td>11 años</td>
+          <td>cancer</td>
+        </tr>
+      
+        <tr>
+          <td>perro</td>
+          <td>12años</td>     
+          <td>fractura</td>
+        </tr>
+      
+        <tr>     
+          <td>conejo</td>
+          <td>2 años</td>     
+          <td>fractura</td>     
+        </tr>
+      
+      </table>
 {% endblock content %}

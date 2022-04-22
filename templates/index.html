@@ -65,7 +65,7 @@
                 </span>
                 <h3>Medicinas</h3>
             </a>
-            <a href="{% url 'veterinaria_app:ventas' %}" class="btn-ventas">
+            <a href="{% url 'ventas_app:ventas' %}" class="btn-ventas">
                 <span class="material-icons-sharp">
                     shopping_cart
                 </span>
@@ -81,7 +81,6 @@
     </aside>
     <!--MAIN-->
     <main>
-        <h1>Dashboard</h1>
         <div class="insights">
             <div class="sales">
                 {% block content %}
@@ -101,7 +100,7 @@
                 <span class="material-icons-sharp active">
                     light_mode
                 </span>
-                <span class="material-icons-sharp">
+                <span class="material-icons-sharp dark">
                     dark_mode
                 </span>
             </div>
@@ -117,6 +116,6 @@
         </div>
     </div>
 </div>
-<script src="{% static 'scripts/home.js' %}"></script>
+<script src="{% static 'scripts/home.js' %}" type="text/javascript"></script>
 </body>
 </html>
