@@ -88,6 +88,10 @@ h5{
     font-size: 0.77rem;
 }
 
+img.logo{
+    margin-left: 3%;
+}
+
 small{
     font-size: 0.76rem;
 }
@@ -103,7 +107,7 @@ aside{
 }
 
 aside .top{
-    background:white;
+    background-color:var(--color-background);
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -126,7 +130,7 @@ aside .close{
 }
 /*Estilos del SIDEBAR*/
 aside .sidebar{
-    background:white;
+    background-color:var(--color-background);
     display:flex;
     flex-direction:column;
     height:86vh;

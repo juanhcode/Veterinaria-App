@@ -5,4 +5,23 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'styles/historial.css' %}">
 <h1 class="title-venta">Historial</h1>
+<!-- Tab de Navegacion en la pestaña de Historial clinico -->
+<div class="tab-historia"> 
+    <div class="lbl-tab">
+        <label for="radio1">Formulario</label>
+        <label for="radio2">Historias Clinicas</label>
+    </div>
+    <div class="content">
+        <input type="radio" name="radio" id="radio1">
+        <div class="tab1">
+            <h2>Formulario</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur alias eius fugiat dolorum ab quo sint, consequatur similique non corrupti accusantium placeat! Unde repudiandae, impedit minus dolore quo veritatis reiciendis?</p>
+        </div>
+        <input type="radio" name="radio" id="radio2">
+        <div class="tab2">
+            <h2>Historias Clinicas</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, praesentium id. Maxime exercitationem veritatis omnis eius, voluptates debitis. Natus maiores nam dolore enim? Inventore assumenda dolores sequi labore magni voluptatum!</p>
+        </div>
+    </div>
+</div>
 {% endblock content %}
