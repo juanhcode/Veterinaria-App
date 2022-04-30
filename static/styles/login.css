@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+*{font-family:poppins,sans-serif;}
+
 body {
   margin: 0;
   padding: 0;
   background: url(../assets/fondo_login.jpg);
   background-size: 100;
-  font-family: sans-serif;
   height: 100vh;
-
 }
+
 
 .login-box {
   width: 320px;
@@ -19,6 +21,7 @@ body {
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
+  border-radius: 20px;
 }
 
 .login-box .avatar {
