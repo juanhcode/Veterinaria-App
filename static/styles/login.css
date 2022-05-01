@@ -1,26 +1,15 @@
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 *{font-family:poppins,sans-serif;}
 
->>>>>>> 3618d22738bd3e12c85848d3bd5fe5a409ec2566
 body {
   margin: 0;
   padding: 0;
   background: url(../assets/fondo_login.jpg);
   background-size: 100;
-<<<<<<< HEAD
-  font-family: sans-serif;
-  height: 100vh;
-
-}
-
-=======
   height: 100vh;
 }
 
 
->>>>>>> 3618d22738bd3e12c85848d3bd5fe5a409ec2566
 .login-box {
   width: 320px;
   height: 420px;
@@ -32,10 +21,7 @@ body {
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
-<<<<<<< HEAD
-=======
   border-radius: 20px;
->>>>>>> 3618d22738bd3e12c85848d3bd5fe5a409ec2566
 }
 
 .login-box .avatar {

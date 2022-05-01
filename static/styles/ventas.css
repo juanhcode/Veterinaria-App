@@ -1,51 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-<<<<<<< HEAD
-
-body{
-    
-    font-family: poppins,sans-serif
-}
-
-h1{
-    text-align: center;
-}
-#main-container{
-    margin: 150px auto;
-    width: 600px;
-}
-
-table{
-    background-color: white;
-    text-align: left;
-    margin-top: 50PX;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-}
-th{
-    background-color: grey;
-    color: white;
-}
-tr:nth-child(odd){
-    background-color: #ddd;
-}
-thead{
-    background-color: black;
-}
-td,th{
-    border: 2PX solid black;
-    padding-left: 20px;
-    padding-right: 20PX;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-tr:hover{
-    background-color: black;
-    color: white;
-}
-=======
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -163,4 +117,3 @@ main .insights small{
 .sales{
     border:2px solid black;
 }
->>>>>>> 3618d22738bd3e12c85848d3bd5fe5a409ec2566

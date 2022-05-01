@@ -1,5 +1,4 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from django.views.generic import TemplateView, CreateView, ListView
 
 from .models import Producto
@@ -24,11 +23,3 @@ class ProductoCreateView(CreateView):
 class ListaProductosView(ListView):
     template_name = 'ventas/ventas.html'
     model = Producto
-=======
-from django.views.generic import TemplateView
-# Create your views here.
-
-#Views del apartado ventas
-class ViewVentas(TemplateView):
-    template_name = 'ventas/ventas.html'
->>>>>>> 3618d22738bd3e12c85848d3bd5fe5a409ec2566
