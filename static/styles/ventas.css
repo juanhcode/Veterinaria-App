@@ -1,46 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-
-body{
-    
-    font-family: poppins,sans-serif
+*{
+    font-family: 'Poppins', sans-serif;
 }
 
-h1{
-    text-align: center;
+section{
+    display:flex;
 }
-#main-container{
-    margin: 150px auto;
-    width: 600px;
+.header{
+    width: 100%;
+    display: flex;
+    padding: 0;
+
+}
+h2.ventas{
+    font-size: 40px;
+    text-align: left;
+    width: 425px;
+    margin: 10px;
+    text-justify: auto;
+    color: rgb(81, 81, 81);
+    flex-grow: 9;
+}
+
+.contenedor .btn{
+    padding: 1px;
+    margin: 0;
+}
+.contenedor .btn .editar {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #66656551;
+    height: 23px;
+    width: 80px;
+    color: #292929a5;
+    font-size: 12px;
+    box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
+}
+
+.contenedor .btn .eliminar {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #66656527;
+    background-color: transparent;
+    height: 23px;
+    width: 80px;
+    color: #292929a5;
+    font-size: 12px;
+    box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
+}
+.contenedor .btn .eliminar:hover{
+    background: #66656587;
+}
+.contenedor .btn .agregar {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #66656551;
+    background-color: transparent;
+    height: 23px;
+    width: 80px;
+    color: #292929a5;
+    font-size: 12px;
+    box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
+}
+.contenedor .btn .agregar:hover{
+    background: #66656587;
+}
+
+.btn{
+    padding:10px;
+    padding-top:20px;
+    flex-grow:3;
+}
+.editar {
+    padding:1.5%;
+    margin-right: 4%;
+    font-size: 17px;
+    border:2px solid #BEBEBE;
+    border-radius:7px;
+    background-color:#f6f6f9;
+}
+.eliminar{
+    padding:1.5%;
+    margin-right: 4%;
+    font-size: 17px;
+    border:2px solid #BEBEBE;
+    border-radius:7px;
+    background-color:#f6f6f9;
+}
+.agregar{
+    padding:1.5%;
+    margin-right: 4%;
+    font-size: 17px;
+    border:2px solid #BEBEBE;
+    border-radius:7px;
+    background-color:#f6f6f9;
 }
 
 table{
-    background-color: white;
-    text-align: left;
-    margin-top: 50PX;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
+    width:100%;
+    font-size: 16px;
+    margin-top: 2%;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 12px;
 }
 th{
-    background-color: grey;
-    color: white;
+    text-align:left;
+    font-size: 14px;
+    color: rgb(81, 81, 81);
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 12px;
 }
-tr:nth-child(odd){
-    background-color: #ddd;
-}
-thead{
-    background-color: black;
+td{
+    text-align:left;
+    font-size: 17px;
 }
 td,th{
-    border: 2PX solid black;
     padding-left: 20px;
     padding-right: 20PX;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-tr:hover{
-    background-color: black;
-    color: white;
 }
