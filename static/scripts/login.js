@@ -3,7 +3,6 @@ console.log(documento.value);
 const form = document.querySelector('form')
 
 form.addEventListener('submit',(e)=> {
-    e.preventDefault();
     console.log(documento.value + "" );
     localStorage.setItem('documentologin', documento.value);
 })

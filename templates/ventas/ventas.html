@@ -4,153 +4,142 @@
 {% endblock title %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
-<h1>VETERINARIA</h1>
-      <table>
-        <thead>
-
+<script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
+    <section class="header">
+      <h2 class="ventas">Ventas</h2>
+       <nav class="btn">
+          <button class="editar"><i class="fa-solid fa-crop"></i>  Editar </button>
+          <button class="eliminar"><i class="fa-regular fa-trash-can"></i>  Eliminar </button>
+          <button class="agregar"><i class="fa-solid fa-plus"></i>  Agregar</button>
+        </nav>
+    </section>
+     <table>
+          <tr class="propiedad">
+            <th>Animal</th>
+            <th>Propietario</th>
+            <th>Precio</th>
+            <th>N Factura</th>
+            <th>Edad</th>
+            <th>Enfermedad</th>
+            <th class="celdaCrud"></th>
+         </tr>
+      
+          <tr id="valores">
+           <td>gato</td>
+           <td>Sancho</td>
+           <td>1'200.000</td>
+           <td>0000111100000</td>
+           <td>11 años</td>
+           <td>Cancer</td>
+           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+         </tr>
+      
           <tr>
-            <th>ANIMAL</th>
-            <th>PROTETARIO</th>
-            <th>PRECIO</th>
-            <th>N° FACTURA</th>
+            <td>perro</td>
+            <td>Dagoberto</td>     
+            <td>500.000</td>
+            <td>0000122000000</td>
+            <td>12 años</td>
+            <td>Fractura</td>
+            <td class="btnEditar"></td>
           </tr>
-          
-        </thead>
-        <tbody>
-          {% for a in object_list %}
-          <tr>
-            <td>{{ a.nombre }}</td>
-            <td>{{ a.apellidos }}</td>
-            <td><a class="button small alert" href="{% url 'ventas_app:formulario' %}">Insertar</a></td>
-          </tr>
-          {% endfor %}
-        </tbody>
-        
-      </table>
-        
-      <link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
-      <script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
-          <section class="header">
-            <h2 class="ventas">Ventas</h2>
-             <nav class="btn">
-                <button class="editar"><i class="fa-solid fa-crop"></i>  Editar </button>
-                <button class="eliminar"><i class="fa-regular fa-trash-can"></i>  Eliminar </button>
-                <button class="agregar"><i class="fa-solid fa-plus"></i>  Agregar</button>
-              </nav>
-          </section>
-           <table>
-                <tr>
-                  <th>Animal</th>
-                  <th>Propietario</th>
-                  <th>Precio</th>
-                  <th>N Factura</th>
-                  <th>Edad</th>
-                  <th>Enfermedad</th>
-               </tr>
-            
-                <tr>
-                 <td>gato</td>
-                 <td>Sancho</td>
-                 <td>1'200.000</td>
-                 <td>0000111100000</td>
-                 <td>11 años</td>
-                 <td>Cancer</td>
-               </tr>
-            
-                <tr>
-                  <td>perro</td>
-                  <td>Dagoberto</td>     
-                  <td>500.000</td>
-                  <td>0000122000000</td>
-                  <td>12 años</td>
-                  <td>Fractura</td>
-                </tr>
-            
-               <tr>     
-                  <td>conejo</td>
-                  <td>Clementina</td>     
-                  <td>800.000</td>     
-                  <td>0000222200000</td>
-                  <td>2 años</td>
-                  <td>Fractura</td>
-               </tr>
-               <tr>
-                <td>gato</td>
-                <td>Sancho</td>
-                <td>1'200.000</td>
-                <td>0000111100000</td>
-                <td>11 años</td>
-                <td>Cancer</td>
-              </tr>
-           
-               <tr>
-                 <td>perro</td>
-                 <td>Dagoberto</td>     
-                 <td>500.000</td>
-                 <td>0000122000000</td>
-                 <td>12 años</td>
-                 <td>Fractura</td>
-               </tr>
-           
-              <tr>     
-                 <td>conejo</td>
-                 <td>Clementina</td>     
-                 <td>800.000</td>     
-                 <td>0000222200000</td>
-                 <td>2 años</td>
-                 <td>Fractura</td>
-              </tr>
-              <tr>
-                <td>gato</td>
-                <td>Sancho</td>
-                <td>1'200.000</td>
-                <td>0000111100000</td>
-                <td>11 años</td>
-                <td>Cancer</td>
-              </tr>
-           
-               <tr>
-                 <td>perro</td>
-                 <td>Dagoberto</td>     
-                 <td>500.000</td>
-                 <td>0000122000000</td>
-                 <td>12 años</td>
-                 <td>Fractura</td>
-               </tr>
-           
-              <tr>     
-                 <td>conejo</td>
-                 <td>Clementina</td>     
-                 <td>800.000</td>     
-                 <td>0000222200000</td>
-                 <td>2 años</td>
-                 <td>Fractura</td>
-              </tr>
-              <tr>
-                <td>gato</td>
-                <td>Sancho</td>
-                <td>1'200.000</td>
-                <td>0000111100000</td>
-                <td>11 años</td>
-                <td>Cancer</td>
-              </tr>
-           
-               <tr>
-                 <td>perro</td>
-                 <td>Dagoberto</td>     
-                 <td>500.000</td>
-                 <td>0000122000000</td>
-                 <td>12 años</td>
-                 <td>Fractura</td>
-               </tr>
-           
-              <tr>     
-                 <td>conejo</td>
-                 <td>Clementina</td>     
-                 <td>800.000</td>     
-                 <td>0000222200000</td>
-                 <td>2 años</td>
-                 <td>Fractura</td>
-              </tr>  
-             </table>
+      
+         <tr>     
+            <td>conejo</td>
+            <td>Clementina</td>     
+            <td>800.000</td>     
+            <td>0000222200000</td>
+            <td>2 años</td>
+            <td>Fractura</td>
+            <td class="btnEditar"></td>
+         </tr>
+         <tr>
+          <td>gato</td>
+          <td>Sancho</td>
+          <td>1'200.000</td>
+          <td>0000111100000</td>
+          <td>11 años</td>
+          <td>Cancer</td>
+          <td class="btnEditar"></td>
+        </tr>
+     
+         <tr>
+           <td>perro</td>
+           <td>Dagoberto</td>     
+           <td>500.000</td>
+           <td>0000122000000</td>
+           <td>12 años</td>
+           <td>Fractura</td>
+           <td class="btnEditar"></td>
+         </tr>
+     
+        <tr>     
+           <td>conejo</td>
+           <td>Clementina</td>     
+           <td>800.000</td>     
+           <td>0000222200000</td>
+           <td>2 años</td>
+           <td>Fractura</td>
+           <td class="btnEditar"></td>
+        </tr>
+        <tr>
+          <td>gato</td>
+          <td>Sancho</td>
+          <td>1'200.000</td>
+          <td>0000111100000</td>
+          <td>11 años</td>
+          <td>Cancer</td>
+          <td class="btnEditar"></td>
+        </tr>
+     
+         <tr>
+           <td>perro</td>
+           <td>Dagoberto</td>     
+           <td>500.000</td>
+           <td>0000122000000</td>
+           <td>12 años</td>
+           <td>Fractura</td>
+           <td class="btnEditar"></td>
+         </tr>
+     
+        <tr>     
+           <td>conejo</td>
+           <td>Clementina</td>     
+           <td>800.000</td>     
+           <td>0000222200000</td>
+           <td>2 años</td>
+           <td>Fractura</td>
+           <td class="btnEditar"></td>
+        </tr>
+        <tr>
+          <td>gato</td>
+          <td>Sancho</td>
+          <td>1'200.000</td>
+          <td>0000111100000</td>
+          <td>11 años</td>
+          <td>Cancer</td>
+          <td class="btnEditar"></td>
+        </tr>
+     
+         <tr>
+           <td>perro</td>
+           <td>Dagoberto</td>     
+           <td>500.000</td>
+           <td>0000122000000</td>
+           <td>12 años</td>
+           <td>Fractura</td>
+           <td class="btnEditar"></td>
+         </tr>
+     
+        <tr>     
+           <td>conejo</td>
+           <td>Clementina</td>     
+           <td>800.000</td>     
+           <td>0000222200000</td>
+           <td>2 años</td>
+           <td>Fractura</td>
+           <td class="btnEditar"></td>
+        </tr>  
+       </table>
+       <script src="{% static 'scripts/ventas.js' %}"></script>
 {% endblock content %}
