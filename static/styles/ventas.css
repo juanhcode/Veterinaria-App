@@ -96,7 +96,12 @@ h2.ventas{
     border-radius:7px;
     background-color:#f6f6f9;
 }
-
+.header{
+    width: 100%;
+    display: inline-flex;
+    padding: 0;
+    background-color: red;
+}
 table{
     width:100%;
     font-size: 16px;

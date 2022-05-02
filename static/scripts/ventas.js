@@ -1,47 +1,30 @@
 const btnEditar = document.querySelector('.editar');
 const btnEliminar = document.querySelector('.eliminar');
-
-const table = document.querySelector('table');
-const propiedad = document.querySelector('.propiedad');
-const valores = document.getElementById('valores');
-const celdaEditar = document.querySelector('.celdaCrud');
-const btnAgregar = document.querySelector('.agregar');
-
-const agregarIcono = document.querySelector('.agregarIcono');
+const celdaEditar = document.querySelectorAll('.celdaCrud');
+const agregarIcono = document.querySelectorAll('.agregarIcono');
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    celdaEditar.style.display = 'none';
-})
-
-btnEditar.addEventListener('click', () => {
-    celdaEditar.textContent = 'Editar';
-    celdaEditar.style.display = 'block';
-    console.log(agregarIcono);
-    agregarIcono.classList.add('fa-solid')
-    agregarIcono.classList.add('fa-crop');
-    for (let i = 0; i < valores.cells.length; i++) {
-        console.log(valores.cells[6]);
+    for (let i = 0; i < celdaEditar.length; i++) {
+        celdaEditar[0].style.display = 'none';  
     }
 })
 
-btnAgregar.addEventListener('click', () => {
-    celdaEditar.textContent = 'Agregar';
-    celdaEditar.style.display = 'block';
-    console.log(agregarIcono);
-    agregarIcono.classList.add('fa-solid')
-    agregarIcono.classList.add('fa-plus');
-    for (let i = 0; i < valores.cells.length; i++) {
-        console.log(valores.cells[6]);
+
+btnEditar.addEventListener('click', () => {
+    celdaEditar[0].textContent = 'Editar';
+    celdaEditar[0].style.display = 'block';
+    for (let i = 0; i < agregarIcono.length; i++) {
+        agregarIcono[i].classList.add('fa-solid')
+        agregarIcono[i].classList.add('fa-crop');
     }
 })
 
 btnEliminar.addEventListener('click',()=>{
-    celdaEditar.textContent = 'Eliminar';
-    celdaEditar.style.display = 'block';
-    agregarIcono.classList.add('fa-regular')
-    agregarIcono.classList.add('fa-trash-can');
-    for (let i = 0; i < valores.cells.length; i++) {
-        console.log(valores.cells[6]);
+    celdaEditar[0].textContent = 'Eliminar';
+    celdaEditar[0].style.display = 'block';
+    for (let i = 0; i < agregarIcono.length; i++) {
+        agregarIcono[i].classList.add('fa-regular')
+        agregarIcono[i].classList.add('fa-trash-can');
     }
 })
