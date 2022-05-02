@@ -11,8 +11,8 @@ section{
     width: 100%;
     display: flex;
     padding: 0;
-
 }
+
 h2.ventas{
     font-size: 40px;
     text-align: left;
@@ -111,8 +111,8 @@ th{
     color: rgb(81, 81, 81);
     border-right: 0px;
     border-left: 0px;
-    border-radius: 12px;
 }
+
 td{
     text-align:left;
     font-size: 17px;

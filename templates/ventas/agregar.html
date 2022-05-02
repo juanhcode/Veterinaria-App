@@ -3,5 +3,11 @@
 {% block title %}Dashboard
 {% endblock title %}
 {% block content %}
+<h1>Registro usuario</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
 
 {% endblock content %}

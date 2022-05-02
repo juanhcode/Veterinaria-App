@@ -9,16 +9,16 @@ from .models import Producto
 
 class ProductoCreateView(CreateView):
     model = Producto
-    template_name = 'ventas/formulario.html'
+    template_name = 'ventas/agregar.html'
     #fields = ['first_name','last_name','job']
-    fields = ['nombre', 'apellidos']
+    fields = ('__all__')
 
     #validacion de los datos
     def form_valid(self, form):
         producto = form.save()
     
         return super(ProductoCreateView, self).form_valid(form)
-    success_url = ('/')
+    success_url = ('.')
 
 class ListaProductosView(ListView):
     template_name = 'ventas/ventas.html'
