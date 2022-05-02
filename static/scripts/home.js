@@ -7,14 +7,27 @@ const logo = document.querySelector('.top');
 const tituloLogo = document.querySelector('.title');
 const sidebar = document.querySelector('.sidebar');
 const infoAdmin = document.querySelector('.info');
-console.log(sidebar)
+const user = document.querySelector('.user');
+const btnSalir = document.querySelector('.salir');
+//Funciones
+const agregarNombre=()=>{
+    user.textContent=localStorage.getItem('documentologin');
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+    agregarNombre();
+})
+
 botonDark.addEventListener('click',()=>{
     body.style.backgroundColor ='#363949';
     body.style.transition='all 300ms ease';
-    h1.style.color='white';
     tituloLogo.style.color='white';
     parrafo.style.color = 'white';
     logo.style.backgroundColor='#363949'
     infoAdmin.style.color = 'white';
     //sidebar.style.backgroundColor='#363949';
+})
+
+btnSalir.addEventListener('click',()=>{
+    window.href ='templates/login/inicio.html'
 })
