@@ -40,6 +40,10 @@
           {% endfor %}
           
         </tbody>
+      </table>
+      <!--
+
+        <table>
           
           <tr class="propiedad">
             <th>Animal</th>
@@ -49,18 +53,18 @@
             <th>Edad</th>
             <th>Enfermedad</th>
             <th class="celdaCrud"></th>
-         </tr>
-      
+          </tr>
+          
           <tr id="valores">
-           <td>gato</td>
-           <td>Sancho</td>
-           <td>1'200.000</td>
+            <td>gato</td>
+            <td>Sancho</td>
+            <td>1'200.000</td>
            <td>0000111100000</td>
            <td>11 años</td>
            <td>Cancer</td>
            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-         </tr>
-      
+          </tr>
+          
           <tr>
             <td>perro</td>
             <td>Dagoberto</td>     
@@ -70,8 +74,8 @@
             <td>Fractura</td>
             <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
           </tr>
-      
-         <tr>     
+          
+          <tr>     
             <td>conejo</td>
             <td>Clementina</td>     
             <td>800.000</td>     
@@ -79,94 +83,51 @@
             <td>2 años</td>
             <td>Fractura</td>
             <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-         </tr>
-         <tr>
-          <td>gato</td>
-          <td>Sancho</td>
-          <td>1'200.000</td>
-          <td>0000111100000</td>
-          <td>11 años</td>
-          <td>Cancer</td>
-          <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-        </tr>
-     
-         <tr>
-           <td>perro</td>
-           <td>Dagoberto</td>     
-           <td>500.000</td>
-           <td>0000122000000</td>
-           <td>12 años</td>
-           <td>Fractura</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-         </tr>
-     
-        <tr>     
-           <td>conejo</td>
-           <td>Clementina</td>     
-           <td>800.000</td>     
-           <td>0000222200000</td>
-           <td>2 años</td>
-           <td>Fractura</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-        </tr>
-        <tr>
-          <td>gato</td>
-          <td>Sancho</td>
-          <td>1'200.000</td>
-          <td>0000111100000</td>
-          <td>11 años</td>
-          <td>Cancer</td>
-          <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-        </tr>
-     
-         <tr>
-           <td>perro</td>
-           <td>Dagoberto</td>     
-           <td>500.000</td>
-           <td>0000122000000</td>
-           <td>12 años</td>
-           <td>Fractura</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-         </tr>
-     
-        <tr>     
-           <td>conejo</td>
-           <td>Clementina</td>     
-           <td>800.000</td>     
-           <td>0000222200000</td>
-           <td>2 años</td>
-           <td>Fractura</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-        </tr>
-        <tr>
-          <td>gato</td>
-          <td>Sancho</td>
-          <td>1'200.000</td>
-          <td>0000111100000</td>
-          <td>11 años</td>
-          <td>Cancer</td>
-          <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-        </tr>
-     
-         <tr>
-           <td>perro</td>
-           <td>Dagoberto</td>     
-           <td>500.000</td>
-           <td>0000122000000</td>
-           <td>12 años</td>
-           <td>Fractura</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-         </tr>
-     
-        <tr>     
-           <td>conejo</td>
-           <td>Clementina</td>     
-           <td>800.000</td>     
-           <td>0000222200000</td>
-           <td>2 años</td>
-           <td>Fractura</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+          </tr>
+          <tr>
+            <td>gato</td>
+            <td>Sancho</td>
+            <td>1'200.000</td>
+            <td>0000111100000</td>
+            <td>11 años</td>
+            <td>Cancer</td>
+            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+          </tr>
+          
+          <tr>
+            <td>perro</td>
+            <td>Dagoberto</td>     
+            <td>500.000</td>
+            <td>0000122000000</td>
+            <td>12 años</td>
+            <td>Fractura</td>
+            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+          </tr>
+          
+          <tr>     
+            <td>conejo</td>
+            <td>Clementina</td>     
+            <td>800.000</td>     
+            <td>0000222200000</td>
+            <td>2 años</td>
+            <td>Fractura</td>
+            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+          </tr>
+          <tr>
+            <td>gato</td>
+            <td>Sancho</td>
+            <td>1'200.000</td>
+            <td>0000111100000</td>
+            <td>11 años</td>
+            <td>Cancer</td>
+            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+          </tr>
+          
         </tr>  
-       </table>
-       <script src="{% static 'scripts/ventas.js' %}"></script>
-{% endblock content %}
+      </table>
+      
+    -->
+      <script src="{% static 'scripts/ventas.js' %}"></script>
+      
+      {% endblock content %}
+      

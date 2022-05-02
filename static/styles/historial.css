@@ -1,53 +1,8 @@
-.tab-historia{
-    width: 100%;
-    max-width: 700px;
-    margin: auto;
-    margin-top: 100px;
+.imagen{
+    border-radius: 20px;
+    text-align: center;
 }
-.lbl-tab{
-    background: #f6f6f9;
-}
-.lbl-tab label{
-    display: inline-block;
-    padding: 20px;
-    color: #7380ec;
-    cursor: pointer;
-    transition: all 400ms ease;
-}
-.lbl-tab label:hover{
-    background: rgba(132,139,200,0.18);
-}
-.content{
-    position: relative;
-}
-.content div{
-    position: absolute;
-    line-height: 1.8;
-    transition: all 600ms ease;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.90);
-    padding-bottom: 40px;
-    background: #fff;
-}
-#radio1,#radio2{
-    display: none;
-}
-#radio1:checked ~ .tab1,
-#radio2:checked ~ .tab2{
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-.content div:after{
-    position: absolute;
-    content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #fff;
-    bottom: 100%;
-    left: 28px;
-}
-.content .tab2:after{
-    left: 122px;
+
+.foto{
+    text-align: center;
 }
