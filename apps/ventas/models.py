@@ -4,7 +4,7 @@ from django.db import models
 
 class Producto(models.Model):
     nombre = models.CharField('Nombre', max_length=50)
-    descripcion = models.CharField('Descripcion', max_length=50, null=True)
+    descripcion = models.TextField(null=True)
     precio = models.PositiveIntegerField(default=0)
     iva = models.PositiveIntegerField(default=0)
     stock = models.PositiveIntegerField(default=0)
