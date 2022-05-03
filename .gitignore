@@ -1,8 +1,3 @@
 db.sqlite3
-<<<<<<< HEAD
-apps/ventas/veterinario/migrations/*
-apps/ventas/ventas/migrations/*
-=======
 apps/veterinario/migrations/*
 apps/ventas/migrations/*
->>>>>>> 871d23f5dd3fe4115bcf0d0e7c079486315d2a5d
