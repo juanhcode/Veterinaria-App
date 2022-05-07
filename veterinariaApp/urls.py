@@ -17,7 +17,15 @@ from django.contrib import admin
 from django.urls import path,include
 
 
+<<<<<<< HEAD
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('veterinaria/',include('apps.veterinario.urls')),
+=======
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('veterinaria/',include('apps.veterinario.urls')),
+    path('ventas/',include('apps.ventas.urls')),
+>>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
 ]

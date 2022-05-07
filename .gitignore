@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 db.sqlite3
+=======
+db.sqlite3
+apps/veterinario/migrations/*
+apps/ventas/migrations/*
+>>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666

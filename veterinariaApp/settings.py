@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #Apps
+<<<<<<< HEAD
     'apps.veterinario'
+=======
+    'apps.veterinario',
+    'apps.ventas'
+>>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
 ]
 
 MIDDLEWARE = [
@@ -77,8 +82,17 @@ WSGI_APPLICATION = 'veterinariaApp.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+=======
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Veterinaria',
+        'USER' : 'postgres',
+        'PASSWORD' : 'databaseCifu',
+        'HOST' : 'localhost',
+        'DATABASE_PORT' : '5432',
+>>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
     }
 }
 
