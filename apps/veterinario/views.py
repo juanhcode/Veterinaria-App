@@ -1,11 +1,5 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-<<<<<<< HEAD
-from django.http import HttpResponse
-# Create your views here.
-class ListViewVeterinario(TemplateView):
-    template_name = 'veterinaria/home.html'
-=======
 
 
 # Create your views here.
@@ -18,4 +12,3 @@ class ListViewHistorial(TemplateView):
 
 class ListViewLogin(TemplateView):
     template_name = 'login/Inicio.html'
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
