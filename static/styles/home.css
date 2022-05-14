@@ -1,24 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
 :root{
     /*Colores*/
     --color-primary:#7380ec;
     --color-danger:#ff7782;
     --color-light:rgba(132,139,200,0.18);
     --color-background:#f6f6f9;
-<<<<<<< HEAD
-    
-=======
     --color-info-light:#dceleb;
     --color-dark:#363949;
     --color-primary-variant:#111e88;
     --color-dark-variant:#677483;
 
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
     --card-border-radius:2rem;
     --border-radius:0.4rem;
     --border-radius-1:0.4rem;
@@ -55,10 +47,7 @@ body{
     background-color:var(--color-background);
     user-select: none;
     overflow-x: hidden;
-<<<<<<< HEAD
-=======
     color:var(--color-dark);
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
 }
 .container{
     display:grid;
@@ -98,13 +87,10 @@ h5{
     font-size: 0.77rem;
 }
 
-<<<<<<< HEAD
-=======
 img.logo{
     margin-left: 3%;
 }
 
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
 small{
     font-size: 0.76rem;
 }
@@ -120,11 +106,7 @@ aside{
 }
 
 aside .top{
-<<<<<<< HEAD
-    background:white;
-=======
     background-color:var(--color-background);
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -147,11 +129,7 @@ aside .close{
 }
 /*Estilos del SIDEBAR*/
 aside .sidebar{
-<<<<<<< HEAD
-    background:white;
-=======
     background-color:var(--color-background);
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
     display:flex;
     flex-direction:column;
     height:86vh;
@@ -210,8 +188,6 @@ aside .sidebar a:hover{
 aside .sidebar a:hover span{
     margin-left: 1rem;
 
-<<<<<<< HEAD
-=======
 }
 
 .ventas{
@@ -381,5 +357,4 @@ main .insights small{
     margin: 30px;
     padding:3%;
     background-color:red;
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
 }
