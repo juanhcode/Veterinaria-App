@@ -23,3 +23,6 @@ class ProductoCreateView(CreateView):
 class ListaProductosView(ListView):
     template_name = 'ventas/ventas.html'
     model = Producto
+
+class TemplateView(TemplateView):
+    template_name = 'ventas/formulario.html'
