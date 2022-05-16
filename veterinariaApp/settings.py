@@ -93,11 +93,8 @@ WSGI_APPLICATION = 'veterinariaApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 1cbf209483effa62ba798703610a73e2f7ae409d
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
