@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-db.sqlite3
-=======
 db.sqlite3
 apps/veterinario/migrations/*
 apps/ventas/migrations/*
-<<<<<<< HEAD
-=======
->>>>>>> 78350140821da17f4691e2414e2a5caba8a1e666
->>>>>>> 2c1c5145a2b11574af03fcdd96b2dc217616b775
+apps/users/migrations/*
+apps/users/__pycache__/*
+apps/ventas/__pycache__/*
+apps/veterinario/__pycache__/*
+secret.json
+
