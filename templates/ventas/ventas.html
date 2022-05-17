@@ -15,7 +15,6 @@
     </section>
      <table>
        <thead>
-
          <tr class="propiedad">
            <th>Nombre</th>
            <th>Descripcion</th>
@@ -24,25 +23,7 @@
            <th>Stock</th>
            <th class="celdaCrud"></th>
           </tr>
-          
         </thead>
-        <tbody>
-           <!--
-          {% for p in object_list %}
-          <tr id="valores">
-            <td>{{ p.nombre }}</td>
-            <td>{{ p.descripcion }}</td>
-            <td>{{ p.precio }}</td>
-            <td>{{ p.iva }}</td>
-            <td>{{ p.stock }}</td>
-            <td class="celdaCrud"><a href="#"><i class="agregarIcono"></i></a></td>
-          </tr>
-          {% endfor %}
-          
-        </tbody>
-      </table>
-      -->
-      
       <table>
           
           <tr class="propiedad">
@@ -129,5 +110,5 @@
     
       <script src="{% static 'scripts/ventas.js' %}"></script>
       
-      {% endblock content %}
+{% endblock content %}
       
