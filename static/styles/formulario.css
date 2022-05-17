@@ -1,14 +1,26 @@
-body{
+*{
     font-family: 'Poppins', Courier, monospace;
     font-style: normal;
+}
+body{
+    
     line-height: 30px;
     text-align: center;
     color: #585858;
 }
+
+/*Quitar flechas de number*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] { -moz-appearance:textfield; }
+
+
 .titulo 
 {
     color: #363949;
-    font-family:'Poppins', 'Roboto';
     font-style: normal;
     font-weight: 600;
     font-size: 35px;
@@ -21,20 +33,16 @@ body{
 {
     height:500px; /*alto*/
     width:800px; /*ancho*/
-    
-
     display: flex;
     justify-content: center;
-
-    /*border: 1px solid #1f1c1c;*/
+    margin:auto;
+    margin-top:5%;
     border-radius: 10px;
-    /*background-color: rgb(105, 105, 105);*/
 }
 
 
 .campo
 {
-    
     height: 100px;
     width: 200x;
     padding-left: 0%;
@@ -51,8 +59,7 @@ body{
 {
     padding-left: 8px;
     border-radius: 5px;
-    height: 25px;
-    /*width: 20x;*/
+    height: 40px;
 
 }
 .espacio-nombre{
@@ -80,22 +87,13 @@ input{
 .formulario
 {
     height:480px; /*alto*/
-    width:450px; /*ancho*/
-    background-color: rgb(255, 255, 255);
-    
-
-    padding-left:0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    /*border: 1px solid #1f1c1c;*/
+    width:600px; /*ancho*/  
 }
 .formulario , li
 {
-
     margin-top: 20px;
     margin-right: 20px;
-    margin-left: 20px;
-    
+    margin-left: 20px;   
     list-style:none;
 }
 
@@ -105,49 +103,28 @@ input{
 }
 
 .btn , text{
-
     width:260px;
     height:40px;
     border-radius: 5px;
     font-size: 18px;
-    
-    
     font-style: normal;
     font-size: 20px;
     line-height: 30px;
-
     background-color: #553CFB;
     color: aliceblue;
-
     border: 0px ;
     position: relative;
 }
 
-.btn:before 
-{
-    content:"";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 0px;
-    height: 100%;
-    background: rgba(21, 247, 40, 0.288);
-    transition: all 1s ease;
 
-}
-.btn:hover:before 
-{
-    width: 100%;
-}
 /* ------------------------Imagen-------------------*/
 .imagen-content
 {
     height:300px; /*alto*/
     width: 300px;
-    margin-top: 150px;
+    margin-top: 90px;
     margin-left: -50px;
     margin-right: 0px;
-    /*border: 1px solid #1f1c1c;*/
 }
 
 .imagen
@@ -155,3 +132,4 @@ input{
     height:300px; /*alto*/
     width: 260px; /*ancho*/
 }
+
