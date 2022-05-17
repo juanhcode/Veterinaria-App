@@ -24,55 +24,31 @@
             </div>
         </div>
         <div class="sidebar">
-            <a href="{% url 'veterinaria_app:home' %}">
+            <a href="{% url 'veterinaria_app:home' %}" class="inicio opc">
                 <span class="material-icons-sharp">
                     grid_view
                 </span>
                 <h3>Inicio</h3>
             </a>
-            <a href="{% url 'veterinaria_app:historial' %}" class="historial">
+            <a href="{% url 'veterinaria_app:historial' %}" class="historial opc">
                 <span class="material-icons-sharp">
                     history
                 </span>
                 <h3>Historial clinico</h3>
             </a>
-            <a href="#" class="datos">
-                <span class="material-icons-sharp">
-                    show_chart
-                </span>
-                <h3>Datos sistema</h3>
-            </a>
-            <a href="#" class="active">
+            <a href="#" class="active opc">
                 <span class="material-icons-sharp">
                     person
                 </span>
                 <h3>Clientes activos</h3>
             </a>
-            <a href="#" class="mascota">
-                <span class="material-icons-sharp">
-                    pets
-                </span>
-                <h3>Mascotas activas</h3>
-            </a>
-            <a href="#" class="citas">
-                <span class="material-icons-sharp">
-                    event_available
-                </span>
-                <h3>Citas</h3>
-            </a>
-            <a href="#" class="medicinas">
-                <span class="material-icons-sharp">
-                    medical_services
-                </span>
-                <h3>Medicinas</h3>
-            </a>
-            <a href="{% url 'ventas_app:ventas' %}" class="btn-ventas">
+            <a href="{% url 'ventas_app:ventas' %}" class="btn-ventas opc">
                 <span class="material-icons-sharp">
                     shopping_cart
                 </span>
                 <h3>Ventas</h3>
             </a>
-            <a href="#" class="salir">
+            <a href="#" class="salir opc">
                 <span class="material-icons-sharp">
                     logout
                 </span>
