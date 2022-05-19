@@ -10,17 +10,33 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+#estas exportaciones son para manejar el secret.json
+from django.core.exceptions import ImproperlyConfigured
+import json
+
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+#Estas lineas de codigo nos ayudaran a leer el arichivo secret.json
+with open("secret.json") as f:
+    secret = json.loads(f.read())
+
+def get_secret(secret_name, secrets=secret):
+    try:
+        return secrets[secret_name]
+    except:
+        msg = "la variable %s no existe" %secret_name
+        raise ImproperlyConfigured(msg)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_3l_yt=-#3o3=(dh#+&4$ok7%_(4y97!4t=q9@!dzlleat-^0e'
+SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #Apps
-    'apps.veterinario'
+    'apps.users',
+    'apps.veterinario',
+    'apps.ventas'
 ]
 
 MIDDLEWARE = [
@@ -75,10 +93,16 @@ WSGI_APPLICATION = 'veterinariaApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': get_secret('DB_NAME'),
+        'USER' : get_secret('USER'),
+        'PASSWORD' : get_secret('PASSWORD'),
+        'HOST' : 'localhost',
+        'DATABASE_PORT' : '5432',
     }
 }
 
@@ -101,11 +125,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#Definiendo la constante para que nuestro proyecto trabaje con este modelo de usuarios:
+AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 

@@ -3,6 +3,7 @@ from . import views
 
 app_name = 'ventas_app'
 urlpatterns = [
-    path('ventas/',views.ViewVentas.as_view(),name='ventas'),
-
+    path('ventas/',views.ListaProductosView.as_view(),name='ventas'),
+    path('formulario/',views.ProductoCreateView.as_view(),name='formulario'),
+    path('formularioprueba/',views.TemplateView.as_view(),name='formularioPrueba'),
 ]
