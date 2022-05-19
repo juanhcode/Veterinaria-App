@@ -46,3 +46,19 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.nombre + ' ' + self.apellidos
     
 
+class Veterinario(User):
+    titulo = models.CharField('Titulo',max_length=40)
+
+    class Meta:
+        db_table = 'veterinario'
+        verbose_name = 'Veterinario'
+        verbose_name_plural = 'Veterinarios'
+
+
+class Vendedor(User):
+
+    class Meta:
+        db_table = 'vendedor'
+        verbose_name = 'Vendedor'
+        verbose_name_plural = 'Vendedores'
+
