@@ -8,8 +8,6 @@
     <section class="header">
       <h2 class="ventas">Ventas</h2>
        <nav class="btn">
-          <button class="editar"><i class="fa-solid fa-crop"></i>  Editar </button>
-          <button class="eliminar"><i class="fa-regular fa-trash-can"></i>  Eliminar </button>
           <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
         </nav>
     </section>
@@ -22,7 +20,7 @@
            <th>Precio</th>
            <th>Iva</th>
            <th>Stock</th>
-           <th class="celdaCrud"></th>
+           <th>Accion</th>
           </tr>
           
         </thead>
@@ -30,12 +28,15 @@
           
           {% for p in object_list %}
           <tr id="valores">
-            <td>{{ p.nombre }}</td>
-            <td>{{ p.descripcion }}</td>
-            <td>{{ p.precio }}</td>
-            <td>{{ p.iva }}</td>
-            <td>{{ p.stock }}</td>
-            <td class="celdaCrud"><a href="#"><i class="agregarIcono"></i></a></td>
+            <td>{{ p.nombre|truncatechars:30 }}</td>
+            <td>{{ p.descripcion|truncatechars:30 }}</td>
+            <td>{{ p.precio|truncatechars:20 }}</td>
+            <td>{{ p.iva|truncatechars:20 }}</td>
+            <td>{{ p.stock|truncatechars:20 }}</td>
+            <td>
+              <a class="fa-solid fa-crop" href="{% url 'ventas_app:update' p.id %}"></a>
+              <a class="fa-regular fa-trash-can" href="{% url 'ventas_app:delete' p.id %}"></a>
+            </td>
           </tr>
           {% endfor %}
           
