@@ -16,10 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-
+from django.conf.urls import handler403
+from apps.ventas.views import Error403View
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('veterinaria/',include('apps.veterinario.urls')),
+    path('',include('apps.veterinario.urls')),
     path('ventas/',include('apps.ventas.urls')),
+    path('user/',include('apps.users.urls')),
 ]
+
+#Manejo de errores
+handler403 = Error403View.as_view()
