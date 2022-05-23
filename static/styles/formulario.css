@@ -80,7 +80,7 @@ input{
 .formulario
 {
     height:480px; /*alto*/
-    width:450px; /*ancho*/
+    width:600px; /*ancho*/
     background-color: rgb(255, 255, 255);
     
 
@@ -144,7 +144,7 @@ input{
 {
     height:300px; /*alto*/
     width: 300px;
-    margin-top: 150px;
+    margin-top: 90px;
     margin-left: -50px;
     margin-right: 0px;
     /*border: 1px solid #1f1c1c;*/
