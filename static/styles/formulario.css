@@ -17,7 +17,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 input[type=number] { -moz-appearance:textfield; }
 
-
 .titulo 
 {
     color: #363949;
@@ -29,6 +28,7 @@ input[type=number] { -moz-appearance:textfield; }
     margin-left: 0px;
     margin-right: 50px;
 }
+
 .content-fondo
 {
     height:500px; /*alto*/
@@ -43,18 +43,26 @@ input[type=number] { -moz-appearance:textfield; }
 
 .campo
 {
-    height: 100px;
     width: 200x;
     padding-left: 0%;
     margin-left: 0px;
 }
 
-
 .campo , label
 {
-    padding-right: 0px;
+    padding-right: 10px;
     text-align: left;
+    padding-bottom: 5em;
+    
+    
+
 }
+
+label{
+    display: inline-block;
+    width: 80px;
+  }
+
 .campo ,input 
 {
     padding-left: 8px;
@@ -62,39 +70,35 @@ input[type=number] { -moz-appearance:textfield; }
     height: 40px;
 
 }
-.espacio-nombre{
-    margin-left:65px;
+
+#descripcion
+{
+    vertical-align: top;
 }
-.espacio-descripcion{
-    margin-left:42px;
-}
-.espacio-precio{
-    margin-left:75px;
-}
-.espacio-iva{
-    margin-left:95px;
-}
-.espacio-stock{
-    margin-left:80px;
+
+#descripcionInput
+{
+    border: 1px solid #A2ABC2;
+    background: #FFFFFF;
+    width: 150px;
+    border-radius: 5px;
 }
 
 input{
-
     border: 1px solid #A2ABC2;
     background: #FFFFFF;
     width: 150px;
 }
+
 .formulario
 {
     height:480px; /*alto*/
     width:600px; /*ancho*/  
 }
-.formulario , li
+
+#formularioVentas
 {
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-left: 20px;   
-    list-style:none;
+    padding-left: 7em;
 }
 
 .formulario , button
@@ -113,15 +117,14 @@ input{
     background-color: #553CFB;
     color: aliceblue;
     border: 0px ;
-    position: relative;
 }
 
 
 /* ------------------------Imagen-------------------*/
 .imagen-content
 {
-    height:300px; /*alto*/
-    width: 300px;
+    height:200px; /*alto*/
+    width: 200px;
     margin-top: 90px;
     margin-left: -50px;
     margin-right: 0px;
