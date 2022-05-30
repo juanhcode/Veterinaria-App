@@ -46,7 +46,13 @@
                 <span class="material-icons-sharp">
                     shopping_cart
                 </span>
-                <h3>Ventas</h3>
+                <h3>inventario</h3>
+            </a>
+            <a href="{% url 'ventas_app:facturas' %}" class="btn-ventas opc">
+                <span class="material-icons-sharp">
+                    monetization_on
+                </span>
+                <h3>Facturas</h3>
             </a>
             <a href="#" class="salir opc">
                 <span class="material-icons-sharp">
@@ -68,11 +74,11 @@
     <!--FINAL de MAIN-->
     <div class="right">
         <div class="top">
-            <button id="menu-btm">
+            <div>
                 <span class="material-icons-sharp">
-                    menu
+                    shopping_cart
                 </span>
-            </button>         
+            </div>         
             <div class="theme-toggler">
                 <span class="material-icons-sharp active">
                     light_mode

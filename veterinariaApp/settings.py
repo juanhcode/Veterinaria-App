@@ -94,17 +94,17 @@ WSGI_APPLICATION = 'veterinariaApp.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': get_secret('DB_NAME'),
         'USER' : get_secret('USER'),
         'PASSWORD' : get_secret('PASSWORD'),
-        'HOST' : 'localhost',
-        'DATABASE_PORT' : '5432',
+        'HOST' : get_secret('HOST'),
+        'DATABASE_PORT' : get_secret('PORT'),
     }
-}"""
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
