@@ -61,3 +61,6 @@ class ProductoUpdateView(UpdateView):
 
 class Error403View(TemplateView):
     template_name = 'ventas/error403.html'
+
+class FacturasView(TemplateView):
+    template_name = 'ventas/facturas.html'
