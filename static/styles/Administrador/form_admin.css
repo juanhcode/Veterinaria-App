@@ -1,46 +1,38 @@
-body
-{
-    font-size: 16px;
-    font-family: 'Roboto','Arial','Poppins';
+*{
+    font-family: 'Poppins', sans-serif;
 }
 
 
-.conten-titulo
-{
-    /*ver limites*/
-    border: 1px  black solid;
-    
-    display: flex;
-    justify-content: center;
 
-    padding-left: 150px;
-    padding-top: 0px;
+/*------------- Titulo --------------------*/
+.content-titulo
+{
+
+    display: flex;
+    justify-content: left;
 
     margin-top: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding-left: 120px;
     
 }
 
 .icono{
+    /*border: 1px  black solid;*/
+    
     font-size: 100px;
     color: #363949;
-    border: 1px  black solid;
-    padding: 0px;
+    padding-top: 20px;
 }
 .titulo
 {
     color: #363949;
-    font-size: 60px; 
-    font-family: 'Roboto'; 
-    border: 1px  black solid;
-    padding-top: 0px;
+    font-size:60px;  
+    padding-left: 20px;
 
 }
 
-.contenedor{
-    /*background-color: green;*/
-}
-
+/* ----------------centrar las celdas de los campos---------- */
 .center{
 
     /*background-color: rgb(154, 243, 37);*/

@@ -5,41 +5,48 @@ body
 }
 
 
-.conten-titulo
+/*------------- Titulo --------------------*/
+.content-titulo
 {
-    /*ver limites*/
-    border: 1px  black solid;
-    
-    display: flex;
-    justify-content: center;
 
-    padding-left: 150px;
-    padding-top: 0px;
+    display: flex;
+    justify-content: left;
 
     margin-top: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding-left: 120px;
     
 }
 
 .icono{
+    /*border: 1px  black solid;*/
+    
     font-size: 100px;
     color: #363949;
-    border: 1px  black solid;
-    padding: 0px;
+    padding-top: 20px;
 }
 .titulo
 {
     color: #363949;
-    font-size: 40px; 
-    font-family: 'Roboto'; 
-    border: 1px  black solid;
-    padding-top: 0px;
+    font-size:60px;  
+    padding-left: 20px;
 
 }
 
-.contenedor{
-    /*background-color: green;*/
+/* ----------------centrar las celdas de los campos---------- */
+.center{
+
+    /*background-color: rgb(154, 243, 37);*/
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+
+    width: 1600px;
+    height:1000px;
+
+    margin-left:80px;
 }
+
 
 .center{
 
@@ -69,7 +76,7 @@ body
 .c1{
     width:650px;
     height: 300px;
-    
+    margin-bottom: 15px;
     /*border: 1px black solid;*/
     /*background-color: yellow;*/
 }
@@ -100,6 +107,7 @@ body
     padding-left: 40px;
     padding-bottom: 10px;
     padding-right: 0px;
+    
     display: flex;
     justify-content: left;
 }
