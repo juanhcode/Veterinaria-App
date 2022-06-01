@@ -9,5 +9,5 @@ urlpatterns = [
     
     path('registrarAdmin/',views.ListViewRegistrarAdmin.as_view(),name='registrarAdmin'),
     path('registrarVeterinario/',views.ListViewRegistrarVeterinario.as_view(),name='registrarVeterinario'),
-    
+    path('registrarVentas/',views.ListViewRegistrarVentas.as_view(),name='registrarVentas'),
 ]
