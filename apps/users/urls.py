@@ -8,5 +8,6 @@ urlpatterns = [
     path('register/',views.VendedorRegisterView.as_view(),name='register'),
     
     path('registrarAdmin/',views.ListViewRegistrarAdmin.as_view(),name='registrarAdmin'),
+    path('registrarVeterinario/',views.ListViewRegistrarVeterinario.as_view(),name='registrarVeterinario'),
     
 ]

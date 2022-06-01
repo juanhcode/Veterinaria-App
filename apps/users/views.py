@@ -73,3 +73,6 @@ class ListViewAdministrador(TemplateView):
 
 class ListViewRegistrarAdmin(TemplateView):
     template_name = 'administrador/form_admin.html'
+
+class ListViewRegistrarVeterinario(TemplateView):
+    template_name = 'administrador/form_veterinario.html'
