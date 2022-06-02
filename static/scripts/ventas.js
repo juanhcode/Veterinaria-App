@@ -28,3 +28,15 @@ btnEliminar.addEventListener('click',()=>{
         agregarIcono[i].classList.add('fa-trash-can');
     }
 })
+
+function abrir(){
+    document.getElementById("elimi").style.display="block";
+  }
+
+  function cerrar(){
+    document.getElementById("elimi").style.display="none";
+  }
+
+  function confirmar(){
+    document.getElementById("elimi").style.display="none";
+  }
