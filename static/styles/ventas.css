@@ -127,3 +127,18 @@ td,th{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.buscar{
+    position: absolute;
+    padding: 5px; 
+    height: 60px;
+}
+.t{
+    height: 26px;
+}
+.lupa{
+    width: 17%;
+    position: absolute;
+    top: 1px;
+    right: -28px;
+    cursor: pointer;
+}
