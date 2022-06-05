@@ -73,3 +73,6 @@ class ListViewAdministrador(TemplateView):
 
 class ListViewRegistrarUsuarios(TemplateView):
     template_name = 'administrador/registrarUsuarios.html'
+
+class ListViewVerUsuarios(TemplateView):
+    template_name = 'administrador/verTablaUsuarios.html'

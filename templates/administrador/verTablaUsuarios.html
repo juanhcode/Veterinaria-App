@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/Administrador/TapBarFormularios.css' %}">
+
+    <div class="mytabs">
+        <input type="radio" id="tabfree" name="mytabs" checked="checked">
+        <label for="tabfree">Administrador</label>
+        <div class="tab">
+            
+            
+        </div>
+        
+        </div>
+
+        <input type="radio" id="tabsilver" name="mytabs">
+        <label for="tabsilver">Veterinarios</label>
+        <div class="tab">
+            
+        </div>
+
+        <input type="radio" id="tabgold" name="mytabs">
+        <label for="tabgold"> Ventas</label>
+        <div class="tab">
+            
+        </div>
+
+    </div>
+
+
+{% endblock content %}
