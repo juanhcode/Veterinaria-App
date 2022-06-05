@@ -1,35 +1,30 @@
-
-*{
-    font-family: 'Poppins', sans-serif;
-}
-
-/*------------- Titulo --------------------*/
-.content-titulo
+body
 {
-    display: flex;
-    justify-content: left;
-
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-left: 120px;
+    font-size: 16px;
+    font-family: 'Roboto','Arial','Poppins';
 }
 
-.icono{
-    /*border: 1px  black solid;*/
-    font-size: 100px;
-    color: #363949;
-    padding-top: 20px;
-    
-}
 .titulo
 {
     color: #363949;
-    font-size:60px; 
-    padding-left: 20px;
+    font-size: 30px;
+    font-family: 'Roboto';
+    
+    padding-left: 100px;
+    padding-top:60px;
+    padding-bottom: 40px;
+    
+    height: 150px;
+    
+
+    /*ver limites*/
+    /*border: 1px  black solid;*/
 }
 
+.contenedor{
+    /*background-color: green;*/
+}
 
-/* ----------------centrar las celdas de los campos---------- */
 .center{
 
     /*background-color: rgb(154, 243, 37);*/
@@ -37,11 +32,12 @@
     display: flex;
     justify-content: center;
 
-    width: 1600px;
+    width: 1000px;
     height:1000px;
 
     margin-left:80px;
 }
+
 
 .campos{
 
@@ -54,7 +50,6 @@
     justify-content: center;
 }
 
-/* ---------c1 = celdas ----------*/
 .c1{
     width:650px;
     height: 300px;
@@ -77,8 +72,6 @@
     margin-left:235px;
 }
 
-
-/*  -------------contenedor de los Inputs--------------*/
 .espacio
 {
     height: 50px; /*ancho*/
@@ -135,7 +128,7 @@ select{
 }
 
 
-/* --------------Boton Registrar---------------*/
+
 .boton
 {
     

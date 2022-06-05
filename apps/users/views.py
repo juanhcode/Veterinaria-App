@@ -71,11 +71,5 @@ class LoginUser(FormView):
 class ListViewAdministrador(TemplateView):
     template_name = 'administrador/home.html'
 
-class ListViewRegistrarAdmin(TemplateView):
-    template_name = 'administrador/form_admin.html'
-
-class ListViewRegistrarVeterinario(TemplateView):
-    template_name = 'administrador/form_veterinario.html'
-
-class ListViewRegistrarVentas(TemplateView):
-    template_name = 'administrador/form_ventas.html'
+class ListViewRegistrarUsuarios(TemplateView):
+    template_name = 'administrador/registrarUsuarios.html'

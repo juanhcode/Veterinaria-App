@@ -1,0 +1,261 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/Administrador/TapBarFormularios.css' %}">
+<link rel="stylesheet" href="{% static 'styles/Administrador/form_admin.css' %}">
+    <div class="mytabs">
+        <input type="radio" id="tabfree" name="mytabs" checked="checked">
+        <label for="tabfree">Registrar Admin</label>
+        <div class="tab">
+            
+            <div class="contenedor">
+            
+            <div class="center">
+
+                <form action="">
+                    <div class="titulo">
+
+                    <h1>Registrar Administrador</h1>    
+                    </div>
+                    <div class="campos">
+                        <div class="c1">
+                            <div class="espacio">
+                                <label >Cedula</label>
+                                <input class="entrada" type="text" name="name[]" id="TextId">
+                            </div>
+                            
+                            <div class="espacio">
+                                <label>Nombre</label>
+                                <input type="text" name="name[]" id="TextId">    
+                            </div>
+                            
+                            <div class="espacio">
+                                <label>Apellido</label>
+                                <input type="text" name="name[]" id="TextId">
+                            </div>
+                        </div>
+                        <div class="c1">
+                            <div class="espacio">
+                                <label>Edad</label>
+                                <input type="text" name="name[]" id="TextId">
+                            </div>
+                            
+                            <div class="espacio">
+                                <label>Sexo</label>
+                                <select name="select">
+                                    <option value="value1">Masculino</option>
+                                    <option value="value2" selected>Femenino</option>
+                                </select>  
+                            </div>
+                            
+                            <div class="espacio">
+                                <label>Telefono</label>
+                                <input type="text" name="name[]" id="TextId">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="campos">
+                        <div class="c1">
+                                <div class="espacio">
+                                    <label >Nombre Usuario</label>
+                                    <input type="text" name="name[]" id="TextId">
+                                </div>
+                                <div class="espacio">
+                                    <label >Correo Electronico</label>
+                                    <input type="text" name="name[]" id="TextId">    
+                                </div>
+                                <div class="espacio">
+                                    <label>Contrasena</label>
+                                    <input type="password" name="name[]" id="TextId">
+                                </div>
+                                <div class="espacio">
+                                    <label>Fecha Ingreso</label>
+                                    <input type="date" name="name[]" id="FechaIngreso">
+                                </div>
+                        </div>  
+                        <div class="c2">
+                            <button class="boton"> Registrar</button>
+                        </div>  
+                    </div>
+                    
+                    
+                </form>
+                
+            </div>
+        </div>
+        
+        </div>
+
+        <input type="radio" id="tabsilver" name="mytabs">
+        <label for="tabsilver">Registrar Veterinario</label>
+        <div class="tab">
+            <div class="contenedor">
+            
+            <div class="center">
+
+                <form action="">
+                    <div class="titulo">
+                    <h1>Registrar Veterinario</h1>    
+                    </div>
+                    <div class="campos">
+                        <div class="c1">
+                            <div class="espacio">
+                                <label>Cedula</label>
+                                <input type="text" name="name[]" id="TextId">
+                            </div>
+                            
+                            <div class="espacio">
+                                <label>Nombre</label>
+                                <input type="text" name="name[]" id="TextId">    
+                            </div>
+                            
+                            <div class="espacio">
+                                <label>Apellido</label>
+                                <input type="text" name="name[]" id="TextId">
+                            </div>
+
+                            <div class="espacio">
+                                <label>Titulo</label>
+                                <input type="text" name="name[]" id="TextId">
+                            </div>
+                        </div>
+                        <div class="c1">
+                            <div class="espacio">
+                                <label>Edad</label>
+                                <input type="text" name="name[]" id="TextId">
+                            </div>
+                            
+                            <div class="espacio">
+                                <label>Sexo</label>
+                                <select name="select">
+                                    <option value="value1">Masculino</option>
+                                    <option value="value2" selected>Femenino</option>
+                                </select>  
+                            </div>
+                            
+                            <div class="espacio">
+                                <label>Telefono</label>
+                                <input type="text" name="name[]" id="TextId">
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="campos">
+                        <div class="c1">
+                                <div class="espacio">
+                                    <label>Nombre Usuario</label>
+                                    <input type="text" name="name[]" id="TextId">
+                                </div>
+                                <div class="espacio">
+                                    <label>Correo Electronico</label>
+                                    <input type="text" name="name[]" id="TextId">    
+                                </div>
+                                <div class="espacio">
+                                    <label>Contrasena</label>
+                                    <input type="password" name="name[]" id="TextId">
+                                </div>
+                                <div class="espacio">
+                                <label>Fecha Ingreso</label>
+                                <input type="date" name="name[]" id="FechaIngreso">
+                                </div>
+                        </div>  
+                        <div class="c2">
+                                <button class="boton"> Registrar</button>
+                        </div>
+                    </div>
+                
+                </form>
+                
+            </div>
+        </div>
+        </div>
+
+        <input type="radio" id="tabgold" name="mytabs">
+        <label for="tabgold">Registrar Ventas</label>
+        <div class="tab">
+            <div class="contenedor">
+            
+                <div class="center">
+
+                    <form action="">
+                        <div class="titulo">
+                        <h1>Registrar Ventas</h1>    
+                        </div>
+                        <div class="campos">
+                            <div class="c1">
+                                <div class="espacio">
+                                    <label>Cedula</label>
+                                    <input type="text" name="name[]" id="TextId">
+                                </div>
+                                
+                                <div class="espacio">
+                                    <label>Nombre</label>
+                                    <input type="text" name="name[]" id="TextId">    
+                                </div>
+                                
+                                <div class="espacio">
+                                    <label>Apellido</label>
+                                    <input type="text" name="name[]" id="TextId">
+                                </div>
+                            </div>
+                            <div class="c1">
+                                <div class="espacio">
+                                    <label>Edad</label>
+                                    <input type="text" name="name[]" id="TextId">
+                                </div>
+                                
+                                <div class="espacio">
+                                    <label>Sexo</label>
+                                    <select name="select">
+                                        <option value="value1">Masculino</option>
+                                        <option value="value2" selected>Femenino</option>
+                                    </select>  
+                                </div>
+                                
+                                <div class="espacio">
+                                    <label>Telefono</label>
+                                    <input type="text" name="name[]" id="TextId">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="campos">
+                            <div class="c1">
+                                    <div class="espacio">
+                                        <label >Nombre Usuario</label>
+                                        <input type="text" name="name[]" id="TextId">
+                                    </div>
+                                    <div class="espacio">
+                                        <label >Correo Electronico</label>
+                                        <input type="text" name="name[]" id="TextId">    
+                                    </div>
+                                    <div class="espacio">
+                                        <label>Contrasena</label>
+                                        <input type="password" name="name[]" id="TextId">
+                                    </div>
+                                    <div class="espacio">
+                                        <label>Fecha Ingreso</label>
+                                        <input type="date" name="name[]" id="FechaIngreso">
+                                    </div>
+                            </div>  
+                            <div class="c2">
+                                <button class="boton"> Registrar</button>
+                            </div>  
+                        </div>
+                        
+                        
+                    </form>
+                    
+                </div>
+        </div>
+        </div>
+
+    </div>
+
+
+{% endblock content %}

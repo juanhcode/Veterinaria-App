@@ -1,10 +1,5 @@
-*{
-    font-family: 'Poppins', sans-serif;
-}
 
-
-
-/*------------- Titulo --------------------*/
+/*------------- Titulo Registrar --------------------*/
 .content-titulo
 {
 
@@ -17,33 +12,38 @@
     
 }
 
+/*
 .icono{
     /*border: 1px  black solid;*/
-    
+    /*
     font-size: 100px;
     color: #363949;
     padding-top: 20px;
-}
+}*/
 .titulo
 {
     color: #363949;
-    font-size:60px;  
-    padding-left: 20px;
-
+    
+    padding-left: 50px;
+    padding-top: 60px;
+    /*border: 1px  black solid;*/
+    height: 150px;
 }
-
-/* ----------------centrar las celdas de los campos---------- */
+.titulo h1{
+    font-size: 32px;
+}
+/* ---------------centrar las celdas de los campos---------- */
 .center{
 
     /*background-color: rgb(154, 243, 37);*/
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: flex;
     justify-content: center;
 
-    width: 1600px;
-    height:1000px;
+    width: 1400px;
+    height:700px;
 
-    margin-left:80px;
+    margin-left:0px;
 }
 
 
@@ -51,7 +51,7 @@
 
     /*border: 1px black solid;*/
     
-    margin-left: 100px;
+    margin-left: 0px;
     /*background-color: red;*/
 
     display: inline-flex;
@@ -59,27 +59,41 @@
 }
 
 .c1{
+    margin-top: 0px;
+    padding-top:5px;
+    
     width:650px;
-    height: 300px;
+    height: 200px;
     
     /*border: 1px black solid;*/
-    /*background-color: yellow;*/
+    /* background-color: yellow;*/
 }
+/* ---------------celda con el boton registrar---------- */
 .c2{
     width:650px;
-    height: 300px;
+    height: 200px;
     
     /*border: 1px black solid;*/
     /*background-color: yellow;*/
     
 }
-
 .c2 button
 {
-    margin-top: 250px;
+    margin-top: 150px;
     margin-left:235px;
+
+    border-radius: 5px;
+    font-size: 18px;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px ;
+
 }
 
+/* ---------------contenedor con los Textos e Inputs/Entradas/Campos---------- */
 .espacio
 {
     height: 50px; /*ancho*/
@@ -88,7 +102,7 @@
 
     /*border: 1px black solid;*/
     border-radius: 10px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 40px;
     padding-bottom: 10px;
     padding-right: 0px;
@@ -119,6 +133,7 @@ input
 {
     /*padding-left: s0px;*/
     width: 320px;
+    height: 40px;
     border-radius: 8px;
     padding-left: 16px;
     font-size: 18px;
@@ -126,24 +141,25 @@ input
 }
 
 select{
-    height: 50px;
-    width: 350px;
+    
+    width: 320px;
+    height: 40px;
     text-align: center;
     border-radius: 8px;
     font-size: 18px;
     border: 1px solid #A2ABC2;
+    font-family: 'Poppins', sans-serif;
 
 }
 
-
-
+/* ---------------Boton Registrar---------- */
 .boton
 {
     
     height: 50px; /*alto*/
     width: 300px; /*ancho*/
     
-    border: 3px solid rgb(0, 109, 0);
+    border: 3px solid rgb(0, 34, 109);
     border-radius: 10px;
     background-color: white;
     font-family: 'Roboto', Times, serif;
@@ -152,15 +168,10 @@ select{
     
 }
 
-.boton:before{
-	left: -48%;
-    background: rgb(145, 124, 6);
-}
-
 .boton:hover
 {
     color: white;
-	background: rgb(0, 109, 0);
+	background: rgb(69, 32, 235);
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
