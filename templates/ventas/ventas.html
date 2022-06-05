@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
   <script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
     <section class="header">
+<<<<<<< HEAD
       <h2 class="ventas">Ventas</h2>
         <nav class="btn">
               <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
@@ -44,6 +45,44 @@
         </table>
     
         <script src="{% static 'scripts/ventas.js' %}"></script>
+=======
+      <h2 class="ventas">Inventario</h2>
+       <nav class="btn">
+          <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
+        </nav>
+    </section>
+     <table>
+       <thead>
+         <tr class="propiedad">
+           <th>Nombre</th>
+           <th>Descripcion</th>
+           <th>Precio</th>
+           <th>Iva</th>
+           <th>Stock</th>
+           <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          {% for p in object_list %}
+          <tr id="valores">
+            <td>{{ p.nombre|truncatechars:30 }}</td>
+            <td>{{ p.descripcion|truncatechars:30 }}</td>
+            <td>{{ p.precio|truncatechars:20 }}</td>
+            <td>{{ p.iva|truncatechars:20 }}</td>
+            <td>{{ p.stock|truncatechars:20 }}</td>
+            <td>
+              <a class="fa-solid fa-crop edit1" href="{% url 'ventas_app:update' p.id %}"></a>
+              <a class="fa-regular fa-trash-can" href="{% url 'ventas_app:delete' p.id %}"></a>
+              <button class="agregar-carrito">Agregar al carrito</button>
+            </td>
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+      <script src="{% static 'scripts/ventas.js' %}"></script>
+>>>>>>> cf27620539f38aae37125dc20c353edc98d7326e
       
 {% endblock content %}
       
