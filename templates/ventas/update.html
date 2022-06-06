@@ -1,18 +1,64 @@
 {% extends 'index.html' %}
 {% load static%}
-{% block title %}Dashboard
-{% endblock title %}
+{% block title %}Modificar Producto{% endblock title %}
 {% block content %}
-          <h1>
-              Modificar Empleado
-          </h1>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_p }}
+<link rel="stylesheet" href="{% static 'styles/update_venta.css' %}">
+          <body>
+            <div class="content-fondo">
+              <div class="formulario">
+                <form method="post">
+                  <h2 class="titulo">Modificar Producto</h2>
+                  {% csrf_token %}
           
-                <button type="submit">Actualizar</button>
-            </form>
-   
+                  <div id="formularioVentas">
+
+                      <div class="campo">
+                        <label>Identificacion</label>
+                        {{ form.identificacion }}
+                      </div>
+          
+                      <div class="campo">
+                          <label>Nombre</label>
+                          {{ form.nombre }}
+                      </div>
+                      
+                      
+                      <div class="campo">
+                          <label id="descripcion">Descripcion</label>
+                          {{ form.descripcion }}
+                      </div>
+                      
+                      <div class="campo">
+                          <label>Precio</label>
+                          {{ form.precio }}
+                      </div>
+                      
+                      <div class="campo">
+                          <label>iva</label>
+                          {{ form.iva }}
+                  </div>
+                  
+                  <div class="campo">
+                      <label>Stock</label>
+                      {{ form.stock }}
+                  </div>
+                  
+                  <div class="campo">
+                      <label>Vendedor</label>
+                      {{ form.vendedor }}
+                  </div>
+              </div>
+          
+                  <button type="submit" class="btn">Guardar</button>
+                </form>
+              </div>
+              <div class="imagen-content">
+                <img class="imagen" src="/static/assets/pet.png" />
+              </div>
+            </div>
+          </body>
+          <script src="{% static 'scripts/formulariosVenta.js' %}"></script>
+          
 
 {% endblock content %}
 

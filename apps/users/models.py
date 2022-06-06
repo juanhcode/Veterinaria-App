@@ -85,6 +85,7 @@ class Duenio(models.Model):
         verbose_name = 'Duenio'
         verbose_name_plural = 'Duenios'
 
+
     def __str__(self):
         return self.nombre + ' ' + self.apellidos + ' - ' +  str(self.cedula)
 

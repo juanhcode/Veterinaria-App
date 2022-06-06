@@ -15,6 +15,7 @@
        <thead>
 
          <tr class="propiedad">
+           <th>Identificacion</th>
            <th>Nombre</th>
            <th>Descripcion</th>
            <th>Precio</th>
@@ -28,6 +29,7 @@
           
           {% for p in object_list %}
           <tr id="valores">
+            <td>{{ p.identificacion|truncatechars:30 }}</td>
             <td>{{ p.nombre|truncatechars:30 }}</td>
             <td>{{ p.descripcion|truncatechars:30 }}</td>
             <td>{{ p.precio|truncatechars:20 }}</td>

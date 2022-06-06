@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView, DeleteView, UpdateView, FormView
 
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 
 from .models import Producto
 
@@ -17,46 +17,47 @@ from .forms import ProductoRegisterForm
 class ProductoCreateView(PermissionRequiredMixin, FormView):
     form_class = ProductoRegisterForm
     template_name = 'ventas/formulario.html'
-    #context_object_name = 'productos'
-    #fields = ['first_name','last_name','job']
-    success_url = '/'
-    permission_required = 'producto.view_producto'
+    success_url = reverse_lazy('ventas_app:ventas')
+    permission_required = 'ventas.add_producto'
     permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
     #validacion de los datos
     def form_valid(self, form):
         
         form.save()
-        
-        '''
-        Producto.objects.create(
-            form.cleaned_data['nombre'],
-            form.cleaned_data['descripcion'],
-            form.cleaned_data['precio'],
-            form.cleaned_data['iva'],
-            form.cleaned_data['stock'],
-            form.cleaned_data['vendedor'],
-        )'''
     
         return super(ProductoCreateView, self).form_valid(form)
     
 
-class ListaProductosView(ListView):
+class ListaProductosView(PermissionRequiredMixin, ListView):
     template_name = 'ventas/ventas.html'
     model = Producto
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
 
-class ProductoDeleteView(DeleteView):
-    model = Producto
-    template_name = "ventas/delete.html"
-    success_url = reverse_lazy('ventas_app:ventas')
-
-
-class ProductoUpdateView(UpdateView):
+class ProductoUpdateView(PermissionRequiredMixin, UpdateView):
     model = Producto
     template_name = "ventas/update.html"
     fields = ('__all__')
     success_url = reverse_lazy('ventas_app:ventas')
+    permission_required = 'ventas.change_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+
+class ProductoDeleteView(PermissionRequiredMixin, DeleteView):
+    model = Producto
+    template_name = "ventas/delete.html"
+    success_url = reverse_lazy('ventas_app:ventas')
+    permission_required = 'ventas.delete_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+
+
 
 
 class Error403View(TemplateView):

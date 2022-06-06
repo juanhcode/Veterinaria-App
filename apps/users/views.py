@@ -40,12 +40,25 @@ class VendedorRegisterView(FormView):
             tipo_usuario = form.cleaned_data['tipo_usuario'],
         )
         #Recuperando el permiso
+        
         content_type = ContentType.objects.get_for_model(Producto)
         permission = Permission.objects.get(
             codename = 'view_producto',
             content_type = content_type
         )
-        vendedor.user_permissions.add(permission)
+        permission2 = Permission.objects.get(
+            codename = 'add_producto',
+            content_type = content_type
+        )
+        permission3 = Permission.objects.get(
+            codename = 'change_producto',
+            content_type = content_type
+        )
+        permission4 = Permission.objects.get(
+            codename = 'delete_producto',
+            content_type = content_type
+        )
+        vendedor.user_permissions.add(permission,permission2, permission3, permission4)
 
         return super(VendedorRegisterView, self).form_valid(form)
 
