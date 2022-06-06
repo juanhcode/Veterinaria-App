@@ -70,3 +70,9 @@ class LoginUser(FormView):
 # Vista de Admin-Menu
 class ListViewAdministrador(TemplateView):
     template_name = 'administrador/home.html'
+
+class ListViewRegistrarUsuarios(TemplateView):
+    template_name = 'administrador/registrarUsuarios.html'
+
+class ListViewVerUsuarios(TemplateView):
+    template_name = 'administrador/verTablaUsuarios.html'
