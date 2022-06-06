@@ -64,3 +64,6 @@ class Error403View(TemplateView):
 
 class FacturasView(TemplateView):
     template_name = 'ventas/facturas.html'
+
+class FacturasFormularioView(TemplateView):
+    template_name = 'ventas/formularioFactura.html'
