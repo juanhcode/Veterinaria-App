@@ -63,6 +63,7 @@
                 </span>
                 <h3>Facturas</h3>
             </a>
+            <br>
             <a href="#" class="salir opc">
 >>>>>>> cf27620539f38aae37125dc20c353edc98d7326e
                 <span class="material-icons-sharp">
@@ -70,6 +71,7 @@
                 </span>
                 <h3>Logout</h3>
             </a>
+
         </div>
     </aside>
     <!--MAIN-->
@@ -97,6 +99,12 @@
                     dark_mode
                 </span>
             </div>
+            <a class="salir" href="{% url 'user_app:login' %}">
+                <span class="material-icons-sharp">
+                    logout
+                </span>
+                <h4>Salir</h4>
+            </a>
             <div class="profile">
                 <div class="info">
                     <p>Hola,<b class="user"> Admin</b></p>
@@ -109,6 +117,7 @@
         </div>
     </div>
 </div>
+
 <script src="{% static 'scripts/home.js' %}"></script>
 </body>
 </html>

@@ -51,6 +51,12 @@
           <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
         </nav>
     </section>
+    <div class="buscar">
+      <input class="t" type="text" placeholder="Buscar" required >
+       <i class="lupa"><img src="/static/assets/lupa.png"></i> 
+    </div>
+    <br>
+    <br>
      <table>
        <thead>
          <tr class="propiedad">
@@ -72,13 +78,21 @@
             <td>{{ p.iva|truncatechars:20 }}</td>
             <td>{{ p.stock|truncatechars:20 }}</td>
             <td>
-              <a class="fa-solid fa-crop edit1" href="{% url 'ventas_app:update' p.id %}"></a>
-              <a class="fa-regular fa-trash-can" href="{% url 'ventas_app:delete' p.id %}"></a>
+              <a class="fa-solid fa-crop" href="{% url 'ventas_app:update' p.id %}"></a>
+              <a class="fa-regular fa-trash-can" href="javascript:abrir()"></a>
               <button class="agregar-carrito">Agregar al carrito</button>
             </td>
           </tr>
           {% endfor %}
           
+            <div class="Ventanae" id="elimi">
+              <h3>¿Quiere eliminar este profucto? </h3>
+              <h3>{{ producto.nombre }}</h3>
+              <h3>confirme que desea realizar</p>
+              <br>
+              <a id="Confirmar" href="javascript:confirmar()">Confirmar</a>
+              <a id="cancelar" href="javascript:cerrar()"> cancelar</a>
+            </div>
         </tbody>
       </table>
       <script src="{% static 'scripts/ventas.js' %}"></script>

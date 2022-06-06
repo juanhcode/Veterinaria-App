@@ -4,11 +4,14 @@
 {% endblock title %}
 {% block content %}
 
+<!--
 <form method="post">{% csrf_token %}
     <h3>¿Quiere eliminar este profucto? {{ producto.nombre }}</h3>
         <p >confirme que desea eliminar</p>
         <button type="submit">Confirmar</button>      
 </form>
+-->
+<link rel="stylesheet" href="{% static 'styles/delete.css' %}">
 
 
 {% endblock content %}
