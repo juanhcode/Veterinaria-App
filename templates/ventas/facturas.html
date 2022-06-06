@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
+<script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
+    <section class="header">
+      <h2 class="ventas">Facturas</h2>
+    </section>
+     <table>
+       <thead>
+         <tr class="propiedad">
+           <th>ID</th>
+           <th>Nombre del producto</th>
+           <th>Id del producto</th>
+           <th>Descripcion</th>
+           <th>Stock</th>
+           <th>Iva</th>
+           <th>Precio</th>
+           <th>Fecha</th>
+           <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in object_list %}
+          <tr id="valores">
+            <td>{{ p.nombre|truncatechars:30 }}</td>
+            <td>{{ p.descripcion|truncatechars:30 }}</td>
+            <td>{{ p.precio|truncatechars:20 }}</td>
+            <td>{{ p.iva|truncatechars:20 }}</td>
+            <td>{{ p.stock|truncatechars:20 }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <script src="{% static 'scripts/ventas.js' %}"></script>
+      
+{% endblock content %}
+      

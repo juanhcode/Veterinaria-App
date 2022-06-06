@@ -13,6 +13,7 @@ section{
     padding: 0;
 }
 
+
 h2.ventas{
     font-size: 40px;
     text-align: left;
@@ -127,6 +128,7 @@ td,th{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 .buscar{
     position: absolute;
     padding: 5px; 
@@ -142,3 +144,42 @@ td,th{
     right: -28px;
     cursor: pointer;
 }
+
+.Ventanae{
+    top: 230px;
+    background: #ffffff;
+    width: 28%;
+    color:rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 33px;
+    min-height: 200px;
+    border-radius: 22px;
+    position: absolute;
+    left: 40%;
+    border:1px solid rgb(0, 0, 0);
+    opacity:8;
+    transition: all 5s;
+    display: none;
+}
+#cancelar{
+    padding: 1.5%;
+    margin-right: 4%;
+    font-size: 15px;
+    border: 2px var(--color-light);
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #553CFB;
+    color: aliceblue;
+}
+#Confirmar{
+    padding: 1.5%;
+    margin-right: 4%;
+    font-size: 15px;
+    border: 2px var(--color-light);
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #553CFB;
+    color: aliceblue;
+}
+
