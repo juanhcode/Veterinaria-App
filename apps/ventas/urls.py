@@ -7,5 +7,5 @@ urlpatterns = [
     path('formulario/',views.ProductoCreateView.as_view(),name='formulario'),
     path('update/<pk>/',views.ProductoUpdateView.as_view(),name='update'),
     path('delete/<pk>/',views.ProductoDeleteView.as_view(),name='delete'),
-
+    path('facturas/',views.FacturasView.as_view(),name='facturas'),
 ]

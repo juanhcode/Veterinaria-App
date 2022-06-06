@@ -4,16 +4,61 @@
 {% endblock title %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
-<script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
     <section class="header">
+<<<<<<< HEAD
       <h2 class="ventas">Ventas</h2>
+        <nav class="btn">
+              <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
+        </nav>
+    </section>
+        <table>
+          <thead>
+
+          <tr class="propiedad">
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th>Iva</th>
+              <th>Stock</th>
+              <th>Accion</th>
+            </tr>
+            
+          </thead>
+          <tbody>
+            
+            {% for p in object_list %}
+            <tr id="valores">
+              <td>{{ p.nombre|truncatechars:30 }}</td>
+              <td>{{ p.descripcion|truncatechars:30 }}</td>
+              <td>{{ p.precio|truncatechars:20 }}</td>
+              <td>{{ p.iva|truncatechars:20 }}</td>
+              <td>{{ p.stock|truncatechars:20 }}</td>
+              <td>
+                <a class="fa-solid fa-crop" href="{% url 'ventas_app:update' p.id %}"></a>
+                <a class="fa-regular fa-trash-can" href="{% url 'ventas_app:delete' p.id %}"></a>
+              </td>
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+    
+        <script src="{% static 'scripts/ventas.js' %}"></script>
+=======
+      <h2 class="ventas">Inventario</h2>
        <nav class="btn">
           <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
         </nav>
     </section>
+    <div class="buscar">
+      <input class="t" type="text" placeholder="Buscar" required >
+       <i class="lupa"><img src="/static/assets/lupa.png"></i> 
+    </div>
+    <br>
+    <br>
      <table>
        <thead>
-
          <tr class="propiedad">
            <th>Identificacion</th>
            <th>Nombre</th>
@@ -23,7 +68,6 @@
            <th>Stock</th>
            <th>Accion</th>
           </tr>
-          
         </thead>
         <tbody>
           
@@ -37,100 +81,24 @@
             <td>{{ p.stock|truncatechars:20 }}</td>
             <td>
               <a class="fa-solid fa-crop" href="{% url 'ventas_app:update' p.id %}"></a>
-              <a class="fa-regular fa-trash-can" href="{% url 'ventas_app:delete' p.id %}"></a>
+              <a class="fa-regular fa-trash-can" href="javascript:abrir()"></a>
+              <button class="agregar-carrito">Agregar al carrito</button>
             </td>
           </tr>
           {% endfor %}
           
+            <div class="Ventanae" id="elimi">
+              <h3>¿Quiere eliminar este profucto? </h3>
+              <h3>{{ producto.nombre }}</h3>
+              <h3>confirme que desea realizar</p>
+              <br>
+              <a id="Confirmar" href="javascript:confirmar()">Confirmar</a>
+              <a id="cancelar" href="javascript:cerrar()"> cancelar</a>
+            </div>
         </tbody>
       </table>
-      <!--
-
-        <table>
-          
-          <tr class="propiedad">
-            <th>Animal</th>
-            <th>Propietario</th>
-            <th>Precio</th>
-            <th>N Factura</th>
-            <th>Edad</th>
-            <th>Enfermedad</th>
-            <th class="celdaCrud"></th>
-          </tr>
-          
-          <tr id="valores">
-            <td>gato</td>
-            <td>Sancho</td>
-            <td>1'200.000</td>
-           <td>0000111100000</td>
-           <td>11 años</td>
-           <td>Cancer</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-          </tr>
-          
-          <tr>
-            <td>perro</td>
-            <td>Dagoberto</td>     
-            <td>500.000</td>
-            <td>0000122000000</td>
-            <td>12 años</td>
-            <td>Fractura</td>
-            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-          </tr>
-          
-          <tr>     
-            <td>conejo</td>
-            <td>Clementina</td>     
-            <td>800.000</td>     
-            <td>0000222200000</td>
-            <td>2 años</td>
-            <td>Fractura</td>
-            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-          </tr>
-          <tr>
-            <td>gato</td>
-            <td>Sancho</td>
-            <td>1'200.000</td>
-            <td>0000111100000</td>
-            <td>11 años</td>
-            <td>Cancer</td>
-            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-          </tr>
-          
-          <tr>
-            <td>perro</td>
-            <td>Dagoberto</td>     
-            <td>500.000</td>
-            <td>0000122000000</td>
-            <td>12 años</td>
-            <td>Fractura</td>
-            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-          </tr>
-          
-          <tr>     
-            <td>conejo</td>
-            <td>Clementina</td>     
-            <td>800.000</td>     
-            <td>0000222200000</td>
-            <td>2 años</td>
-            <td>Fractura</td>
-            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-          </tr>
-          <tr>
-            <td>gato</td>
-            <td>Sancho</td>
-            <td>1'200.000</td>
-            <td>0000111100000</td>
-            <td>11 años</td>
-            <td>Cancer</td>
-            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-          </tr>
-          
-        </tr>  
-      </table>
-      
-    -->
       <script src="{% static 'scripts/ventas.js' %}"></script>
+>>>>>>> cf27620539f38aae37125dc20c353edc98d7326e
       
-      {% endblock content %}
+{% endblock content %}
       

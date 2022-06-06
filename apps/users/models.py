@@ -40,8 +40,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = [
         'correo'
     ]
-   
-    
 
 class Veterinario(User):
     titulo = models.CharField('Titulo',max_length=40)

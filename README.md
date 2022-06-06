@@ -4,4 +4,8 @@ Proyecto de desarrollo de software II
 Para poder ejecutar el proyecto, diríjase a la carpeta veterinariaApp y, digite el siguiente comando
 ```bash
 python .\manage.py runserver
+
+Por si algo:
+
+pip install windows-curses
 ```

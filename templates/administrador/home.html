@@ -1,8 +1,17 @@
 {% extends 'index.html' %}
-{% load static %}
-{% block title %}Modulo Admin{% endblock title %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
 {% block content %}
 
-<h1>Hola mundo</h1>
+<link rel="stylesheet" href="{% static 'styles/Administrador/botones.css' %}">
+<div class="contenedor">
+
+        <div class="contenedor-botones">
+            <a href="{% url 'user_app:registrarUsuarios' %}" class="boton">Registrar Usuario</a>
+            <a href="{% url 'user_app:verUsuarios' %}" class="boton">Ver Tablas Usuarios</a>
+            <button class="boton">Reporte Usuario</button>
+        </div>
+    </div>
 
 {% endblock content %}
