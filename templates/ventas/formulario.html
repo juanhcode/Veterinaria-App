@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 {% load static%} 
-{% block title %}Agregar Producto{%endblock title %} 
+{% block title %}Dashboard {%endblock title %} 
 {% block content %}
 <link rel="stylesheet" href="/static/styles/formulario.css" />
 <body>
@@ -12,10 +12,10 @@
 
         <div id="formularioVentas">
 
-            <div class="campo">
-              <label>Identificacion</label>
-              {{ form.identificacion }}
-            </div>
+          <div class="campo">
+            <label>Identificacion</label>
+            {{ form.identificacion }}
+          </div>
 
             <div class="campo">
                 <label>Nombre</label>
@@ -48,6 +48,11 @@
             {{ form.vendedor }}
         </div>
     </div>
+        
+        {% for i in form.errors %} {{i}} {% endfor %} 
+        {% if form.errors %}
+        <p>error!</p>
+        {% endif %}
 
         <button type="submit" class="btn">Guardar</button>
       </form>

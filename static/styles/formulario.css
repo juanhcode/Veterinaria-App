@@ -12,8 +12,8 @@ body{
 /*Quitar flechas de number*/
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 input[type=number] { -moz-appearance:textfield; }
 
@@ -61,7 +61,7 @@ input[type=number] { -moz-appearance:textfield; }
 label{
     display: inline-block;
     width: 80px;
-}
+  }
 
 .campo ,input 
 {
@@ -93,14 +93,7 @@ input{
 .formulario
 {
     height:480px; /*alto*/
-    width:600px; /*ancho*/
-    background-color: rgb(255, 255, 255);
-    
-
-    padding-left:0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    /*border: 1px solid #1f1c1c;*/
+    width:600px; /*ancho*/  
 }
 
 #formularioVentas
@@ -130,8 +123,8 @@ input{
 /* ------------------------Imagen-------------------*/
 .imagen-content
 {
-    height:300px; /*alto*/
-    width: 300px;
+    height:200px; /*alto*/
+    width: 200px;
     margin-top: 90px;
     margin-left: -50px;
     margin-right: 0px;
@@ -142,4 +135,3 @@ input{
     height:300px; /*alto*/
     width: 260px; /*ancho*/
 }
-
