@@ -4,31 +4,211 @@
 {% endblock title %}
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'styles/Administrador/TapBarFormularios.css' %}">
 
-    <div class="mytabs">
-        <input type="radio" id="tabfree" name="mytabs" checked="checked">
-        <label for="tabfree">Administrador</label>
-        <div class="tab">
-            
-            
-        </div>
-        
-        </div>
+<link rel="stylesheet" href="{% static 'styles/Administrador/tapTablas.css' %}">
+<link rel="stylesheet" href="{% static 'styles/Administrador/tabla_admin.css' %}">
+<div class="mytabs">
+            <input type="radio" id="tabfree" name="mytabs" checked="checked">
+            <label for="tabfree">Ver Admin</label>
+            <div class="tab">
+                <div class="contenedor">
+                
+                    <div class="center">
+                            <div class="contenedor-tabla">
+                                <div class="contenedor-titulo">
+                                    <h1 class="titulo">Tabla Administradores</h1>
+                                </div>
+                                <table class="tabla" >
+                                <tr>
+                                    <th>Cedula</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Edad</th>
+                                    <th>Sexo</th>
+                                    <th>Telefono</th> 
+                                    <th>Fecha Ingreso</th>  
+                                    <th>Nombre Usuario</th>   
+                                    <th>Correo Electronico</th> 
+                                    <th>Contrasena</th>   
+                                </tr>
+                                <tr> 
+                                    <td>1</td>          <!--Cedulla-->
+                                    <td>Sample</td>     <!--Nombre-->
+                                    <td>Diaz</td>      <!--Apellido-->
+                                    <td>20</td>         <!--Edad-->
+                                    <td>masculino</td>  <!--Sexo-->
+                                    <td>3123909445</td>          <!--Telefono-->
+                                    <td>13/12/2022</td>     <!--Telefono--> 
+                                    <td>usuario</td>        <!--Nombre Usuario--> 
+                                    <td>sample@correo</td>  <!--correo--> 
+                                    <td>contra124</td>      <!--contra--> 
+                                </tr>  
+                                <tr> 
+                                    <td>1</td>          <!--Cedulla-->
+                                    <td>Sample</td>     <!--Nombre-->
+                                    <td>Diaz</td>      <!--Apellido-->
+                                    <td>20</td>         <!--Edad-->
+                                    <td>masculino</td>  <!--Sexo-->
+                                    <td>3123909445</td>          <!--Telefono-->
+                                    <td>13/12/2022</td>     <!--Telefono--> 
+                                    <td>usuario</td>        <!--Nombre Usuario--> 
+                                    <td>sample@correo</td>  <!--correo--> 
+                                    <td>contra124</td>      <!--contra--> 
+                                </tr>   
+                                <tr> 
+                                    <td>1</td>          <!--Cedulla-->
+                                    <td>Sample</td>     <!--Nombre-->
+                                    <td>Diaz</td>      <!--Apellido-->
+                                    <td>20</td>         <!--Edad-->
+                                    <td>masculino</td>  <!--Sexo-->
+                                    <td>3123909445</td>          <!--Telefono-->
+                                    <td>13/12/2022</td>     <!--Telefono--> 
+                                    <td >usuario</td>        <!--Nombre Usuario--> 
+                                    <td>sample@correo</td>  <!--correo--> 
+                                    <td>contra124</td>      <!--contra--> 
+                                </tr>            
+                                </table>
 
-        <input type="radio" id="tabsilver" name="mytabs">
-        <label for="tabsilver">Veterinarios</label>
-        <div class="tab">
-            
-        </div>
+                            </div>
 
-        <input type="radio" id="tabgold" name="mytabs">
-        <label for="tabgold"> Ventas</label>
-        <div class="tab">
-            
-        </div>
+                    </div>
+                </div>
+            </div> 
 
-    </div>
+            <input type="radio" id="tabsilver" name="mytabs">
+            <label for="tabsilver">Ver Veterinarios</label>
+            <div class="tab">
+                <div class="contenedor">
+                
+                    <div class="center">
+                        <div class="contenedor-tabla">
+                                <div class="contenedor-titulo">
+                                    <h1 class="titulo">Tabla Veterinario</h1>
+                                </div>
+                                <table class="tabla" >
+                                <tr>
+                                    <th>Cedula</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Titulo</th>
+                                    <th>Edad</th>
+                                    <th>Sexo</th>
+                                    <th>Telefono</th> 
+                                    <th>Fecha Ingreso</th>  
+                                    <th>Nombre Usuario</th>   
+                                    <th>Correo Electronico</th> 
+                                    <th>Contrasena</th>   
+                                </tr>
+                                <tr> 
+                                    <td>1</td>          <!--Cedulla-->
+                                    <td>Sample</td>     <!--Nombre-->
+                                    <td>Diaz</td>      <!--Apellido-->
+                                    <td>Titulo</td>      <!--Titulo-->
+                                    <td>20</td>         <!--Edad-->
+                                    <td>masculino</td>  <!--Sexo-->
+                                    <td>3123909445</td>          <!--Telefono-->
+                                    <td>13/12/2022</td>     <!--Telefono--> 
+                                    <td>usuario</td>        <!--Nombre Usuario--> 
+                                    <td>sample@correo</td>  <!--correo--> 
+                                    <td>contra124</td>      <!--contra--> 
+                                </tr>  
+                                <tr> 
+                                    <td>1</td>          <!--Cedulla-->
+                                    <td>Sample</td>     <!--Nombre-->
+                                    <td>Diaz</td>      <!--Apellido-->
+                                    <td>Titulo</td>      <!--Titulo-->
+                                    <td>20</td>         <!--Edad-->
+                                    <td>masculino</td>  <!--Sexo-->
+                                    <td>3123909445</td>          <!--Telefono-->
+                                    <td>13/12/2022</td>     <!--Telefono--> 
+                                    <td>usuario</td>        <!--Nombre Usuario--> 
+                                    <td>sample@correo</td>  <!--correo--> 
+                                    <td>contra124</td>      <!--contra--> 
+                                </tr>   
+                                <tr> 
+                                    <td>1</td>          <!--Cedulla-->
+                                    <td>Sample</td>     <!--Nombre-->
+                                    <td>Diaz</td>      <!--Apellido-->
+                                    <td>Titulo</td>      <!--Titulo-->
+                                    <td>20</td>         <!--Edad-->
+                                    <td>masculino</td>  <!--Sexo-->
+                                    <td>3123909445</td>          <!--Telefono-->
+                                    <td>13/12/2022</td>     <!--Telefono--> 
+                                    <td >usuario</td>        <!--Nombre Usuario--> 
+                                    <td>sample@correo</td>  <!--correo--> 
+                                    <td>contra124</td>      <!--contra--> 
+                                </tr>            
+                                </table>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="radio" id="tabgold" name="mytabs">
+            <label for="tabgold">Ver Ventas</label>
+            <div class="tab">
+                <div class="contenedor">
+                
+                    <div class="center">
+                        <div class="contenedor-tabla">
+                            <div class="contenedor-titulo">
+                                <h1 class="titulo">Tabla Ventas</h1>
+                            </div>
+                            <table class="tabla" >
+                            <tr>
+                                <th>Cedula</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Edad</th>
+                                <th>Sexo</th>
+                                <th>Telefono</th> 
+                                <th>Fecha Ingreso</th>  
+                                <th>Nombre Usuario</th>   
+                                <th>Correo Electronico</th> 
+                                <th>Contrasena</th>   
+                            </tr>
+                            <tr> 
+                                <td>1</td>          <!--Cedulla-->
+                                <td>Sample</td>     <!--Nombre-->
+                                <td>Diaz</td>      <!--Apellido-->
+                                <td>20</td>         <!--Edad-->
+                                <td>masculino</td>  <!--Sexo-->
+                                <td>3123909445</td>          <!--Telefono-->
+                                <td>13/12/2022</td>     <!--Telefono--> 
+                                <td>usuario</td>        <!--Nombre Usuario--> 
+                                <td>sample@correo</td>  <!--correo--> 
+                                <td>contra124</td>      <!--contra--> 
+                            </tr>  
+                            <tr> 
+                                <td>1</td>          <!--Cedulla-->
+                                <td>Sample</td>     <!--Nombre-->
+                                <td>Diaz</td>      <!--Apellido-->
+                                <td>20</td>         <!--Edad-->
+                                <td>masculino</td>  <!--Sexo-->
+                                <td>3123909445</td>          <!--Telefono-->
+                                <td>13/12/2022</td>     <!--Telefono--> 
+                                <td>usuario</td>        <!--Nombre Usuario--> 
+                                <td>sample@correo</td>  <!--correo--> 
+                                <td>contra124</td>      <!--contra--> 
+                            </tr>   
+                            <tr> 
+                                <td>1</td>          <!--Cedulla-->
+                                <td>Sample</td>     <!--Nombre-->
+                                <td>Diaz</td>      <!--Apellido-->
+                                <td>20</td>         <!--Edad-->
+                                <td>masculino</td>  <!--Sexo-->
+                                <td>3123909445</td>          <!--Telefono-->
+                                <td>13/12/2022</td>     <!--Telefono--> 
+                                <td >usuario</td>        <!--Nombre Usuario--> 
+                                <td>sample@correo</td>  <!--correo--> 
+                                <td>contra124</td>      <!--contra--> 
+                            </tr>            
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
 
 {% endblock content %}
