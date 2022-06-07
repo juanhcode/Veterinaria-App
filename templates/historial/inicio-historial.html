@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'styles/inicio-historial.css' %}">
 
 <a class="gestion" href="{% url 'veterinaria_app:cliente-responsable' %}"><b>Gestionar Clientes/Responsables</b></a>
-<a class="gestion" href=""><b>Gestionar Mascotas/Pacientes</b></a>
+<a class="gestion" href="{% url 'veterinaria_app:mascotas' %}"><b>Gestionar Mascotas/Pacientes</b></a>
 <a class="gestion" href=""><b>Gestionar Historial Clinico</b></a>
 
 {% endblock content %}

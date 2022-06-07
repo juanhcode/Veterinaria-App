@@ -21,3 +21,9 @@ class ListViewClienteResponsable(TemplateView):
 
 class ListViewFormularioClienteResponsable(TemplateView):
     template_name = 'historial/formulario-clientes.html'
+
+class ListViewMascotas(TemplateView):
+    template_name = 'historial/mascotas.html'
+
+class ListViewFormularioMascotas(TemplateView):
+    template_name = 'historial/formulario-mascota.html'
