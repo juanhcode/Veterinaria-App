@@ -12,10 +12,9 @@ class Producto(models.Model):
     iva = models.PositiveIntegerField(default=0)
     stock = models.PositiveIntegerField(default=0)
     vendedor = models.ForeignKey(Vendedor, on_delete=models.CASCADE)
-    
 
     class Meta:
-        ordering = ['id']
+        ordering = ['id','nombre']
         verbose_name = 'Producto'
         verbose_name_plural = 'Productos'
     

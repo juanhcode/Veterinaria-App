@@ -11,10 +11,13 @@
           <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
         </nav>
     </section>
+    <form method="get">
     <div class="buscar">
-      <input class="t" type="text" placeholder="Buscar" required >
-       <i class="lupa"><img src="/static/assets/lupa.png"></i> 
-    </div>
+        {% csrf_token %}
+        <input type="text" name="kword" class="t" id="kword" placeholder="Ingrese el titulo">
+        <button class="lupa" type="submit"><img src="/static/assets/lupa.png"></button> 
+      </div>
+    </form>
     <br>
     <br>
      <table>
@@ -45,16 +48,20 @@
               <button class="agregar-carrito">Agregar al carrito</button>
             </td>
           </tr>
-          {% endfor %}
+          
           
             <div class="Ventanae" id="elimi">
-              <h3>¿Quiere eliminar este profucto? </h3>
-              <h3>{{ producto.nombre }}</h3>
-              <h3>confirme que desea realizar</p>
-              <br>
-              <a id="Confirmar" href="javascript:confirmar()">Confirmar</a>
-              <a id="cancelar" href="javascript:cerrar()"> cancelar</a>
+              <form action="{% url 'ventas_app:delete' p.id %}" method="post">
+                {% csrf_token %}
+                <h3>¿Quiere eliminar este producto? </h3>
+                <h3>{{ p.nombre }}</h3>
+                <h3>confirme que desea realizar</p>
+                  <br>
+                  <button type="submit" id="Confirmar">Confirmar</button>
+                </form>
+                <button id="cancelar" onclick="cerrar()"> Cancelar</button>
             </div>
+          {% endfor %}
         </tbody>
       </table>
       <script src="{% static 'scripts/ventas.js' %}"></script>

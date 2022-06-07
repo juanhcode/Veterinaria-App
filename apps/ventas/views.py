@@ -37,6 +37,29 @@ class ListaProductosView(PermissionRequiredMixin, ListView):
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
+    def get_queryset(self):
+        #aqui obtengo el input del html a traves de un get
+        palabra_clave = self.request.GET.get("kword", "")
+        lista = Producto.objects.filter(
+            #Buscamos por cadena, ejemplo= si buscamos jo el icontains se encargara de buscar todos los nombres
+            #que contangan la j y la o al principio
+            nombre__icontains=palabra_clave
+        )
+        return lista
+
+class ListaProductosViewTrg(PermissionRequiredMixin, ListView):
+    template_name = 'ventas/ventas.html'
+    #context_object_name = 'productos'
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get("kword","")
+
+        
+        return Producto.objects.listar_producto_trg(palabra_clave)
+
 
 class ProductoUpdateView(PermissionRequiredMixin, UpdateView):
     model = Producto
@@ -50,7 +73,6 @@ class ProductoUpdateView(PermissionRequiredMixin, UpdateView):
 
 class ProductoDeleteView(PermissionRequiredMixin, DeleteView):
     model = Producto
-    template_name = "ventas/delete.html"
     success_url = reverse_lazy('ventas_app:ventas')
     permission_required = 'ventas.delete_producto'
     permission_denied_message = 'No tienes permisos'

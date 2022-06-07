@@ -82,12 +82,14 @@ label{
     background: #FFFFFF;
     width: 150px;
     border-radius: 5px;
+    margin-left: 5px;
 }
 
 input{
     border: 1px solid #A2ABC2;
     background: #FFFFFF;
     width: 150px;
+    margin-left: 5px;
 }
 
 .formulario
