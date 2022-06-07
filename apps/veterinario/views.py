@@ -4,6 +4,9 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
+class ListViewInicioHistorial(TemplateView):
+    template_name = 'historial/inicio-historial.html'
+
 class ListViewVeterinario(TemplateView):
     template_name = 'veterinaria/home.html'
 
