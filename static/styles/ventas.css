@@ -50,7 +50,7 @@ h2.ventas{
     font-size: 12px;
     box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
 }
-.contenedor .btn .eliminar:hover{
+.eliminar:hover{
     background: #66656587;
 }
 .contenedor .btn .agregar {
@@ -64,7 +64,7 @@ h2.ventas{
     font-size: 12px;
     box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
 }
-.contenedor .btn .agregar:hover{
+.agregar:hover{
     background: #66656587;
 }
 

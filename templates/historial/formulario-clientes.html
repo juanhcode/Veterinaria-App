@@ -6,43 +6,56 @@
 <body>
         <div class="content-fondo">
             <div class="formulario">
-                <form action="/page" method="post">
-                    <ul>
-                        <l>
-                            <h2 class="titulo">Registrar Cliente/Responsable</h2>
-                        </l> 
-                    <li class="campo">
-                        <label for="name">Nombre</label>
-                        <input  class="espacio-nombre" type="text" id="name" name="user_name">
-                    </li>
-                    <li class="campo">
-                        <label for="mail">Descripcion</label>
-                        <input class="espacio-descripcion" type="email" id="mail" name="user_mail">
-                    </li >
-                    <li class="campo">
-                        <label for="precio">Precio</label>
-                        <input class="espacio-precio" type="email" id="mail" name="user_mail">
-                    </li>
-                    <li class="campo">
-                        <label for="iva">iva</label>
-                        <input class="espacio-iva" type="email" id="mail" name="user_mail">
-                    </li>
-                    <li class="campo">
-                        <label for="stock">Stock</label>
-                        <input class="espacio-stock" type="email" id="stock" name="user_mail">
-                    </li>
-                    <li>
-                        <button type="submit" class="btn">Guardar</button>
-                    </li>
-                </ul>
-            </form>
+                <form method="post">
+                    <h2 class="titulo">Registrar Cliente/Responsable</h2><br>
+                    {% csrf_token %} 
 
+                    <div id="formularioClienteResponsable">
 
+                        <div class="campo">
+                            <label>Nombres</label>
+                            <input type="text">
+                        </div>
+                        
+                        
+                        <div class="campo">
+                            <label>Apellidos</label>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Cedula</label>
+                            <input type="number">
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Dirección</label>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Telefono</label>
+                            <input type="number">
+                        </div>
+                        
+                    </div>
+
+                    {% for i in form.errors %} {{i}} {% endfor %} 
+                    {% if form.errors %}
+                    <p>error!</p>
+                    {% endif %}
+
+                    <button type="submit" class="btn">Guardar</button>
+                
+                </form>
             </div>
+
             <div class="imagen-content">
-                <img class = "imagen" src="/static/assets/pet.png">
+                <img class = "imagen" src="/static/assets/responsable.png">
             </div>
         </div>
 </body>
-
+<script src="{% static 'scripts/formulariosVenta.js' %}"></script>
 {% endblock content %}
+
+
