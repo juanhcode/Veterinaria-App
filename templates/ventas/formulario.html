@@ -1,49 +1,61 @@
 {% extends 'index.html' %}
-{% load static%}
-{% block title %}Dashboard
-{% endblock title %}
+{% load static%} 
+{% block title %}Dashboard {%endblock title %} 
 {% block content %}
-<link rel="stylesheet" href="/static/styles/formulario.css">
+<link rel="stylesheet" href="/static/styles/formulario.css" />
 <body>
-        <div class="content-fondo">
-            <div class="formulario">
-                <form action="/page" method="post">
-                    <ul>
-                        <l>
-                            <h2 class="titulo">Registra tu Producto</h2>
-                        </l> 
-                    <li class="campo">
-                        <label for="name">Nombre</label>
-                        <input  class="espacio-nombre" type="text" id="name" name="user_name">
-                    </li>
-                    <li class="campo">
-                        <label for="mail">Descripcion</label>
-                        <input class="espacio-descripcion" type="email" id="mail" name="user_mail">
-                    </li >
-                    <li class="campo">
-                        <label for="precio">Precio</label>
-                        <input class="espacio-precio" type="email" id="mail" name="user_mail">
-                    </li>
-                    <li class="campo">
-                        <label for="iva">iva</label>
-                        <input class="espacio-iva" type="email" id="mail" name="user_mail">
-                    </li>
-                    <li class="campo">
-                        <label for="stock">Stock</label>
-                        <input class="espacio-stock" type="email" id="stock" name="user_mail">
-                    </li>
-                    <li>
-                        <button type="submit" class="btn">Guardar</button>
-                    </li>
-                </ul>
-            </form>
+  <div class="content-fondo">
+    <div class="formulario">
+      <form method="post">
+        <h2 class="titulo">Registra tu Producto</h2>
+        {% csrf_token %}
 
+        <div id="formularioVentas">
 
+            <div class="campo">
+                <label>Nombre</label>
+                {{ form.nombre }}
             </div>
-            <div class="imagen-content">
-                <img class = "imagen" src="/static/assets/pet.png">
+            
+            
+            <div class="campo">
+                <label id="descripcion">Descripcion</label>
+                {{ form.descripcion }}
             </div>
+            
+            <div class="campo">
+                <label>Precio</label>
+                {{ form.precio }}
+            </div>
+            
+            <div class="campo">
+                <label>iva</label>
+                {{ form.iva }}
         </div>
-</body>
+        
+        <div class="campo">
+            <label>Stock</label>
+            {{ form.stock }}
+        </div>
+        
+        <div class="campo">
+            <label>Vendedor</label>
+            {{ form.vendedor }}
+        </div>
+    </div>
+        
+        {% for i in form.errors %} {{i}} {% endfor %} 
+        {% if form.errors %}
+        <p>error!</p>
+        {% endif %}
 
+        <button type="submit" class="btn">Guardar</button>
+      </form>
+    </div>
+    <div class="imagen-content">
+      <img class="imagen" src="/static/assets/pet.png" />
+    </div>
+  </div>
+</body>
+<script src="{% static 'scripts/formulariosVenta.js' %}"></script>
 {% endblock content %}
