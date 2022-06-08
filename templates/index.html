@@ -88,7 +88,8 @@
                     dark_mode
                 </span>
             </div>
-            <a class="salir" href="{% url 'user_app:login' %}">
+            {% if not user.is_anonymous %}
+            <a class="salir" href="{% url 'user_app:logout' %}">
                 <span class="material-icons-sharp">
                     logout
                 </span>
@@ -96,13 +97,15 @@
             </a>
             <div class="profile">
                 <div class="info">
-                    <p>Hola,<b class="user"> Admin</b></p>
-                    <small class="text-muted">Admin</small>
+                    <p>Bienvenido<b class="user"></b></p>
+                    <small class="text-muted">{{ user.correo }}</small>
                 </div>
+            {% else %} 
                 <div class="profile-photo">
-                    <img src="/static/assets/user.png" alt="">
+                    <a href="{% url 'user_app:login' %}"><img src="{% static 'assets/user.png' %}"></img></button>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -110,3 +113,5 @@
 <script src="{% static 'scripts/home.js' %}"></script>
 </body>
 </html>
+
+

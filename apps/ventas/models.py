@@ -2,6 +2,8 @@ from django.db import models
 
 from apps.users.models import Vendedor, Duenio
 
+from .managers import VentasManager
+
 # Create your models here.
 
 class Producto(models.Model):
@@ -12,6 +14,8 @@ class Producto(models.Model):
     iva = models.PositiveIntegerField(default=0)
     stock = models.PositiveIntegerField(default=0)
     vendedor = models.ForeignKey(Vendedor, on_delete=models.CASCADE)
+
+    objects = VentasManager()
 
     class Meta:
         ordering = ['id','nombre']

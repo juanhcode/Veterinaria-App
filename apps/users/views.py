@@ -1,8 +1,7 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 
-from datetime import date
-
-from django.views.generic import TemplateView, CreateView, ListView, DeleteView, UpdateView, FormView
+from django.views.generic import TemplateView,FormView, View
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Permission
@@ -78,6 +77,17 @@ class LoginUser(FormView):
         login (self.request, user)
 
         return super(LoginUser, self).form_valid(form)
+
+
+class LogoutView(View):
+    
+    def get(self,request, *args, **kwargs):
+        logout(request)
+        return HttpResponseRedirect(
+            reverse(
+                'user_app:login'
+            )   
+        )
 
 
 # Vista de Admin-Menu
