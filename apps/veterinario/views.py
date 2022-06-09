@@ -13,6 +13,9 @@ class ListViewLogin(TemplateView):
 class ListViewHistorial(TemplateView):
     template_name = 'historial/historial.html'
 
+class ListViewFormularioHistorial(TemplateView):
+    template_name = 'historial/formulario-historial.html'
+
 class ListViewInicioHistorial(TemplateView):
     template_name = 'historial/inicio-historial.html'
 
