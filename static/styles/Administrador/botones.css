@@ -21,18 +21,17 @@
 }
 .boton{
 
+    display: flex;
+    justify-content: center;
     font-size: 18px;
     width: 1100px;  /*ancho*/
     height: 160px;
     
-    border: 1px solid black;
-    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(61, 61, 61);
+    background-color: rgb(241, 241, 241);
     border-radius: 12px;
 
-    margin-top: 10px;
-    margin-left: 0px;
     padding-top: 60px;
-    text-align: center;
     text-decoration: none;
 }
 
@@ -40,6 +39,8 @@
 {
     background-color: #a0a9e9;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
+    width: 1110px;
+    height: 165px;
 }
