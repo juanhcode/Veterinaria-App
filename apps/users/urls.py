@@ -11,5 +11,6 @@ urlpatterns = [
     path('administrador/',views.ListViewAdministrador.as_view(),name='administrador'),
     path('registrarUsuarios/',views.ListViewRegistrarUsuarios.as_view(),name='registrarUsuarios'),
     path('verUsuarios/',views.ListViewVerUsuarios.as_view(),name='verUsuarios'),
+    path('reporteUsuarios/',views.ListViewReporteUsuarios.as_view(),name='reporteUsuarios'),
 
 ]
