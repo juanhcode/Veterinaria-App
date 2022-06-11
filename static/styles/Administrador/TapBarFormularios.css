@@ -1,0 +1,41 @@
+
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900p;
+    margin: 0px auto;
+    padding: 0px;
+}
+.mytabs input[type="radio"] {
+    display: none;
+}
+.mytabs label {
+    border-radius: 8px;
+    padding:10px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.mytabs .tab {
+    width: 1200;
+    height: 600px;
+    padding: 20px;
+    background: #fff;
+    order: 1;
+    display: none;
+    border-radius: 8px;
+}
+.mytabs .tab h2
+{
+    font-size: 3em;
+}
+
+.mytabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+
+.mytabs input[type="radio"]:checked + label {
+    background: #fff;
+}

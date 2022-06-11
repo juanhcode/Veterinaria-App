@@ -4,16 +4,26 @@
 {% endblock title %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
-<script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
     <section class="header">
       <h2 class="ventas">Inventario</h2>
        <nav class="btn">
           <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
         </nav>
     </section>
+    <form method="get">
+    <div class="buscar">
+        {% csrf_token %}
+        <input type="text" name="kword" class="t" id="kword" placeholder="Ingrese el titulo">
+        <button class="lupa" type="submit"><img src="/static/assets/lupa.png"></button> 
+      </div>
+    </form>
+    <br>
+    <br>
      <table>
        <thead>
          <tr class="propiedad">
+           <th>Identificacion</th>
            <th>Nombre</th>
            <th>Descripcion</th>
            <th>Precio</th>
@@ -26,19 +36,32 @@
           
           {% for p in object_list %}
           <tr id="valores">
+            <td>{{ p.identificacion|truncatechars:30 }}</td>
             <td>{{ p.nombre|truncatechars:30 }}</td>
             <td>{{ p.descripcion|truncatechars:30 }}</td>
             <td>{{ p.precio|truncatechars:20 }}</td>
             <td>{{ p.iva|truncatechars:20 }}</td>
             <td>{{ p.stock|truncatechars:20 }}</td>
             <td>
-              <a class="fa-solid fa-crop edit1" href="{% url 'ventas_app:update' p.id %}"></a>
-              <a class="fa-regular fa-trash-can" href="{% url 'ventas_app:delete' p.id %}"></a>
+              <a class="fa-solid fa-crop" href="{% url 'ventas_app:update' p.id %}"></a>
+              <a class="fa-regular fa-trash-can" href="javascript:abrir()"></a>
               <button class="agregar-carrito">Agregar al carrito</button>
             </td>
           </tr>
-          {% endfor %}
           
+          
+            <div class="Ventanae" id="elimi">
+              <form action="{% url 'ventas_app:delete' p.id %}" method="post">
+                {% csrf_token %}
+                <h3>¿Quiere eliminar este producto? </h3>
+                <h3>{{ p.nombre }}</h3>
+                <h3>confirme que desea realizar</p>
+                  <br>
+                  <button type="submit" id="Confirmar">Confirmar</button>
+                </form>
+                <button id="cancelar" onclick="cerrar()"> Cancelar</button>
+            </div>
+          {% endfor %}
         </tbody>
       </table>
       <script src="{% static 'scripts/ventas.js' %}"></script>

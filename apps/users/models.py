@@ -40,8 +40,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = [
         'correo'
     ]
-   
-    
 
 class Veterinario(User):
     titulo = models.CharField('Titulo',max_length=40)
@@ -84,6 +82,7 @@ class Duenio(models.Model):
         db_table = 'Duenios'
         verbose_name = 'Duenio'
         verbose_name_plural = 'Duenios'
+
 
     def __str__(self):
         return self.nombre + ' ' + self.apellidos + ' - ' +  str(self.cedula)

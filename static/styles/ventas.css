@@ -13,6 +13,7 @@ section{
     padding: 0;
 }
 
+
 h2.ventas{
     font-size: 40px;
     text-align: left;
@@ -23,71 +24,13 @@ h2.ventas{
     flex-grow: 9;
 }
 
-.contenedor .btn{
-    padding: 1px;
-    margin: 0;
-}
-.contenedor .btn .editar {
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #66656551;
-    height: 23px;
-    width: 80px;
-    color: #292929a5;
-    font-size: 12px;
-    box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
-}
-
-.contenedor .btn .eliminar {
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #66656527;
-    background-color: transparent;
-    height: 23px;
-    width: 80px;
-    color: #292929a5;
-    font-size: 12px;
-    box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
-}
-.contenedor .btn .eliminar:hover{
-    background: #66656587;
-}
-.contenedor .btn .agregar {
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #66656551;
-    background-color: transparent;
-    height: 23px;
-    width: 80px;
-    color: #292929a5;
-    font-size: 12px;
-    box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
-}
-.contenedor .btn .agregar:hover{
-    background: #66656587;
-}
 
 .btn{
     padding:10px;
     padding-top:20px;
     flex-grow:3;
 }
-.editar {
-    padding:1.5%;
-    margin-right: 4%;
-    font-size: 17px;
-    border:2px solid #BEBEBE;
-    border-radius:7px;
-    background-color:#f6f6f9;
-}
-.eliminar{
-    padding:1.5%;
-    margin-right: 4%;
-    font-size: 17px;
-    border:2px solid #BEBEBE;
-    border-radius:7px;
-    background-color:#f6f6f9;
-}
+
 .agregar{
     padding:1.5%;
     margin-right: 4%;
@@ -127,3 +70,60 @@ td,th{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.buscar{
+    position: absolute;
+    padding: 5px; 
+    height: 60px;
+}
+.t{
+    height: 26px;
+}
+.lupa{
+    width: 17%;
+    position: absolute;
+    top: 1px;
+    right: -28px;
+    cursor: pointer;
+}
+
+.Ventanae{
+    top: 230px;
+    background: #ffffff;
+    width: 28%;
+    color:rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 33px;
+    min-height: 200px;
+    border-radius: 22px;
+    position: absolute;
+    left: 40%;
+    border:1px solid rgb(0, 0, 0);
+    opacity:8;
+    transition: all 5s;
+    display: none;
+}
+
+
+#cancelar{
+    padding: 1.5%;
+    margin-right: 4%;
+    font-size: 15px;
+    border: 2px var(--color-light);
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #553CFB;
+    color: aliceblue;
+}
+#Confirmar{
+    padding: 1.5%;
+    margin-right: 4%;
+    font-size: 15px;
+    border: 2px var(--color-light);
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #553CFB;
+    color: aliceblue;
+}
+

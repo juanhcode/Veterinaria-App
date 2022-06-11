@@ -48,18 +48,19 @@
                 </span>
                 <h3>inventario</h3>
             </a>
+            <a href="{% url 'user_app:administrador' %}" class="btn-ventas">
+                <span class="material-icons-sharp">
+                    admin_panel_settings
+                </span>
+                <h3>Administrador</h3>
+            </a>
             <a href="{% url 'ventas_app:facturas' %}" class="btn-ventas opc">
                 <span class="material-icons-sharp">
                     monetization_on
                 </span>
                 <h3>Facturas</h3>
             </a>
-            <a href="#" class="salir opc">
-                <span class="material-icons-sharp">
-                    logout
-                </span>
-                <h3>Logout</h3>
-            </a>
+            <br>
         </div>
     </aside>
     <!--MAIN-->
@@ -102,6 +103,12 @@
                     dark_mode
                 </span>
             </div>
+            <a class="salir" href="{% url 'user_app:login' %}">
+                <span class="material-icons-sharp">
+                    logout
+                </span>
+                <h4>Salir</h4>
+            </a>
             <div class="profile">
                 <div class="info">
                     <p>Hola,<b class="user"> Admin</b></p>
@@ -114,6 +121,7 @@
         </div>
     </div>
 </div>
+
 <script src="{% static 'scripts/home.js' %}"></script>
 </body>
 </html>

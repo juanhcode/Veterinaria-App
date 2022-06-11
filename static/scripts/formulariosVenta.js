@@ -28,8 +28,3 @@ for (let i = 0; i < campo.length; i++) {
 
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
-    campo[2].children[1].value = '';
-    campo[3].children[1].value = '';
-    campo[4].children[1].value = '';
-})
