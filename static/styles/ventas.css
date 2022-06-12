@@ -78,6 +78,8 @@ td,th{
 }
 .t{
     height: 26px;
+    border-style: solid;
+    border-width: 1px;
 }
 .lupa{
     width: 17%;
@@ -127,3 +129,55 @@ td,th{
     color: aliceblue;
 }
 
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #7380ec;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
+  .center {
+    text-align: center;
+  }
+  
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+  }
+  
+  .pagination a.active {
+    background-color: #7380ec;
+    color: white;
+    border: 1px solid #7380ec;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}

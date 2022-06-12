@@ -30,26 +30,10 @@ class ProductoCreateView(PermissionRequiredMixin, FormView):
         return super(ProductoCreateView, self).form_valid(form)
     
 
-class ListaProductosView(PermissionRequiredMixin, ListView):
-    template_name = 'ventas/ventas.html'
-    model = Producto
-    permission_required = 'ventas.view_producto'
-    permission_denied_message = 'No tienes permisos'
-    login_url = reverse_lazy('user_app:login')
-
-    def get_queryset(self):
-        #aqui obtengo el input del html a traves de un get
-        palabra_clave = self.request.GET.get("kword", "")
-        lista = Producto.objects.filter(
-            #Buscamos por cadena, ejemplo= si buscamos jo el icontains se encargara de buscar todos los nombres
-            #que contangan la j y la o al principio
-            nombre__icontains=palabra_clave
-        )
-        return lista
-
 class ListaProductosViewTrg(PermissionRequiredMixin, ListView):
     template_name = 'ventas/ventas.html'
-    #context_object_name = 'productos'
+    paginate_by = 3
+    ordering = 'nombre'
     permission_required = 'ventas.view_producto'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
