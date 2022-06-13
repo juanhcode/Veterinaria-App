@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
-from django.views.generic import TemplateView,FormView, View, DeleteView, ListView
+from django.views.generic import TemplateView,FormView, View, DeleteView, ListView, UpdateView
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Permission
@@ -20,13 +20,19 @@ from django.urls import reverse_lazy, reverse
 
 # Create your views here.
 
-class HomeRegistrarUsuarios(TemplateView):
+class HomeRegistrarUsuarios(PermissionRequiredMixin, TemplateView):
     template_name = 'administrador/home-registrar.html'
+    permission_required = 'users.view_administrador'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
 
 # Vista de Admin-Menu
-class ListViewAdministrador(TemplateView):
+class ListViewAdministrador(PermissionRequiredMixin ,TemplateView):
     template_name = 'administrador/home.html'
+    permission_required = 'users.view_administrador'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
 
 class HomeVerUsuarios(TemplateView):
@@ -176,11 +182,14 @@ class LogoutView(View):
         )
 
 
-class ListViewVerAdmins(ListView):
+class ListViewVerAdmins(PermissionRequiredMixin, ListView):
     template_name = 'administrador/verAdmins.html'
     paginate_by = 3
     ordering = 'nombre'
     model = Administrador
+    permission_required = 'users.view_administrador'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
     def get_queryset(self):
         #aqui obtengo el input del html a traves de un get
@@ -193,21 +202,122 @@ class ListViewVerAdmins(ListView):
         return lista
 
 
-class ProductoUpdateView(PermissionRequiredMixin, UpdateView):
-    model = Producto
-    template_name = "ventas/update.html"
-    fields = ('__all__')
-    success_url = reverse_lazy('ventas_app:ventas')
-    permission_required = 'ventas.change_producto'
+class AdminUpdateView(PermissionRequiredMixin, UpdateView):
+    model = Administrador
+    template_name = "administrador/actualizar_admin.html"
+    fields = (
+        'cedula',
+        'nombre',
+        'apellidos',
+        'edad',
+        'sexo',
+        'telefono',
+        'correo',
+        'fecha_ingreso'
+    )
+    success_url = reverse_lazy('user_app:verAdmins')
+    permission_required = 'users.change_administrador'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
 
+class AdminDeleteView(PermissionRequiredMixin, DeleteView):
+    model = Administrador
+    success_url = reverse_lazy('user_app:verAdmins')
+    permission_required = 'users.delete_administrador'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+
+class ListViewVerVendedores(PermissionRequiredMixin, ListView):
+    template_name = 'administrador/verVendedor.html'
+    paginate_by = 3
+    ordering = 'nombre'
+    model = Vendedor
+    permission_required = 'users.view_vendedor'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+    def get_queryset(self):
+        #aqui obtengo el input del html a traves de un get
+        palabra_clave = self.request.GET.get("kword", "")
+        lista = Vendedor.objects.filter(
+            #Buscamos por cadena, ejemplo= si buscamos jo el icontains se encargara de buscar todos los nombres
+            #que contangan la j y la o al principio
+            cedula__icontains=palabra_clave
+        )
+        return lista
+
+class VendedorUpdateView(PermissionRequiredMixin, UpdateView):
+    model = Vendedor
+    template_name = "administrador/actualizar_vendedor.html"
+    fields = (
+        'cedula',
+        'nombre',
+        'apellidos',
+        'edad',
+        'sexo',
+        'telefono',
+        'correo',
+        'fecha_ingreso'
+    )
+    success_url = reverse_lazy('user_app:verVendedor')
+    permission_required = 'users.change_vendedor'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
 
 class VendedorDeleteView(PermissionRequiredMixin, DeleteView):
     model = Vendedor
-    success_url = reverse_lazy('user_app:verUsuarios')
+    success_url = reverse_lazy('user_app:verVendedor')
     permission_required = 'users.delete_vendedor'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+
+class ListViewVerVeterinario(PermissionRequiredMixin, ListView):
+    template_name = 'administrador/verVeterinario.html'
+    paginate_by = 3
+    ordering = 'nombre'
+    model = Veterinario
+    permission_required = 'users.view_veterinario'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+    def get_queryset(self):
+        #aqui obtengo el input del html a traves de un get
+        palabra_clave = self.request.GET.get("kword", "")
+        lista = Veterinario.objects.filter(
+            #Buscamos por cadena, ejemplo= si buscamos jo el icontains se encargara de buscar todos los nombres
+            #que contangan la j y la o al principio
+            cedula__icontains=palabra_clave
+        )
+        return lista
+
+
+class VeterinarioUpdateView(PermissionRequiredMixin, UpdateView):
+    model = Veterinario
+    template_name = "administrador/actualizar_veterinario.html"
+    fields = (
+        'cedula',
+        'nombre',
+        'apellidos',
+        'edad',
+        'sexo',
+        'telefono',
+        'correo',
+        'fecha_ingreso',
+        'titulo'
+    )
+    success_url = reverse_lazy('user_app:verVeterinario')
+    permission_required = 'users.change_veterinario'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+
+class VeterinarioDeleteView(PermissionRequiredMixin, DeleteView):
+    model = Veterinario
+    success_url = reverse_lazy('user_app:verVeterinario')
+    permission_required = 'users.delete_veterinario'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
