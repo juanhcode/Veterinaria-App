@@ -3,25 +3,14 @@
 {% block title %}Dashboard
 {% endblock title %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
 <link rel="stylesheet" href="{% static 'styles/historial.css' %}">
 <script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
     <section class="header">
       <h2 class="ventas">Historial Clinico</h2>
-        <nav class="btn">
-            <button class="editar"><i class="fa-solid fa-crop"></i>  Editar </button>
-            <button class="eliminar"><i class="fa-regular fa-trash-can"></i>  Eliminar </button>
-            <button class="agregar"><i class="fa-solid fa-plus"></i>  Agregar</button>
-          </nav>
+       <nav class="btn">
+          <a class="agregar" href="{% url 'veterinaria_app:formulario-historial' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
+        </nav>
     </section>
-
-      <table>
-    <div class="buscar">
-      <input class="t" type="text" placeholder="Buscar" required >
-       <i class="lupa"><img src="/static/assets/lupa.png"></i> 
-    </div>
-    <br>
-    <br>
      <table>
           <tr class="propiedad">
             <th>Nombre</th>
@@ -33,19 +22,19 @@
             <th class="foto">Foto</th>
             <th>Fecha Nacimiento</th>
             <th class="celdaCrud"></th>
-        </tr>
+         </tr>
       
           <tr id="valores">
-            <td>Motita</td>
-            <td>Perez</td>
-            <td>Perro</td>
-            <td>Motis</td>
-            <td>2 años</td>
-            <td>carvos</td>
-            <td><img class="imagen"src="https://images.ecestaticos.com/6uBjSmsBorRk6l_IHAxkBS1JCwE=/114x0:1997x1410/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F721%2F122%2F714%2F72112271431cb1078c3fe3e75ad5ab41.jpg" alt="" width="100" height="100"></td>
-            <td>2022-02-09</td>
-            <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-          </tr>
-      </table>
-      <script src="{% static 'scripts/ventas.js' %}"></script>
+           <td>Motita</td>
+           <td>Perez</td>
+           <td>Perro</td>
+           <td>Motis</td>
+           <td>2 años</td>
+           <td>carvos</td>
+           <td><img class="imagen"src="https://images.ecestaticos.com/6uBjSmsBorRk6l_IHAxkBS1JCwE=/114x0:1997x1410/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F721%2F122%2F714%2F72112271431cb1078c3fe3e75ad5ab41.jpg" alt="" width="100" height="100"></td>
+           <td>2022-02-09</td>
+           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+         </tr>
+       </table>
+       <script src="{% static 'scripts/ventas.js' %}"></script>
 {% endblock content %}

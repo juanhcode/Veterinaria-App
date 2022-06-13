@@ -14,7 +14,7 @@
     <form method="get">
     <div class="buscar">
         {% csrf_token %}
-        <input type="text" name="kword" class="t" id="kword" placeholder="Ingrese el titulo">
+        <input type="text" name="kword" class="t" id="kword" placeholder="Ingrese el nombre">
         <button class="lupa" type="submit"><img src="/static/assets/lupa.png"></button> 
       </div>
     </form>
@@ -61,10 +61,48 @@
                 </form>
                 <button id="cancelar" onclick="cerrar()"> Cancelar</button>
             </div>
+
+            {% empty %}
+                <div class="alert">
+                  <span span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                  No se han encontrado resultados.
+                </div>
+
+            
           {% endfor %}
         </tbody>
       </table>
       <script src="{% static 'scripts/ventas.js' %}"></script>
-      
+
+      <!-- inicio de bloque de paginacion -->
+<div class="center">
+
+  <div class="pagination">
+    
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>  
+    {% endif %}
+    
+    {% for pagina in paginator.page_range %}
+    {% if pagina == page_obj.number  %}
+    <a class="active" href="?page={{ pagina }}">{{ pagina }}</a>
+    {% else %}
+    <a href="?page={{ pagina }}">{{ pagina }}</a> 
+    {% endif %}
+    {% endfor %}
+    
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>   
+    {% endif %}
+    
+    {% endif %}
+    
+  </div>
+</div>
+  <!-- FIN bloque de paginacion -->
+  
+  
+  
 {% endblock content %}
       

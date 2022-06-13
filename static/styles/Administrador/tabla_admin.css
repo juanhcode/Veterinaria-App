@@ -1,62 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+*{
+    font-family: 'Poppins', sans-serif;
+}
 
-.titulo{
-    font-size: 30px;
-
+section{
+    display:flex;
+}
+.header{
     width: 100%;
-    
-    text-align: center;
-    padding-top: 0px;
-    
-    /*border: 1px solid black;*/
-
+    display: flex;
+    padding: 0;
 }
-.contenedor-tabla
-{
 
-    width:1100px;
-    height: 400px;
 
-    margin-top: 40px;
-    border-radius: 12px;
-
-    /*border: 1px solid black;*/
-}
-.tabla
-{
-    width:100%;
-    
-    border-collapse: collapse;
+h2.ventas{
+    font-size: 40px;
     text-align: left;
+    width: 425px;
+    margin: 10px;
+    text-justify: auto;
+    color: rgb(81, 81, 81);
+    flex-grow: 9;
+}
 
-    /*border: 1px solid rgb(0, 0, 0);*/
+
+.btn{
+    padding:10px;
+    padding-top:20px;
+    flex-grow:3;
+}
+
+.agregar{
+    padding:1.5%;
+    margin-right: 4%;
+    font-size: 17px;
+    border:2px solid #BEBEBE;
+    border-radius:7px;
+    background-color:#f6f6f9;
+}
+.header{
+    width: 100%;
+    display: inline-flex;
+    padding: 0;
+}
+table{
+    width:100%;
+    font-size: 16px;
+    margin-top: 2%;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 12px;
 }
 th{
-    font-style: bold;
-    font-size: 16px;
-    width: 6%;
-    font-family: "poppins",sans-serif;
-    color: rgb(0, 0, 0);
+    text-align:left;
+    font-size: 14px;
+    color: rgb(81, 81, 81);
+    border-right: 0px;
+    border-left: 0px;
 }
+
 td{
+    text-align:left;
     font-size: 17px;
-    color: rgb(58, 58, 58);
 }
-th, td
-{
-        text-align: left;
-        vertical-align: top;
-        /*border: 1px solid rgb(199, 199, 199);*/
-        border-spacing: 10px;
+td,th{
+    padding-left: 20px;
+    padding-right: 20PX;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
-        padding: 16px;
+.buscar{
+    position: absolute;
+    padding: 5px; 
+    height: 60px;
 }
-tr:nth-child(even)
-{   
-    background-color: rgb(255, 255, 255);
+.t{
+    height: 26px;
+    border-style: solid;
+    border-width: 1px;
 }
-tr:hover{
-    background-color: rgb(211, 211, 211);
+.lupa{
+    width: 17%;
+    position: absolute;
+    top: 1px;
+    right: -28px;
+    cursor: pointer;
+}
+
+.Ventanae{
+    top: 230px;
+    background: #ffffff;
+    width: 28%;
+    color:rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 33px;
+    min-height: 200px;
+    border-radius: 22px;
+    position: absolute;
+    left: 40%;
+    border:1px solid rgb(0, 0, 0);
+    opacity:8;
+    transition: all 5s;
+    display: none;
+}
+
+
+#cancelar{
+    padding: 1.5%;
+    margin-right: 4%;
+    font-size: 15px;
+    border: 2px var(--color-light);
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #553CFB;
+    color: aliceblue;
+}
+#Confirmar{
+    padding: 1.5%;
+    margin-right: 4%;
+    font-size: 15px;
+    border: 2px var(--color-light);
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #553CFB;
+    color: aliceblue;
+}
+
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #7380ec;
     color: white;
-}
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
 
+
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #7380ec;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}

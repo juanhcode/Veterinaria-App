@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/Administrador/botones.css' %}">
+<div class="contenedor">
+
+        <div class="contenedor-botones">
+            <a href="{% url 'user_app:registrar-vendedor' %}" class="boton">Registrar Vendedor</a>
+            <a href="{% url 'user_app:registrar-veterinario' %}" class="boton">Registrar Veterinario</a>
+            <a href="{% url 'user_app:registrar-admin' %}" class="boton">Registrar Administrador</a>
+        </div>
+    </div>
+
+{% endblock content %}

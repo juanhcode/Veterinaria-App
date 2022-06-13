@@ -1,0 +1,107 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/ventas.css' %}">
+  <script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
+    <section class="header">
+      <h2 class="ventas">Lista de Vendedores</h2>
+    </section>
+    <form method="get">
+    <div class="buscar">
+        {% csrf_token %}
+        <input type="text" name="kword" class="t" id="kword" placeholder="Ingrese la cedula">
+        <button class="lupa" type="submit"><img src="/static/assets/lupa.png"></button> 
+      </div>
+    </form>
+    <br>
+    <br>
+     <table>
+       <thead>
+         <tr class="propiedad">
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Telefono</th> 
+            <th>Fecha Ingreso</th>  
+            <th>Correo Electronico</th> 
+          </tr>
+        </thead>
+        <tbody>
+          
+          {% for v in object_list %}
+          <tr id="valores">
+            <td>{{ v.cedula|truncatechars:20 }}</td>
+            <td>{{ v.nombre|truncatechars:20 }}</td>
+            <td>{{ v.apellidos|truncatechars:20 }}</td>
+            <td>{{ v.edad|truncatechars:20 }}</td>
+            <td>{{ v.sexo }}</td>
+            <td>{{ v.telefono }}</td> 
+            <td>{{ v.fecha_ingreso }}</td> 
+            <td>{{ v.correo }}</td>  
+            <td>
+              <a class="fa-solid fa-crop" href="{% url 'user_app:actualizarVendedor' v.id %}"></a>
+              <a class="fa-regular fa-trash-can" href="javascript:abrir()"></a>
+            </td>
+          </tr>
+          
+          
+            <div class="Ventanae" id="elimi">
+              <form action="{% url 'user_app:eliminarVendedor' v.id %}" method="post">
+                {% csrf_token %}
+                <h3>¿Quiere eliminar este vendedor? </h3>
+                <h3>{{ v.nombre }}</h3>
+                <h3>confirme que desea realizar</p>
+                  <br>
+                  <button type="submit" id="Confirmar">Confirmar</button>
+                </form>
+                <button id="cancelar" onclick="cerrar()"> Cancelar</button>
+            </div>
+
+            {% empty %}
+                <div class="alert">
+                  <span span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                  No se han encontrado resultados.
+                </div>
+
+            
+          {% endfor %}
+        </tbody>
+      </table>
+      <script src="{% static 'scripts/ventas.js' %}"></script>
+
+      <!-- inicio de bloque de paginacion -->
+<div class="center">
+
+  <div class="pagination">
+    
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>  
+    {% endif %}
+    
+    {% for pagina in paginator.page_range %}
+    {% if pagina == page_obj.number  %}
+    <a class="active" href="?page={{ pagina }}">{{ pagina }}</a>
+    {% else %}
+    <a href="?page={{ pagina }}">{{ pagina }}</a> 
+    {% endif %}
+    {% endfor %}
+    
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>   
+    {% endif %}
+    
+    {% endif %}
+    
+  </div>
+</div>
+  <!-- FIN bloque de paginacion -->
+  
+  
+  
+{% endblock content %}
+      

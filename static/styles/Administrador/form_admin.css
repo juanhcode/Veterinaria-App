@@ -1,3 +1,7 @@
+*{
+    font-family: 'Poppins', Courier, monospace;
+    font-style: normal;
+}
 
 /*------------- Titulo Registrar --------------------*/
 .content-titulo
@@ -81,7 +85,6 @@
 {
     margin-top: 150px;
     margin-left:235px;
-
     border-radius: 5px;
     font-size: 18px;
     font-style: normal;
@@ -162,7 +165,7 @@ select{
     border: 3px solid rgb(0, 34, 109);
     border-radius: 10px;
     background-color: white;
-    font-family: 'Roboto', Times, serif;
+    font-family: 'Poppins', Courier, monospace;
     font-size: 24px;
 
     
