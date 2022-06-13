@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     #Apps
     'apps.users',
     'apps.veterinario',
@@ -100,8 +101,8 @@ DATABASES = {
         'NAME': get_secret('DB_NAME'),
         'USER' : get_secret('USER'),
         'PASSWORD' : get_secret('PASSWORD'),
-        'HOST' : get_secret('HOST'),
-        'DATABASE_PORT' : get_secret('PORT'),
+        'HOST' : 'localhost',
+        'DATABASE_PORT' : '5432',
     }
 }
 

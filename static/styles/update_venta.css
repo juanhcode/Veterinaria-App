@@ -26,7 +26,7 @@ input[type=number] { -moz-appearance:textfield; }
     line-height: 70px;
 
     margin-left: 0px;
-    margin-right: 50px;
+    margin-right: 75px;
 }
 
 .content-fondo
@@ -53,9 +53,6 @@ input[type=number] { -moz-appearance:textfield; }
     padding-right: 10px;
     text-align: left;
     padding-bottom: 5em;
-    
-    
-
 }
 
 label{
@@ -76,20 +73,23 @@ label{
     vertical-align: top;
 }
 
-#descripcionInput
+#id_descripcion
 {
     border: 1px solid #A2ABC2;
     background: #FFFFFF;
     width: 150px;
     border-radius: 5px;
-    margin-left: 5px;
+    resize: none;
+    padding: 10;
+    height: 3.5em;
+    width: 11.2em;
 }
+
 
 input{
     border: 1px solid #A2ABC2;
     background: #FFFFFF;
     width: 150px;
-    margin-left: 5px;
 }
 
 .formulario

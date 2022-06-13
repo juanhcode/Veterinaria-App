@@ -18,55 +18,36 @@
                                 <div class="contenedor-titulo">
                                     <h1 class="titulo">Tabla Administradores</h1>
                                 </div>
-                                <table class="tabla" >
-                                <tr>
-                                    <th>Cedula</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Edad</th>
-                                    <th>Sexo</th>
-                                    <th>Telefono</th> 
-                                    <th>Fecha Ingreso</th>  
-                                    <th>Nombre Usuario</th>   
-                                    <th>Correo Electronico</th> 
-                                    <th>Contrasena</th>   
-                                </tr>
-                                <tr> 
-                                    <td>1</td>          <!--Cedulla-->
-                                    <td>Sample</td>     <!--Nombre-->
-                                    <td>Diaz</td>      <!--Apellido-->
-                                    <td>20</td>         <!--Edad-->
-                                    <td>masculino</td>  <!--Sexo-->
-                                    <td>3123909445</td>          <!--Telefono-->
-                                    <td>13/12/2022</td>     <!--Telefono--> 
-                                    <td>usuario</td>        <!--Nombre Usuario--> 
-                                    <td>sample@correo</td>  <!--correo--> 
-                                    <td>contra124</td>      <!--contra--> 
-                                </tr>  
-                                <tr> 
-                                    <td>1</td>          <!--Cedulla-->
-                                    <td>Sample</td>     <!--Nombre-->
-                                    <td>Diaz</td>      <!--Apellido-->
-                                    <td>20</td>         <!--Edad-->
-                                    <td>masculino</td>  <!--Sexo-->
-                                    <td>3123909445</td>          <!--Telefono-->
-                                    <td>13/12/2022</td>     <!--Telefono--> 
-                                    <td>usuario</td>        <!--Nombre Usuario--> 
-                                    <td>sample@correo</td>  <!--correo--> 
-                                    <td>contra124</td>      <!--contra--> 
-                                </tr>   
-                                <tr> 
-                                    <td>1</td>          <!--Cedulla-->
-                                    <td>Sample</td>     <!--Nombre-->
-                                    <td>Diaz</td>      <!--Apellido-->
-                                    <td>20</td>         <!--Edad-->
-                                    <td>masculino</td>  <!--Sexo-->
-                                    <td>3123909445</td>          <!--Telefono-->
-                                    <td>13/12/2022</td>     <!--Telefono--> 
-                                    <td >usuario</td>        <!--Nombre Usuario--> 
-                                    <td>sample@correo</td>  <!--correo--> 
-                                    <td>contra124</td>      <!--contra--> 
-                                </tr>            
+                                <table class="tabla">
+                                    <thead>
+
+                                        <tr>
+                                            <th>Cedula</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Edad</th>
+                                            <th>Sexo</th>
+                                            <th>Telefono</th> 
+                                            <th>Fecha Ingreso</th>  
+                                            <th>Correo Electronico</th>    
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for a in administrador %}    
+                                        <tr> 
+                                            <td>{{ a.cedula|truncatechars:20 }}</td>          <!--Cedulla-->
+                                            <td>{{ a.nombre|truncatechars:20 }}</td>     <!--Nombre-->
+                                            <td>{{ a.apellidos|truncatechars:20 }}</td>      <!--Apellido-->
+                                            <td>{{ a.edad|truncatechars:20 }}</td>         <!--Edad-->
+                                            <td>{{ a.sexo }}</td>  <!--Sexo-->
+                                            <td>{{ a.telefono }}</td>          <!--Telefono-->
+                                            <td>{{ a.fecha_ingreso }}</td>     <!--Telefono--> 
+                                            <td>{{ a.correo }}</td>  <!--correo-->     
+                                        </tr>  
+                                        {% endfor %}
+                                    </tbody>
+                                    
+                                          
                                 </table>
 
                             </div>
@@ -152,63 +133,102 @@
                 
                     <div class="center">
                         <div class="contenedor-tabla">
-                            <div class="contenedor-titulo">
-                                <h1 class="titulo">Tabla Ventas</h1>
-                            </div>
-                            <table class="tabla" >
-                            <tr>
-                                <th>Cedula</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Edad</th>
-                                <th>Sexo</th>
-                                <th>Telefono</th> 
-                                <th>Fecha Ingreso</th>  
-                                <th>Nombre Usuario</th>   
-                                <th>Correo Electronico</th> 
-                                <th>Contrasena</th>   
-                            </tr>
-                            <tr> 
-                                <td>1</td>          <!--Cedulla-->
-                                <td>Sample</td>     <!--Nombre-->
-                                <td>Diaz</td>      <!--Apellido-->
-                                <td>20</td>         <!--Edad-->
-                                <td>masculino</td>  <!--Sexo-->
-                                <td>3123909445</td>          <!--Telefono-->
-                                <td>13/12/2022</td>     <!--Telefono--> 
-                                <td>usuario</td>        <!--Nombre Usuario--> 
-                                <td>sample@correo</td>  <!--correo--> 
-                                <td>contra124</td>      <!--contra--> 
-                            </tr>  
-                            <tr> 
-                                <td>1</td>          <!--Cedulla-->
-                                <td>Sample</td>     <!--Nombre-->
-                                <td>Diaz</td>      <!--Apellido-->
-                                <td>20</td>         <!--Edad-->
-                                <td>masculino</td>  <!--Sexo-->
-                                <td>3123909445</td>          <!--Telefono-->
-                                <td>13/12/2022</td>     <!--Telefono--> 
-                                <td>usuario</td>        <!--Nombre Usuario--> 
-                                <td>sample@correo</td>  <!--correo--> 
-                                <td>contra124</td>      <!--contra--> 
-                            </tr>   
-                            <tr> 
-                                <td>1</td>          <!--Cedulla-->
-                                <td>Sample</td>     <!--Nombre-->
-                                <td>Diaz</td>      <!--Apellido-->
-                                <td>20</td>         <!--Edad-->
-                                <td>masculino</td>  <!--Sexo-->
-                                <td>3123909445</td>          <!--Telefono-->
-                                <td>13/12/2022</td>     <!--Telefono--> 
-                                <td >usuario</td>        <!--Nombre Usuario--> 
-                                <td>sample@correo</td>  <!--correo--> 
-                                <td>contra124</td>      <!--contra--> 
-                            </tr>            
-                            </table>
+                            <script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
+    <section class="header">
+      <h2 class="ventas">Inventario</h2>
+       
+    </section>
+    <form method="get">
+    <div class="buscar">
+        {% csrf_token %}
+        <input type="text" name="kword" class="t" id="kword" placeholder="Ingrese el nombre">
+        <button class="lupa" type="submit"><img src="/static/assets/lupa.png"></button> 
+      </div>
+    </form>
+    <br>
+    <br>
+     <table>
+       <thead>
+         <tr class="propiedad">
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Telefono</th> 
+            <th>Fecha Ingreso</th>  
+            <th>Correo Electronico</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for v in vendedor %}    
+            <tr id="valores">
+                <td>{{ v.cedula|truncatechars:20 }}</td>          <!--Cedulla-->
+                <td>{{ v.nombre|truncatechars:20 }}</td>     <!--Nombre-->
+                <td>{{ v.apellidos|truncatechars:20 }}</td>      <!--Apellido-->
+                <td>{{ v.edad|truncatechars:20 }}</td>         <!--Edad-->
+                <td>{{ v.sexo }}</td>  <!--Sexo-->
+                <td>{{ v.telefono }}</td>          <!--Telefono-->
+                <td>{{ v.fecha_ingreso }}</td>     <!--Telefono--> 
+                <td>{{ v.correo }}</td>  <!--correo-->     
+            <td>
+              <a class="fa-solid fa-crop" href="#"></a>
+              <a class="fa-regular fa-trash-can" href="javascript:abrir()"></a>
+            </td>
+          </tr>
+
+          <div class="Ventanae" id="elimi">
+            <form action="{% url 'user_app:delete-vendedor' v.id %}" method="post">
+              {% csrf_token %}
+              <h3>¿Quiere eliminar este vendedor? </h3>
+              <h3>{{ v.nombre }}</h3>
+              <h3>confirme que desea realizar</p>
+                <br>
+                <button type="submit" id="Confirmar">Confirmar</button>
+              </form>
+              <button id="cancelar" onclick="cerrar()"> Cancelar</button>
+          </div>
+
+          {% empty %}
+              <div class="alert">
+                <span span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                No se han encontrado resultados.
+              </div>
+          {% endfor %}            
+         
+        </tbody>
+      </table>
+      <script src="{% static 'scripts/ventas.js' %}"></script>
                         </div>
                     </div>
                 </div>
             </div>
+
 </div>
+
+<!-- inicio de bloque de paginacion -->
+<div class="pagination">
+
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>  
+    {% endif %}
+    
+    {% for pagina in paginator.page_range %}
+    {% if pagina == page_obj.number  %}
+    <a class="active" href="?page={{ pagina }}">{{ pagina }}</a>
+    {% else %}
+    <a href="?page={{ pagina }}">{{ pagina }}</a> 
+    {% endif %}
+    {% endfor %}
+    
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>   
+    {% endif %}
+    
+    {% endif %}
+    
+  </div>
+<!-- FIN bloque de paginacion -->
 
 {% endblock content %}

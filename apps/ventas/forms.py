@@ -15,9 +15,10 @@ class ProductoRegisterForm(forms.ModelForm):
 
     class Meta:
         model = Producto
-        fields = ('nombre', 'descripcion', 'precio', 'iva', 'stock', 'vendedor')
+        fields = ('identificacion','nombre', 'descripcion', 'precio', 'iva', 'stock', 'vendedor')
         widgets = {
-            'name': TextInput(),
+            'identificacion':NumberInput(),
+            'nombre': TextInput(),
             'descripcion': Textarea(attrs={'cols': 20, 'rows': 2, 'style':'resize:none;', 'id':'descripcionInput'}),
             'precio': NumberInput(),
             'iva': NumberInput(),
@@ -25,50 +26,4 @@ class ProductoRegisterForm(forms.ModelForm):
             'vendedor': forms.Select()
         }
 
-
-    '''
-    nombre = forms.CharField(
-        required=True,
-        widget=forms.TextInput(
-            attrs={
-                'class':'form-control'
-            }
-        )
-    )
-
-    descripcion = forms.CharField(
-        required=True,
-        widget=forms.Textarea(
-            attrs={
-                'class':'form-control'
-            }
-        )
-    )
-
-    precio = forms.IntegerField(
-        required=True,
-        widget=forms.TextInput(
-            attrs={
-                'class':'form-control'
-            }
-        )
-    )
-
-    iva = forms.IntegerField(
-        required=True,
-        widget=forms.TextInput(
-            attrs={
-                'class':'form-control'
-            }
-        )
-    )
-
-    stock = forms.IntegerField(
-        required=True,
-        widget=forms.TextInput(
-            attrs={
-                'class':'form-control'
-            }
-        )
-    )'''
 

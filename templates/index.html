@@ -48,6 +48,12 @@
                 </span>
                 <h3>inventario</h3>
             </a>
+            <a href="{% url 'user_app:administrador' %}" class="btn-ventas">
+                <span class="material-icons-sharp">
+                    admin_panel_settings
+                </span>
+                <h3>Administrador</h3>
+            </a>
             <a href="{% url 'ventas_app:facturas' %}" class="btn-ventas opc">
                 <span class="material-icons-sharp">
                     monetization_on
@@ -55,13 +61,6 @@
                 <h3>Facturas</h3>
             </a>
             <br>
-            <a href="#" class="salir opc">
-                <span class="material-icons-sharp">
-                    logout
-                </span>
-                <h3>Logout</h3>
-            </a>
-
         </div>
     </aside>
     <!--MAIN-->
@@ -89,7 +88,8 @@
                     dark_mode
                 </span>
             </div>
-            <a class="salir" href="{% url 'user_app:login' %}">
+            {% if not user.is_anonymous %}
+            <a class="salir" href="{% url 'user_app:logout' %}">
                 <span class="material-icons-sharp">
                     logout
                 </span>
@@ -97,13 +97,15 @@
             </a>
             <div class="profile">
                 <div class="info">
-                    <p>Hola,<b class="user"> Admin</b></p>
-                    <small class="text-muted">Admin</small>
+                    <p>Bienvenido<b class="user"></b></p>
+                    <small class="text-muted">{{ user.correo }}</small>
                 </div>
+            {% else %} 
                 <div class="profile-photo">
-                    <img src="/static/assets/user.png" alt="">
+                    <a href="{% url 'user_app:login' %}"><img src="{% static 'assets/user.png' %}"></img></button>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -111,3 +113,5 @@
 <script src="{% static 'scripts/home.js' %}"></script>
 </body>
 </html>
+
+
