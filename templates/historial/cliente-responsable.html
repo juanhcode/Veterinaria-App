@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Clientes/Responsables{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/cliente-responsable.css' %}">
+<script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
+    <section class="header">
+      <h2 class="clientes">Clientes/Responsables</h2>
+       <nav class="btn">
+            <a class="agregar" href="{% url 'veterinaria_app:formulario-cliente' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
+        </nav>
+    </section>
+     <table>
+          <tr class="propiedad">
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Cedula</th>
+            <th>Dirección</th>
+            <th>Telefonos</th>
+            <th class="celdaCrud"></th>
+         </tr>
+      
+          <tr id="valores">
+           <td>Alberto</td>
+           <td>Chupalo</td>
+           <td>123232232</td>
+           <td>Cra 23 12-12</td>
+           <td>3123458769-3125645432</td>
+           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+         </tr>
+       </table>
+       <script src="{% static 'scripts/ventas.js' %}"></script>
+{% endblock content %}

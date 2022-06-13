@@ -13,7 +13,7 @@ section{
     padding: 0;
 }
 
-h2.ventas{
+h2.mascotas{
     font-size: 40px;
     text-align: left;
     width: 425px;
@@ -26,16 +26,6 @@ h2.ventas{
 .contenedor .btn{
     padding: 1px;
     margin: 0;
-}
-.contenedor .btn .editar {
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #66656551;
-    height: 23px;
-    width: 80px;
-    color: #292929a5;
-    font-size: 12px;
-    box-shadow: 0 6px 6px rgba(198, 192, 192, 0.6);
 }
 
 
@@ -74,7 +64,7 @@ h2.ventas{
     padding: 0;
 }
 table{
-    width:100%;
+    width:fit-content;
     font-size: 16px;
     margin-top: 2%;
     margin-left: 0px;
@@ -98,14 +88,4 @@ td,th{
     padding-right: 20PX;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-
-.imagen{
-    border-radius: 20px;
-    text-align: center;
-}
-
-.foto{
-    text-align: center;
 }
