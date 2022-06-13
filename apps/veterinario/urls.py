@@ -3,7 +3,7 @@ from . import views
 
 app_name = 'veterinaria_app'
 urlpatterns = [
-    path('home/',views.ListViewVeterinario.as_view(),name='home'),
+    path('',views.ListViewVeterinario.as_view(),name='home'),
     path('historial/',views.ListViewHistorial.as_view(),name='historial'),
     path('formulario-historial/',views.ListViewFormularioHistorial.as_view(),name='formulario-historial'),
     path('login/',views.ListViewLogin.as_view(),name='login'),
