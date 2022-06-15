@@ -3,28 +3,38 @@
 {% block title %}Dashboard
 {% endblock title %}
 {% block content %}
+<link rel="stylesheet" href="/static/styles/formulario.css" />
 <link rel="stylesheet" href="/static/styles/addFactura.css" />
-<h1>Registrar Factura</h1>
-<br>
-<h2 class="h2agrega">Agrega productos a tu factura.</h2>
-<a href="" class="add">Agregar producto.</a>
-<form action="">
-    <div class="sectio1">
-        <div class="one">
-            <label for="id" class="label">ID</label>
-            <input type="number" for="id" class="input-id">
+<body>
+    <div class="content-fondo">
+        <div class="formulario">
+            <form action="post">
+                <h1>Registrar Factura</h1>
+                <br>
+                <h2 class="h2agrega">Agrega productos a tu factura.</h2>
+                <a href="" class="add">Agregar producto.</a>
+    
+                <div id="formularioventas">
+                    <div class="campo">
+                        <label for="id" class="label">ID</label>
+                        <input type="number" for="id" class="input-id"> 
+                    </div>
+                    <div class="campo">
+                        <label for="fecha" class="label">Fecha</label>
+                        <input type="date" for="fecha" class="input-id">
+                    </div>
+                    <div class="campo">
+                        <label for="total" class="label">Total</label>
+                        <input type="number" for="total" class="input-id">
+                    </div>
+                </div>
+                <input type="submit" class="btn" value="Registrar">
+            </form>
         </div>
-        <div class="two">
-            <label for="fecha" class="label">Fecha</label>
-            <input type="date" for="fecha" class="input-id">
+        <div class="imagen-content">
+            <img class="imagen" src="/static/assets/factura.png" alt="">
         </div>
-        <div class="three">
-            <label for="total" class="label">Total</label>
-            <input type="number" for="total" class="input-id">
-        </div>
-        <br>
-        <input type="submit" class="input-send" value="Registrar">
     </div>
-</form>
+</body>
 {% endblock content %}
       
