@@ -1,3 +1,4 @@
+secret.json
 db.sqlite3
 apps/veterinario/migrations/*
 apps/ventas/migrations/*
@@ -5,5 +6,5 @@ apps/users/migrations/*
 apps/users/__pycache__/*
 apps/ventas/__pycache__/*
 apps/veterinario/__pycache__/*
-secret.json
+
 

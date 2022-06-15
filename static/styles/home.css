@@ -358,3 +358,36 @@ main .insights small{
     padding:3%;
     background-color:red;
 }
+/*Agregar carrito*/
+
+.submenu{
+    position:relative;
+}
+
+.submenu #carrito{
+    display:none;
+}
+
+
+.submenu:hover #carrito{
+    display:block;
+    position:absolute;
+    right:0;
+    top:100%;
+    z-index: 1;
+    background-color:white;
+    padding:20px;
+    min-height: 400px;
+    min-width: 300px;
+}
+
+
+.agregar-carrito{
+    margin:10px;
+}
+#vaciar-carrito{
+    font-size: 14px;
+    border:2px solid #7380ec;
+    padding:10px;
+    border-radius: 10px;
+}

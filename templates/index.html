@@ -75,10 +75,25 @@
     <!--FINAL de MAIN-->
     <div class="right">
         <div class="top">
-            <div>
+            <div class="submenu">
                 <span class="material-icons-sharp">
                     shopping_cart
                 </span>
+                <div id="carrito">
+                    <table id="lista-carrito" class="u-full-width">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>  <!--AQUI VA PYTHON-->
+                    </table>
+                    <br>
+                    <a href="#" id="vaciar-carrito" class="generar">Generar Factura</a>
+                </div>
             </div>         
             <div class="theme-toggler">
                 <span class="material-icons-sharp active">
