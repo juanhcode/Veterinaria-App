@@ -1,37 +1,4 @@
-/*Quitar flechas de number*/
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-.sectio1{
-    
-}
-.label{
-    display:block;
-    font-size: 18px;
-}
-
-.h2agrega{
-    display: inline-block;
-}
-.add{
-    font-size: 19px;
-    text-decoration: underline;
-    color:#553cfb;
-}
-
-.input-id{
-    margin: 3px;
-    padding: 10px;
-    border-radius: 9px;
-    border: 1px solid #cdd1de;
-}
-
-.input-send{
-    padding: 10px;
-    border-radius: 9px;
-    width:200px; 
-    background-color:#553cfb;
-    color:white;
+.imagen{
+    width: 300px;
+    height: 300px;
 }
