@@ -181,6 +181,9 @@ class LogoutView(View):
             )   
         )
 
+class ListViewReporteUsuarios(TemplateView):
+    template_name = 'administrador/reporteUsuarios.html'
+
 
 class ListViewVerAdmins(PermissionRequiredMixin, ListView):
     template_name = 'administrador/verAdmins.html'
