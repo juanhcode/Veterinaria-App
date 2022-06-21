@@ -28,15 +28,55 @@ class UserRegisterFormAdministrador(forms.ModelForm):
         )
     )
 
+    cedula = forms.CharField(
+        required=True,
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder':'Digite su cedula'
+            }
+        )
+    )
 
+    telefono = forms.CharField(
+        required=True,
+        widget=forms.NumberInput(
+        )
+    )
+
+    #validacion si la contrasenia 2 es diferente a la 1
+    def clean_password2(self):
+        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
+            self.add_error('password2','Las contrasenias no son iguales')
+        #Verificando que la contrasenia tenga mas de 5 caracteres    
+        elif len(self.cleaned_data['password1']) < 5:
+            self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
+
+            #validacion si la contrasenia 2 es diferente a la 1
+
+    def clean(self):
+        cleaned_data = super(UserRegisterFormAdministrador, self).clean
+        cedula = self.cleaned_data['cedula']
+        telefono = self.cleaned_data['telefono']
+        
+
+        if len(cedula) > 10:
+            print('Entre en el if')
+            raise forms.ValidationError('El campo de cedula solo permite hasta 10 numeros')
+
+        elif len(telefono) > 10:
+            raise forms.ValidationError('El campo de telefono solo permite hasta 10 numeros')
+        
+        return self.cleaned_data
+
+        
     class Meta:
         model = Administrador
         #Jamas se guarda una contrasenia como dato plano, es por ello que no lo pedimos en los fields
 
         fields = (
+            'cedula',
             'nombre',
             'apellidos',
-            'cedula',
             'edad',
             'sexo',
             'correo',
@@ -45,15 +85,17 @@ class UserRegisterFormAdministrador(forms.ModelForm):
             
         )
         widgets = {
+            'cedula': forms.NumberInput(),
             'nombre': forms.TextInput(),
             'apellidos': forms.TextInput(),
-            'cedula': forms.NumberInput(),
             'edad': forms.NumberInput(),
             'sexo': forms.Select(),
             'correo': forms.EmailInput(),
             'telefono': forms.NumberInput(),
             'fecha_ingreso': forms.DateInput(),
         }
+
+    
 
 class UserRegisterFormVendedor(forms.ModelForm):
 
@@ -77,6 +119,46 @@ class UserRegisterFormVendedor(forms.ModelForm):
             }
         )
     )
+
+    cedula = forms.CharField(
+        required=True,
+        widget=forms.NumberInput(
+            attrs={
+                'placeholder':'Digite su cedula'
+            }
+        )
+    )
+
+    telefono = forms.CharField(
+        required=True,
+        widget=forms.NumberInput(
+        )
+    )
+
+    #validacion si la contrasenia 2 es diferente a la 1
+    def clean_password2(self):
+        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
+            self.add_error('password2','Las contrasenias no son iguales')
+        #Verificando que la contrasenia tenga mas de 5 caracteres    
+        elif len(self.cleaned_data['password1']) < 5:
+            self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
+
+            #validacion si la contrasenia 2 es diferente a la 1
+
+    def clean(self):
+        cleaned_data = super(UserRegisterFormVendedor, self).clean
+        cedula = self.cleaned_data['cedula']
+        telefono = self.cleaned_data['telefono']
+        
+
+        if len(cedula) > 10:
+            print('Entre en el if')
+            raise forms.ValidationError('El campo de cedula solo permite hasta 10 numeros')
+
+        elif len(telefono) > 10:
+            raise forms.ValidationError('El campo de telefono solo permite hasta 10 numeros')
+        
+        return self.cleaned_data    
 
 
     class Meta:
@@ -105,16 +187,6 @@ class UserRegisterFormVendedor(forms.ModelForm):
             'fecha_ingreso': forms.DateInput(),
         }
 
-    
-
-    #validacion si la contrasenia 2 es diferente a la 1
-    def clean_password2(self):
-        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-            self.add_error('password2','Las contrasenias no son iguales')
-        #Verificando que la contrasenia tenga mas de 5 caracteres    
-        elif len(self.cleaned_data['password1']) < 5:
-            self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
-
 
 class UserRegisterFormVeterinario(forms.ModelForm):
 
@@ -138,6 +210,46 @@ class UserRegisterFormVeterinario(forms.ModelForm):
             }
         )
     )
+
+    cedula = forms.CharField(
+    required=True,
+    widget=forms.NumberInput(
+        attrs={
+                'placeholder':'Digite su cedula'
+            }
+        )
+    )
+
+    telefono = forms.CharField(
+        required=True,
+        widget=forms.NumberInput(
+        )
+    )
+
+    #validacion si la contrasenia 2 es diferente a la 1
+    def clean_password2(self):
+        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
+            self.add_error('password2','Las contrasenias no son iguales')
+        #Verificando que la contrasenia tenga mas de 5 caracteres    
+        elif len(self.cleaned_data['password1']) < 5:
+            self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
+
+            #validacion si la contrasenia 2 es diferente a la 1
+
+    def clean(self):
+        cleaned_data = super(UserRegisterFormVeterinario, self).clean
+        cedula = self.cleaned_data['cedula']
+        telefono = self.cleaned_data['telefono']
+        
+
+        if len(cedula) > 10:
+            print('Entre en el if')
+            raise forms.ValidationError('El campo de cedula solo permite hasta 10 numeros')
+
+        elif len(telefono) > 10:
+            raise forms.ValidationError('El campo de telefono solo permite hasta 10 numeros')
+        
+        return self.cleaned_data
 
     class Meta:
         model = Veterinario
@@ -207,7 +319,7 @@ class LoginForm(forms.Form):
         
 
     def clean(self):
-        cleaner_data = super(LoginForm, self).clean
+        cleaned_data = super(LoginForm, self).clean
         cedula = self.cleaned_data['cedula']
         password = self.cleaned_data['password']
 

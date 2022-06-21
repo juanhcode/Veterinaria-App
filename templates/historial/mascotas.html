@@ -11,31 +11,72 @@
         </nav>
     </section>
     <table>
-        <tr class="propiedad">
-            <th>Nombre</th>
-            <th>Raza</th>
-            <th>Especie</th>
-            <th>Sexo</th>
-            <th>Edad</th>
-            <th>Color</th>
-            <th>¿Castrado?</th>
-            <th>Estado</th>
-            <th>Cedula/Responsable</th>
-            <th class="celdaCrud"></th>
-        </tr> 
-      
+        <thead>
+
+            <tr class="propiedad">
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Especie</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>Color</th>
+                <th>¿Castrado?</th>
+                <th>Estado</th>
+                <th>Cedula/Responsable</th>
+            </tr> 
+        </thead>
+        <tbody>    
+        {% for m in object_list %}
         <tr id="valores">
-           <td>Pepas</td>
-           <td>Pastor Aleman</td>
-           <td>Perra</td>
-           <td>Casi no</td>
-           <td>2 años</td>
-           <td>Si</td>
-           <td>Cafe con negro</td>
-           <td>Vivito</td>
-           <td>11123234344</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
+            <td>{{ m.nombre|truncatechars:20 }}</td>
+            <td>{{ m.raza|truncatechars:20 }}</td>
+            <td>{{ m.especie|truncatechars:20 }}</td>
+            <td>{{ m.sexo|truncatechars:20 }}</td>
+            <td>{{ m.edad|truncatechars:20 }}</td>
+            <td>{{ m.color|truncatechars:20 }}</td>
+            <td>
+                {% if m.castrado == True %}
+                    <p>Si</p>
+                {% else %}
+                <p>No</p>
+                {% endif %}
+            </td>
+            <td>{{ m.estado|truncatechars:20 }}</td>
+            <td>{{ m.duenio|truncatechars:40 }}</td>
         </tr>
+        {% endfor %}
+            
+        </tbody>
     </table>
     <script src="{% static 'scripts/ventas.js' %}"></script>
+
+
+ <!-- inicio de bloque de paginacion -->
+ <div class="center">
+
+    <div class="pagination">
+      
+      {% if is_paginated %}
+      {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>  
+      {% endif %}
+      
+      {% for pagina in paginator.page_range %}
+      {% if pagina == page_obj.number  %}
+      <a class="active" href="?page={{ pagina }}">{{ pagina }}</a>
+      {% else %}
+      <a href="?page={{ pagina }}">{{ pagina }}</a> 
+      {% endif %}
+      {% endfor %}
+      
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>   
+      {% endif %}
+      
+      {% endif %}
+      
+    </div>
+  </div>
+    <!-- FIN bloque de paginacion -->
+    
 {% endblock content %}

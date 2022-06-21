@@ -2,16 +2,10 @@ from email.headerregistry import Group
 from django import forms
 from django.forms import Textarea, TextInput, NumberInput
 
-from apps.users.models import Vendedor
 from .models import Producto
 
 
 class ProductoRegisterForm(forms.ModelForm):
-    '''
-    def __init__(self, *args, **kwargs):
-        self.fields['vendedor'].queryset = Vendedor.objects.all()'''
-
-    #vendedor = forms.ModelChoiceField(queryset=Vendedor.objects.all())
 
     class Meta:
         model = Producto

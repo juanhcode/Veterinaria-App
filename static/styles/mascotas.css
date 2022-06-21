@@ -89,3 +89,25 @@ td,th{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.pagination {
+    display: inline-block;
+  }
+
+.center {
+    text-align: center;
+}
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #7380ec;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
