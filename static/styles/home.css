@@ -163,20 +163,20 @@ aside .sidebar a:last-child{
     width:100%;
 }
 
-aside .sidebar a.active{
+aside .sidebar a.active:hover{
     background: var(--color-light);
     color: var(--color-primary);
     margin-left: 0;
 }
 
-aside .sidebar a.active:before{
+aside:before .sidebar:before a.active:before{
     content: " ";
     width:6px;
     height:100%;
     background: var(--color-primary);
 }
 
-aside .sidebar a.active span{
+aside .sidebar a.active span:hover{
     color: var(--color-primary);
     margin-left:calc(1rem - 6px)
 }
@@ -357,4 +357,37 @@ main .insights small{
     margin: 30px;
     padding:3%;
     background-color:red;
+}
+/*Agregar carrito*/
+
+.submenu{
+    position:relative;
+}
+
+.submenu #carrito{
+    display:none;
+}
+
+
+.submenu:hover #carrito{
+    display:block;
+    position:absolute;
+    right:0;
+    top:100%;
+    z-index: 1;
+    background-color:white;
+    padding:20px;
+    min-height: 400px;
+    min-width: 300px;
+}
+
+
+.agregar-carrito{
+    margin:10px;
+}
+#vaciar-carrito{
+    font-size: 14px;
+    border:2px solid #7380ec;
+    padding:10px;
+    border-radius: 10px;
 }
