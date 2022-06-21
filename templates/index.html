@@ -24,37 +24,31 @@
             </div>
         </div>
         <div class="sidebar">
-            <a href="{% url 'veterinaria_app:home' %}" class="inicio opc">
+            <a href="{% url 'veterinaria_app:home' %}" class="active inicio opc">
                 <span class="material-icons-sharp">
                     grid_view
                 </span>
                 <h3>Inicio</h3>
             </a>
-            <a href="{% url 'veterinaria_app:historial' %}" class="historial opc">
+            <a href="{% url 'veterinaria_app:inicio-historial' %}" class="active historial opc">
                 <span class="material-icons-sharp">
                     history
                 </span>
                 <h3>Historial clinico</h3>
             </a>
-            <a href="#" class="active opc">
-                <span class="material-icons-sharp">
-                    person
-                </span>
-                <h3>Clientes activos</h3>
-            </a>
-            <a href="{% url 'ventas_app:ventas' %}" class="btn-ventas opc">
+            <a href="{% url 'ventas_app:ventas' %}" class="active btn-ventas opc">
                 <span class="material-icons-sharp">
                     shopping_cart
                 </span>
                 <h3>inventario</h3>
             </a>
-            <a href="{% url 'user_app:administrador' %}" class="btn-ventas">
+            <a href="{% url 'user_app:administrador' %}" class="active btn-ventas">
                 <span class="material-icons-sharp">
                     admin_panel_settings
                 </span>
                 <h3>Administrador</h3>
             </a>
-            <a href="{% url 'ventas_app:facturas' %}" class="btn-ventas opc">
+            <a href="{% url 'ventas_app:facturas' %}" class="active btn-ventas opc">
                 <span class="material-icons-sharp">
                     monetization_on
                 </span>
@@ -75,10 +69,25 @@
     <!--FINAL de MAIN-->
     <div class="right">
         <div class="top">
-            <div>
+            <div class="submenu">
                 <span class="material-icons-sharp">
                     shopping_cart
                 </span>
+                <div id="carrito">
+                    <table id="lista-carrito" class="u-full-width">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>  <!--AQUI VA PYTHON-->
+                    </table>
+                    <br>
+                    <a href="#" id="vaciar-carrito" class="generar">Generar Factura</a>
+                </div>
             </div>         
             <div class="theme-toggler">
                 <span class="material-icons-sharp active">
@@ -88,7 +97,8 @@
                     dark_mode
                 </span>
             </div>
-            <a class="salir" href="{% url 'user_app:login' %}">
+            {% if not user.is_anonymous %}
+            <a class="salir" href="{% url 'user_app:logout' %}">
                 <span class="material-icons-sharp">
                     logout
                 </span>
@@ -96,13 +106,15 @@
             </a>
             <div class="profile">
                 <div class="info">
-                    <p>Hola,<b class="user"> Admin</b></p>
-                    <small class="text-muted">Admin</small>
+                    <p>Bienvenido<b class="user"></b></p>
+                    <small class="text-muted">{{ user.correo }}</small>
                 </div>
+            {% else %} 
                 <div class="profile-photo">
-                    <img src="/static/assets/user.png" alt="">
+                    <a href="{% url 'user_app:login' %}"><img src="{% static 'assets/user.png' %}"></img></button>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -110,3 +122,5 @@
 <script src="{% static 'scripts/home.js' %}"></script>
 </body>
 </html>
+
+

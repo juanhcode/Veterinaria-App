@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Formulario Clientes/Responsables{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="/static/styles/formulario-clientes.css">
+<body>
+        <div class="content-fondo">
+            <div class="formulario">
+                <form method="post">
+                    <h2 class="titulo">Registrar Cliente/Responsable</h2><br>
+                    {% csrf_token %} 
+
+                    <div id="formularioClienteResponsable">
+
+                        <div class="campo">
+                            <label>Nombres</label>
+                            <input type="text">
+                        </div>
+                        
+                        
+                        <div class="campo">
+                            <label>Apellidos</label>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Cedula</label>
+                            <input type="number">
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Dirección</label>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Telefono</label>
+                            <input type="number">
+                        </div>
+                        
+                    </div>
+
+                    {% for i in form.errors %} {{i}} {% endfor %} 
+                    {% if form.errors %}
+                    <p>error!</p>
+                    {% endif %}
+
+                    <button type="submit" class="btn">Guardar</button>
+                
+                </form>
+            </div>
+
+            <div class="imagen-content">
+                <img class = "imagen" src="/static/assets/responsable.png">
+            </div>
+        </div>
+</body>
+<script src="{% static 'scripts/formulariosVenta.js' %}"></script>
+{% endblock content %}
+
+

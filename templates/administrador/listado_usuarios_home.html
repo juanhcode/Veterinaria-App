@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/Administrador/botones.css' %}">
+<div class="contenedor">
+
+        <div class="contenedor-botones">
+            <a href="{% url 'user_app:verAdmins' %}" class="boton">Listado administradores</a>
+            <a href="{% url 'user_app:verVendedor' %}" class="boton">Listado Vendedores</a>
+            <a href="{% url 'user_app:verVeterinario' %}" class="boton">Listado Veterinarios</a>
+        </div>
+    </div>
+
+{% endblock content %}

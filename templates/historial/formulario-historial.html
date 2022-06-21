@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Formulario Historial Clinico{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="/static/styles/formulario-historial.css">
+<body>
+        <div class="content-fondo">
+            <div class="formulario">
+                <form method="post">
+                    <h2 class="titulo">Registrar Historia Clinica</h2><br>
+                    {% csrf_token %} 
+
+                    <div id="formularioHistorial">
+                        <h3>1.Datos de la mascota y dueño/responsable:</h3>
+                        <div class="campo1">
+                            <label>Nombre mascota</label>
+                            <input type="text">
+                        </div>
+                        
+                        
+                        <div class="campo2">
+                            <label>Cedula dueño/responsable</label>
+                            <input type="text">
+                        </div>
+                        
+                        <h3>2. Anamnesis:</h3>
+                        <div class="areatext">
+                            <textarea placeholder="Descripcion de Anamnesis..." cols="100" rows="10"></textarea>
+                        </div>
+                        
+                        <div class="campo3">
+                            <label>Vacunas</label>
+                            <input type="text">
+                        </div>
+                        
+                        <h3>3. Examen fisico:</h3>
+                        <div class="areatext">
+                            <textarea placeholder="Descripcion del examen fisico..." cols="100" rows="10"></textarea>
+                        </div>
+
+                        <div class="campo4">
+                            <label>Peso</label>
+                            <input type="number">
+                        </div>
+
+                        <div class="campo4">
+                            <label>Temperatura</label>
+                            <input type="number">
+                        </div>
+
+                        <div class="campo4">
+                            <label>Frecuencia cardiaca</label>
+                            <input type="number">
+                        </div>
+
+                        <h3>4. Detalles de la visita:</h3>
+                        <div class="areatext">
+                            <textarea placeholder="Descripcion y detalles de la visita..." cols="100" rows="10"></textarea>
+                        </div>
+
+                        <h3>5. Diagnostico:</h3>
+                        <div class="areatext">
+                            <textarea placeholder="Descripcion del diagnostico..." cols="100" rows="10"></textarea>
+                        </div>
+
+                        <h3>6. Patología:</h3>
+                        <div class="areatext">
+                            <textarea placeholder="Descripcion de la patología..." cols="100" rows="10"></textarea>
+                        </div>
+
+                        <h3>7. Tratamiento:</h3>
+                        <div class="areatext">
+                            <textarea placeholder="Descripcion del tratamiento..." cols="100" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    {% for i in form.errors %} {{i}} {% endfor %} 
+                    {% if form.errors %}
+                    <p>error!</p>
+                    {% endif %}
+
+                    <button type="submit" class="btn">Guardar</button>
+                
+                </form>
+            </div>
+
+        </div>
+</body>
+<script src="{% static 'scripts/formulariosVenta.js' %}"></script>
+{% endblock content %}

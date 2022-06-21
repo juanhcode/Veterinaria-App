@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/Administrador/TapBarFormularios.css' %}">
+<link rel="stylesheet" href="{% static 'styles/Administrador/form_admin.css' %}">
+
+<div class="tab">
+            
+    <div class="contenedor">
+    
+    <div class="center">
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="titulo">
+
+            <h1>Actualizar Administrador</h1>    
+            </div>
+            <div class="campos">
+                <div class="c1">
+                    <div class="espacio">
+                        <label >Cedula</label>
+                        {{ form.cedula }}
+                    </div>
+                    
+                    <div class="espacio">
+                        <label>Nombre</label>
+                        {{ form.nombre }}    
+                    </div>
+                    
+                    <div class="espacio">
+                        <label>Apellido</label>
+                        {{ form.apellidos }}
+                    </div>
+                </div>
+                <div class="c1">
+                    <div class="espacio">
+                        <label>Edad</label>
+                        {{ form.edad }}
+                    </div>
+                    
+                    <div class="espacio">
+                        <label>Sexo</label>
+                        {{ form.sexo }}
+                    </div>
+                    
+                    <div class="espacio">
+                        <label>Telefono</label>
+                        {{ form.telefono }}
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="campos">
+                <div class="c1">
+                        <div class="espacio">
+                            <label >Correo Electronico</label>
+                            {{ form.correo }}
+                        </div>
+                        <div class="espacio">
+                            <label>Fecha Ingreso</label>
+                            {{ form.fecha_ingreso }}
+                        </div>
+                        {% for i in form.errors %} {{i}} {% endfor %} 
+                        {% if form.errors %}
+                            <p>error!</p>
+                        {% endif %}
+                </div>  
+                <div class="c2">
+                    <button class="boton" type="submit">Actualizar</button>
+                </div>  
+            </div>
+            
+            
+        </form>
+        
+    </div>
+</div>
+
+</div>
+
+{% endblock content %}

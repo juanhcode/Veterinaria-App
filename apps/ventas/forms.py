@@ -18,7 +18,7 @@ class ProductoRegisterForm(forms.ModelForm):
         fields = ('identificacion','nombre', 'descripcion', 'precio', 'iva', 'stock', 'vendedor')
         widgets = {
             'identificacion':NumberInput(),
-            'name': TextInput(),
+            'nombre': TextInput(),
             'descripcion': Textarea(attrs={'cols': 20, 'rows': 2, 'style':'resize:none;', 'id':'descripcionInput'}),
             'precio': NumberInput(),
             'iva': NumberInput(),

@@ -1,0 +1,89 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Formulario Mascotas{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="/static/styles/formulario-mascota.css">
+<body>
+        <div class="content-fondo">
+            <div class="formulario">
+                <form method="post">
+                    <h2 class="titulo">Registrar Mascotas</h2><br>
+                    {% csrf_token %} 
+
+                    <div id="formularioClienteResponsable">
+
+                        <div class="campo">
+                            <label>Nombre</label>
+                            <input class="nomalinp" type="text">
+                        </div>
+                        
+                        
+                        <div class="campo2">
+                            <label>Raza</label>
+                            <input class="nomalinp" type="text">
+                        </div>
+                        
+                        <div class="campo">
+                            <label>Especie</label>
+                            <input class="nomalinp" type="text">
+                        </div>
+                        
+                        <div class="campoRadio">
+                            <input type="radio" name="sexo" id="hembra" value="hembra">
+                            <label for="hembra">Hembra</label>
+                            <input type="radio" name="sexo" id="macho" value="macho">
+                            <label for="macho">Macho</label>
+                        </div>
+
+                        <div class="campo">
+                            <label>Edad</label>
+                            <input class="nomalinp" type="text">
+                        </div>
+
+                        <div class="campo2">
+                            <label>Color</label>
+                            <input class="nomalinp" type="text">
+                        </div>
+
+                        <div class="campoRadio">
+                            <label>¿Castrado?</label>
+                            <input type="radio" name="castrado" id="si" value="si">
+                            <label for="si">Si</label>
+                            <input type="radio" name="castrado" id="no" value="no">
+                            <label for="no">No</label>
+                        </div>
+
+                        <div class="campoRadio">
+                            <input type="radio" name="estado" id="vivo" value="vivo">
+                            <label for="vivo">Vivo</label>
+                            <input type="radio" name="estado" id="muerto" value="muerto">
+                            <label for="muerto">Muerto</label>
+                            
+                        </div>
+                        
+                        <div class="campo3">
+                            <label>Cedula/Responsable</label>
+                            <input class="nomalinp" type="number">
+                        </div>
+                        
+                    </div>
+
+                    {% for i in form.errors %} {{i}} {% endfor %} 
+                    {% if form.errors %}
+                    <p>error!</p>
+                    {% endif %}
+
+                    <button type="submit" class="btn">Guardar</button>
+                
+                </form>
+            </div>
+
+            <div class="imagen-content">
+                <img class = "imagen" src="/static/assets/pet.png">
+            </div>
+        </div>
+</body>
+<script src="{% static 'scripts/formulariosVenta.js' %}"></script>
+{% endblock content %}
+
+
