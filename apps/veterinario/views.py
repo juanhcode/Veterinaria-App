@@ -31,3 +31,6 @@ class ListViewMascotas(TemplateView):
 
 class ListViewFormularioMascotas(TemplateView):
     template_name = 'historial/formulario-mascota.html'
+
+class DetailViewHistorial(TemplateView):
+    template_name = 'historial/detailView.html'

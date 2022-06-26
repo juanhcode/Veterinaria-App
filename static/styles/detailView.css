@@ -1,0 +1,155 @@
+*{
+    font-family: 'Poppins', Courier, monospace;
+    font-style: normal;
+}
+body{
+    
+    line-height: 30px;
+    text-align: center;
+    color: #585858;
+}
+
+
+/*Quitar flechas de number*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number] { -moz-appearance:textfield; }
+
+.titulo 
+{
+    color: #363949;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 70px;
+
+    margin-left: 0px;
+    margin-right: 50px;
+}
+
+
+.content-fondo
+{
+    height:500px; /*alto*/
+    width:800px; /*ancho*/
+    display: flex;
+    margin:auto;
+    border-radius: 10px;
+}
+
+h3{
+    text-align: left;
+}
+
+.campo1
+{
+    width: 45%;
+    padding-right: 10px;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+
+.campo2 {
+    width: 45%;
+    text-align: left;
+    display: inline-block;
+}
+
+
+textarea{
+    border-radius: 5px;
+    border: 1px solid #A2ABC2;
+    background: #FFFFFF;
+    resize: none;
+    padding-left: 5px;
+}
+
+.areatext{
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.campo3{
+    padding-right: 10px;
+    text-align: left;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.campo4{
+    width: 30%;
+    padding-right: 10px;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.campo4 input{
+    width: 50px;
+}
+
+.campo , label
+{
+    padding-right: 20px;
+    text-align: left;
+    padding-bottom: 0;
+    
+}
+
+label{
+    display: inline-block;
+    padding-right: 20px;
+    text-align: left;
+    padding-bottom: 0;
+}
+
+.campo ,input 
+{
+    padding-left: 8px;
+    border-radius: 5px;
+    height: 40px;
+
+}
+
+input{
+    border: 1px solid #A2ABC2;
+    background: #FFFFFF;
+    width: 150px;
+}
+
+.formulario
+{
+    height:480px; /*alto*/
+    width:800px; /*ancho*/
+    
+
+    padding-left:0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /*border: 1px solid #1f1c1c;*/
+}
+
+.formulario , button
+{
+    margin-top: 40px;
+}
+
+.btn , text{
+    width:260px;
+    height:40px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px ;
+}

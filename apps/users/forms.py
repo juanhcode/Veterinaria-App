@@ -13,17 +13,17 @@ class UserRegisterFormAdministrador(forms.ModelForm):
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder':'Constraseña'
+                'placeholder':'Contraseña'
             }
         )
     )
 
     password2 = forms.CharField(
-        label = 'Contraseña',
+        label = 'Repetir Contraseña',
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder':'Repetir Constraseña'
+                'placeholder':'Repetir Contraseña'
             }
         )
     )
