@@ -27,4 +27,5 @@ urlpatterns = [
     path('actualizar-veterinario/<pk>/',views.VeterinarioUpdateView.as_view(),name='actualizarVeterinario'),
     path('eliminar-veterinario/<pk>/',views.VeterinarioDeleteView.as_view(),name='eliminarVeterinario'),
 
+    path('reporteUsuarios/',views.ListViewReporteUsuarios.as_view(),name='reporteUsuarios'),
 ]
