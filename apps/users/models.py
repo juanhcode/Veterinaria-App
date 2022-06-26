@@ -80,7 +80,7 @@ class Duenio(models.Model):
     cedula = models.CharField('Cedula',max_length=10, unique=True)
     edad = models.PositiveIntegerField('Edad')
     sexo = models.CharField('Sexo', max_length=1, choices=GENERO)
-    direccion = models.CharField('Direccion', max_length=30, null=False)
+    direccion = models.CharField('Direccion', max_length=30, blank=False)
 
     class Meta:
         db_table = 'Duenios'
