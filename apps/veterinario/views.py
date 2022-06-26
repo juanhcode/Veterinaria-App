@@ -130,3 +130,6 @@ class CreateFormularioMascotas(PermissionRequiredMixin, FormView):
         )
 
         return super(CreateFormularioMascotas, self).form_valid(form)
+
+class DetailViewHistorial(TemplateView):
+    template_name = 'historial/detailView.html'

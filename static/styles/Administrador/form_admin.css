@@ -74,8 +74,9 @@
 }
 /* ---------------celda con el boton registrar---------- */
 .c2{
-    width:650px;
-    height: 200px;
+    margin-top: 8em;
+    width: 100%;
+    margin-left: -30%;
     
     /*border: 1px black solid;*/
     /*background-color: yellow;*/
@@ -106,7 +107,8 @@
     /*border: 1px black solid;*/
     border-radius: 10px;
     padding-top: 10px;
-    padding-left: 40px;
+    word-wrap: normal;
+   /* padding-left: 40px;*/
     padding-bottom: 10px;
     padding-right: 0px;
     display: flex;

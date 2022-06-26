@@ -12,5 +12,6 @@ urlpatterns = [
     path('formulario-cliente/',views.CreateClienteResponsable.as_view(),name='formulario-cliente'),
     path('mascotas/',views.ListViewMascotas.as_view(),name='mascotas'),
     path('formulario-mascota/',views.CreateFormularioMascotas.as_view(),name='formulario-mascota'),
+    path('detalle-historial/',views.DetailViewHistorial.as_view(),name='detailView'),
 
 ]
