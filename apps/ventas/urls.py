@@ -9,4 +9,13 @@ urlpatterns = [
     path('delete/<pk>/',views.ProductoDeleteView.as_view(),name='delete'),
     path('facturas/',views.FacturasView.as_view(),name='facturas'),
     path('facturasFormulario/',views.FacturasFormularioView.as_view(),name='formularioFacturas'),
+
+    path('add-to-cart-<int:pro_id>/',views.AgregarAlCarro.as_view(),name='agregarCarro'),
+    path('my-cart/',views.CarroView.as_view(),name='MiCarro'),
+    path('editar-carro/<int:cp_id>/',views.EditarCarroView.as_view(),name='EditarCarro'),
+    path('empty-car/',views.VaciarCarroView.as_view(),name='VaciarCarro'),
+
+    path('facturacion/',views.FacturacionView.as_view(),name='Facturacion'),
+
+    path('reporte1/',views.Reporte10ProductosMasVendidos.as_view(),name='reporteUno'),
 ]

@@ -26,4 +26,4 @@ class HistorialClinico(models.Model):
         verbose_name_plural = 'Historiales Clinicos'
 
     def __str__(self):
-        return str(self.id) + ' ' + self.mascota + ' ' + self.veterinario
+        return str(self.id) + ' ' + str(self.mascota) + ' ' + str(self.veterinario)

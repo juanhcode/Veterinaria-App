@@ -1,4 +1,7 @@
 secret.json
+.coverage
+coverage.xml
+.scannerwork
 db.sqlite3
 apps/veterinario/migrations/*
 apps/ventas/migrations/*
