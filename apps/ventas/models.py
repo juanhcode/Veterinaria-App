@@ -49,10 +49,10 @@ class Factura(models.Model):
 class Carro(models.Model):
     cliente = models.ForeignKey(Vendedor, on_delete=models.SET_NULL, null=True, blank=True)
     total = models.PositiveIntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField('Fecha', auto_now_add=True)
 
     def __str__(self):
-        return "Carro: " + str(self.id)
+        return "Carro: " + str(self.id) + ' - ' + "Fecha:" + str(self.created_at)
 
 
 class ProductoCarro(models.Model):

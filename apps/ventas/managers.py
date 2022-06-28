@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.postgres.search import TrigramSimilarity
 
+
 class VentasManager(models.Manager):
 
     #trabajando con Tiagram 
@@ -13,4 +14,7 @@ class VentasManager(models.Manager):
             return resultado
         else:
             return self.all()[:10]
+
+    
+
 

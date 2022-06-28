@@ -192,7 +192,7 @@ class LogoutView(View):
         )
 
 class ListViewReporteUsuarios(TemplateView):
-    template_name = 'administrador/reporteUsuarios.html'
+    template_name = 'administrador/reporteAdmin.html'
 
 
 class ListViewVerAdmins(PermissionRequiredMixin, ListView):

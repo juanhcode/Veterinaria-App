@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Facturacion
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="col1">
+        <h3>Productos en el carro</h3>
+        <a href="{% url 'ventas_app:MiCarro' %}">Actualizar carro</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in carro.productocarro_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ c.producto.nombre }}</td>
+                    <td>{{ c.rate }}</td>
+                    <td>{{ c.cantidad }}</td>
+                    <td>{{ c.subtotal }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th>Total {{ carro.total }}</th>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="col2">
+        <h3>Generar Factura</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Continuar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Mi Carro
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h4>Items en mi carro </h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in carro.productocarro_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ c.producto.nombre }}</td>
+                    <td>{{ c.rate }}</td>
+                    <td>{{ c.cantidad }}</td>
+                    <td>{{ c.subtotal }}</td>
+                    <td>
+                        <a href="{% url 'ventas_app:EditarCarro' c.id %}?action=inc">+</a>
+                        <a href="{% url 'ventas_app:EditarCarro' c.id %}?action=dcr">-</a>
+                        <a href="{% url 'ventas_app:EditarCarro' c.id %}?action=rmv">X</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th>Total</th>
+                    <th>{{ carro.total }}</th>
+                    {% if carro.productocarro_set.all %}
+                    <th><a href="{% url 'ventas_app:VaciarCarro' %}">Vaciar Carro</a></th>
+                    {% endif %}
+                </tr>
+                {% if carro.productocarro_set.all %}
+                <tr>
+                    <th><a href="{% url 'ventas_app:Facturacion' %}">Generar Factura</a></th>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}
