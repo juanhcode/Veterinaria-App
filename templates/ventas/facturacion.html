@@ -3,10 +3,11 @@
 {% block title %}Facturacion
 {% endblock title %}
 {% block content %}
+<link rel="stylesheet" href="/static/styles/facturacion.css">
 <div class="container">
     <div class="col1">
-        <h3>Productos en el carro</h3>
-        <a href="{% url 'ventas_app:MiCarro' %}">Actualizar carro</a>
+        <p class="producto"> Productos en el carro</p>
+        <a class="actCarro" href="{% url 'ventas_app:MiCarro' %}">Actualizar carro</a>
         <table>
             <thead>
                 <tr>
@@ -28,18 +29,22 @@
                 </tr>
                 {% endfor %}
                 <tr>
-                    <th>Total {{ carro.total }}</th>                    
+                    <p class="total">Total: {{ carro.total }} </p>                    
                 </tr>
             </tbody>
         </table>
     </div>
     <br>
     <div class="col2">
-        <h3>Generar Factura</h3>
+        <p class="factura" >Generar Factura</p>
         <form action="" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <div class="campo">
+                <label>Pedido por:</label>
+                <input type="text">
+            </div>
             <button type="submit">Continuar</button>
+            <img src="/static/assets/factura.png" alt="">
         </form>
     </div>
 </div>
