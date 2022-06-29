@@ -1,0 +1,25 @@
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+</style>
+
+<table>
+    <thead>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Cantidad Comprada</th>
+    </thead>
+    <tbody>
+        <h1>{{ title }}</h1>
+        {% for c in compradores %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ c.pedido_por }}</td>
+            <td>{{ c.count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
