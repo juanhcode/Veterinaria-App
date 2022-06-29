@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+section{
+    display:flex;
+}
+
+.itemsCar{
+    width: 290px;
+    font-size: 27px;
+    font-weight: bold;
+}
+/* --- ESTILO DE LA TABLA --- */
+table{
+    border-collapse: collapse;
+    font-size: 18px;
+    margin: 30px;
+    border-radius: 12px;
+    position: absolute;
+    left: 35%;
+    top: 25%;
+    margin-left: -100px;
+   
+}
+th{
+    
+    padding: 10px;
+    text-align:center;
+    border-right: 0px;
+    border-left: 0px;
+ 
+}
+
+tr{
+    text-align:center;
+}
+td{
+    border: rgb(81, 81, 81) 1px solid;
+    margin: 100px;
+    width: 100px;
+    height: 50px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+tr,td{
+    text-align: center;
+}
+
+.total {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 43.5%;
+    top: 42%;
+}
+
+.carroTotal{
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 51.2%;
+    top: 42%;
+}
+.vaciarCarro{
+    font-size: 17px;
+    position: absolute;
+    left: 60%;
+    top: 42%;
+}
+
+.vaciarCarro a{
+    color: #553CFB;
+}
+
+.generarFac{
+    width: 12%;
+    padding: 15px;
+    border-radius: 5px;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+    position: absolute;
+    top: 51%;
+    left: 43%;
+}
+.generarFac a{
+    color: aliceblue;
+}
+
+/* --- BOTONES DE MAS MENOS Y MULTI --- */
+.mas{
+    position: absolute;
+    left: 52%;
+    top: 49.5%;
+    margin: 10px;
+    width: 4.5%;
+    padding: 4px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+    margin-left: 33.5%;
+}
+
+.menos{
+    position: absolute;
+    left: 60%;
+    top: 49.5%;
+    margin: 10px;
+    width: 4.5%;
+    padding: 4px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+    margin-left: 30.5%;
+}
+
+.multi{
+    position: absolute;
+    left: 68%;
+    top: 49.5%;
+    margin: 10px;
+    width: 4.5%;
+    padding: 4px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+    margin-left: 27.5%;
+}
