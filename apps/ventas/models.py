@@ -1,4 +1,3 @@
-from pyexpat import model
 from django.db import models
 from django.urls import reverse
 
@@ -72,10 +71,12 @@ class Pedido(models.Model):
     subtotal = models.PositiveIntegerField()
     descuento = models.PositiveIntegerField()
     total = models.PositiveIntegerField(null=True, blank=True)
-    creado_el = models.DateTimeField(auto_now_add=True)
+    creado_el = models.DateField(auto_now_add=True)
+
+    objects = VentasManager()
 
     def __str__(self):
-        return "Pedido: " + str(self.id)
+        return "Pedido: " + str(self.id) + ' - ' + 'Fecha: ' + str(self.creado_el) 
 
     
     

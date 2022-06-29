@@ -1,16 +1,24 @@
 from multiprocessing import context
 from urllib import request
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView,ListView, DeleteView, UpdateView, FormView, View, CreateView
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
-from .models import Carro, Producto, ProductoCarro
+from .models import Carro, Pedido, Producto, ProductoCarro
 
 from apps.users.models import Duenio, Vendedor
 
 from .forms import FacturaForm, ProductoRegisterForm
+
+import os
+from django.conf import settings
+from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from django.template import Context
 # Create your views here.
 
 #Views del apartado ventas
@@ -34,7 +42,8 @@ class ProductoCreateView(PermissionRequiredMixin, FormView):
 
 class ListaProductosViewTrg(PermissionRequiredMixin, ListView):
     template_name = 'ventas/ventas.html'
-    paginate_by = 3
+    model = Producto
+    paginate_by = 5
     ordering = 'nombre'
     permission_required = 'ventas.view_producto'
     permission_denied_message = 'No tienes permisos'
@@ -230,18 +239,95 @@ class FacturacionView(CreateView):
 
 #------------------------------------------Modulo de reportes--------------------------------------------------------
 
-class Reporte10ProductosMasVendidos(PermissionRequiredMixin, ListView):
-    template_name = 'ventas/reporteProducto.html'
-    permission_required = 'users.view_administrador'
-    permission_denied_message = 'No tienes permisos'
-    login_url = reverse_lazy('user_app:login')
+#Top 10 productos mas vendidos
+class Reporte10PMV(View):
+    def get(self, request, *args, **kwargs):
 
-    #Modulo de reporte 10 productos mas vendidos
+        sqlquery = ''' select vp.id, vp.nombre, sum(vpc.cantidad)
+            from ventas_productocarro vpc inner join ventas_producto vp on vpc.producto_id = vp.id
+            group by vp.id, vp.nombre
+            order by sum(vpc.cantidad) desc limit 10
+        '''
+
+        productocarro = ProductoCarro.objects.raw(sqlquery)
+
+
+        try:
+            template = get_template('ventas/reporteProductoPDF.html')
+            context = {'title':'Top 10 Productos mas vendidos', 'productocarro':productocarro}
+            html = template.render(context)
+            response = HttpResponse(content_type='application/pdf')
+            pisa.CreatePDF(
+                html, dest=response)
+            return response
+        except:
+            pass
+        return HttpResponseRedirect(reverse_lazy('veterinaria_app:home'))
+
+
+#Top 10 personas con mas compras
+class Reporte10PMC(View):
+    def get(self, request, *args, **kwargs):
+
+        sqlquery = ''' select 1 as id, count(id),pedido_por
+            from ventas_pedido
+            group by pedido_por
+            order by count(id) desc limit 10
+        '''
+
+        compradores = Pedido.objects.raw(sqlquery)
+
+
+        
+        template = get_template('ventas/reporteCompradorPDF.html')
+        context = {'title':'Top 10 Clientes con mas compras', 'compradores':compradores}
+        html = template.render(context)
+        response = HttpResponse(content_type='application/pdf')
+        # create a pdf
+        pisa_status = pisa.CreatePDF(
+           html, dest=response)
+        # if error then show some funny view
+        if pisa_status.err:
+           return HttpResponse('We had some errors <pre>' + html + '</pre>')
+        return response
+
+
+class ReporteRangoFechas(ListView):
+    template_name = 'ventas/reporteRangoFechas.html'
+    context_object_name = 'fechas'
+
     def get_queryset(self):
 
-        sqlquery = "select count(vp.id), vp.nombre, vp.id from ventas_productocarro vpc inner join ventas_producto vp on vpc.producto_id = vp.id group by vp.nombre, vp.id"
+        palabra_clave = self.request.GET.get("kword",'')
+
+        #fecha1
+        f1 = self.request.GET.get("fecha1",'')
+
+        #fecha2
+        f2 = self.request.GET.get("fecha2",'')
         
+        if f1 and f2:
+            return Pedido.objects.listar_fechas(palabra_clave, f1, f2)
 
-        return ProductoCarro.objects.raw(sqlquery)
+        else:
+            return Pedido.objects.listar_fechas_default(palabra_clave)
 
+
+#Reporte de ragos a pdf
+class ReporteRangoPDF(View):
+
+    def get(self, request, *args, **kwargs):
+
+        template = get_template('ventas/reporteRangoFechas.html')
+        context = {'title':'Rango Fechas'}
+        html = template.render(context)
+        response = HttpResponse(content_type='application/pdf')
+        # create a pdf
+        pisa_status = pisa.CreatePDF(
+           html, dest=response)
+        # if error then show some funny view
+        if pisa_status.err:
+           return HttpResponse('We had some errors <pre>' + html + '</pre>')
+        return response
+        
 
