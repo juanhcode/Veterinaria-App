@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Modificar Producto{% endblock title %}
+{% block content %}
+
+<h1>Lista de pedidos por fecha</h1>
+
+<p>
+    <form action="" method="get">
+        {% csrf_token %}
+        <label >
+            Desde:
+            <input type="date" name="fecha1" id="fecha1">
+        </label>
+        <br>
+        <label>
+            Hasta:
+            <input type="date" name="fecha2" id="fecha2">
+        </label>
+        <br>
+
+        <button type="submit">Consultar</button>
+    </form>
+    <a href="{% url 'ventas_app:reporteTresPDF' %}">Generar reporte</a>
+</p>
+
+<ul>
+    {% for f in fechas %}
+      <li>{{ f.pedido_por }} - {{ f.creado_el }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+
+    

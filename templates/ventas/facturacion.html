@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Facturacion
+{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="/static/styles/facturacion.css">
+<div class="container">
+    <div class="col1">
+        <p class="producto"> Productos en el carro</p>
+        <a class="actCarro" href="{% url 'ventas_app:MiCarro' %}">Actualizar carro</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in carro.productocarro_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ c.producto.nombre }}</td>
+                    <td>{{ c.rate }}</td>
+                    <td>{{ c.cantidad }}</td>
+                    <td>{{ c.subtotal }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th class="total">Total: {{ carro.total }} </th>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="col2">
+        <p class="factura" >Generar Factura </p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="campo">
+                <label>Id factura:</label>
+                {{ form.identificacion_factura }}
+            </div>
+            <div class="campo">
+                <label>Pedido por:</label>
+                {{ form.pedido_por }}
+            </div>
+            <div class="campo">
+                <label>Cedula:</label>
+                {{ form.cedula }}
+            </div>
+            <div class="campo">
+                <label>Telefono:</label>
+                {{ form.telefono }}
+            </div>
+            <div class="campo">
+                <label>Direccion:</label>
+                {{ form.direccion }}
+            </div>
+            <button type="submit">Continuar</button>
+            <img src="/static/assets/factura.png" alt="">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

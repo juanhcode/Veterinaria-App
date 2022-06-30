@@ -11,23 +11,63 @@
         </nav>
     </section>
      <table>
-          <tr class="propiedad">
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Cedula</th>
-            <th>Dirección</th>
-            <th>Telefonos</th>
-            <th class="celdaCrud"></th>
-         </tr>
-      
-          <tr id="valores">
-           <td>Alberto</td>
-           <td>Chupalo</td>
-           <td>123232232</td>
-           <td>Cra 23 12-12</td>
-           <td>3123458769-3125645432</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-         </tr>
-       </table>
-       <script src="{% static 'scripts/ventas.js' %}"></script>
-{% endblock content %}
+      <thead>
+
+        <tr class="propiedad">
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Cedula</th>
+          <th>Dirección</th>
+          <th>Telefono</th>
+          <th>Edad</th>
+          <th>Sexo</th>
+          <th class="celdaCrud"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        
+        {% for d in object_list %}
+        <tr id="valores">
+          <td>{{ d.nombre|truncatechars:20 }}</td>
+          <td>{{ d.apellidos|truncatechars:20 }}</td>
+          <td>{{ d.cedula|truncatechars:20 }}</td>
+          <td>{{ d.direccion|truncatechars:20 }}</td>
+          <td>{{ d.telefono|truncatechars:20 }}</td>
+          <td>{{ d.edad|truncatechars:20 }}</td>
+          <td>{{ d.sexo|truncatechars:20 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+      <script src="{% static 'scripts/ventas.js' %}"></script>
+
+      <!-- inicio de bloque de paginacion -->
+<div class="center">
+
+  <div class="pagination">
+    
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>  
+    {% endif %}
+    
+    {% for pagina in paginator.page_range %}
+    {% if pagina == page_obj.number  %}
+    <a class="active" href="?page={{ pagina }}">{{ pagina }}</a>
+    {% else %}
+    <a href="?page={{ pagina }}">{{ pagina }}</a> 
+    {% endif %}
+    {% endfor %}
+    
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>   
+    {% endif %}
+    
+    {% endif %}
+    
+  </div>
+</div>
+  <!-- FIN bloque de paginacion -->
+
+      {% endblock content %}

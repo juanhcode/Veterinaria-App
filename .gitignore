@@ -1,8 +1,13 @@
 secret.json
+.coverage
+coverage.xml
+.scannerwork
+.pytest_cache
 db.sqlite3
 apps/veterinario/migrations/*
 apps/ventas/migrations/*
 apps/users/migrations/*
+apps/prueba/migrations/*
 apps/users/__pycache__/*
 apps/ventas/__pycache__/*
 apps/veterinario/__pycache__/*

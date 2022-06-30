@@ -14,63 +14,62 @@
                         <h3>1.Datos de la mascota y dueño/responsable:</h3>
                         <div class="campo1">
                             <label>Nombre mascota</label>
-                            <input type="text">
+                            {{ form.mascota }}
                         </div>
                         
-                        
                         <div class="campo2">
-                            <label>Cedula dueño/responsable</label>
-                            <input type="text">
+                            <label>Veterinario</label>
+                            {{ form.veterinario }}
                         </div>
                         
                         <h3>2. Anamnesis:</h3>
                         <div class="areatext">
-                            <textarea placeholder="Descripcion de Anamnesis..." cols="100" rows="10"></textarea>
+                            {{ form.anamnesis }}
                         </div>
                         
                         <div class="campo3">
                             <label>Vacunas</label>
-                            <input type="text">
+                            {{ form.vacunas }}
                         </div>
                         
                         <h3>3. Examen fisico:</h3>
                         <div class="areatext">
-                            <textarea placeholder="Descripcion del examen fisico..." cols="100" rows="10"></textarea>
+                            {{ form.examen_fisico }}
                         </div>
 
                         <div class="campo4">
                             <label>Peso</label>
-                            <input type="number">
+                            {{ form.peso }}
                         </div>
 
                         <div class="campo4">
                             <label>Temperatura</label>
-                            <input type="number">
+                            {{ form.temperatura }}
                         </div>
 
                         <div class="campo4">
-                            <label>Frecuencia cardiaca</label>
-                            <input type="number">
+                        <label>Frecuencia cardiaca</label>
+                            {{ form.frecuencia_cardiaca }}
                         </div>
 
                         <h3>4. Detalles de la visita:</h3>
                         <div class="areatext">
-                            <textarea placeholder="Descripcion y detalles de la visita..." cols="100" rows="10"></textarea>
+                            {{ form.detalles_visita }}
                         </div>
 
                         <h3>5. Diagnostico:</h3>
                         <div class="areatext">
-                            <textarea placeholder="Descripcion del diagnostico..." cols="100" rows="10"></textarea>
+                            {{ form.diagnostico }}
                         </div>
 
                         <h3>6. Patología:</h3>
                         <div class="areatext">
-                            <textarea placeholder="Descripcion de la patología..." cols="100" rows="10"></textarea>
+                            {{ form.patologia }}                                    
                         </div>
 
                         <h3>7. Tratamiento:</h3>
                         <div class="areatext">
-                            <textarea placeholder="Descripcion del tratamiento..." cols="100" rows="10"></textarea>
+                            {{ form.tratamiento }}
                         </div>
                     </div>
 

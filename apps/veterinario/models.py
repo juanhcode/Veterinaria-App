@@ -16,6 +16,7 @@ class HistorialClinico(models.Model):
     tratamiento = models.TextField('Tratamiento')
     temperatura = models.PositiveIntegerField('Temperatura')
     detalles_visita = models.TextField('Detalles de la Visita')
+    fecha_creacion = models.DateField(auto_now_add=True)
     veterinario = models.ForeignKey(Veterinario, on_delete=models.CASCADE)
     mascota = models.ForeignKey(Mascota, on_delete=models.CASCADE)
 
@@ -26,4 +27,4 @@ class HistorialClinico(models.Model):
         verbose_name_plural = 'Historiales Clinicos'
 
     def __str__(self):
-        return str(self.id) + ' ' + self.mascota + ' ' + self.veterinario
+        return str(self.id) + ' ' + str(self.mascota) + ' ' + str(self.veterinario) + ' ' + 'Fecha de creacion: ' + str(self.fecha_creacion)

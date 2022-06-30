@@ -12,29 +12,62 @@
         </nav>
     </section>
      <table>
-          <tr class="propiedad">
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Tipo Mascota</th>
-            <th>Nombre Mascota</th>
-            <th>Edad</th>
-            <th>Enfermedad</th>
-            <th class="foto">Foto</th>
-            <th>Fecha Nacimiento</th>
-            <th class="celdaCrud"></th>
-         </tr>
-      
-          <tr id="valores">
-           <td>Motita</td>
-           <td>Perez</td>
-           <td>Perro</td>
-           <td>Motis</td>
-           <td>2 años</td>
-           <td>carvos</td>
-           <td><img class="imagen"src="https://images.ecestaticos.com/6uBjSmsBorRk6l_IHAxkBS1JCwE=/114x0:1997x1410/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F721%2F122%2F714%2F72112271431cb1078c3fe3e75ad5ab41.jpg" alt="" width="100" height="100"></td>
-           <td>2022-02-09</td>
-           <td class="celdaCrud"><a href="{% url 'ventas_app:ventas' %}"><i class="agregarIcono"></i></a></td>
-         </tr>
+      <thead>
+
+        <tr class="propiedad">
+          <th>Nombre Mascota</th>
+          <th>Veterinario</th>
+          <th>Detalles Visita</th>
+          <th>Vacunas</th>
+          <th>Peso</th>
+          <th>Temperatura</th>
+          <th>Frecuencia Cardiaca</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for h in object_list %}
+          
+        <tr id="valores">
+          <td>{{ h.mascota|truncatechars:10 }}</td>
+          <td>{{ h.veterinario|truncatechars:20 }}</td>
+          <td>{{ h.detalles_visita|truncatechars:20 }}</td>
+          <td>{{ h.vacunas|truncatechars:10 }}</td>
+          <td>{{ h.peso|truncatechars:10 }}</td>
+          <td>{{ h.temperatura|truncatechars:10 }}</td>
+          <td>{{ h.frecuencia_cardiaca|truncatechars:10 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
        </table>
        <script src="{% static 'scripts/ventas.js' %}"></script>
+
+<!-- inicio de bloque de paginacion -->
+<div class="center">
+
+  <div class="pagination">
+    
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>  
+    {% endif %}
+    
+    {% for pagina in paginator.page_range %}
+    {% if pagina == page_obj.number  %}
+    <a class="active" href="?page={{ pagina }}">{{ pagina }}</a>
+    {% else %}
+    <a href="?page={{ pagina }}">{{ pagina }}</a> 
+    {% endif %}
+    {% endfor %}
+    
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>   
+    {% endif %}
+    
+    {% endif %}
+    
+  </div>
+</div>
+  <!-- FIN bloque de paginacion -->
+
 {% endblock content %}

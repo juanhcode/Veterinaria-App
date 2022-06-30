@@ -12,10 +12,12 @@
     <div class="contenedor">
     
     <div class="center">
+        
 
         <form method="post">
             {% csrf_token %}
             <div class="titulo">
+                
 
             <h1>Registrar Administrador</h1>    
             </div>
@@ -65,7 +67,7 @@
                             {{ form.password1 }}
                         </div>
                         <div class="espacio">
-                            <label>Contraseña</label>
+                            <label>Repetir Contraseña</label>
                             {{ form.password2 }}
                         </div>
                         <div class="espacio">
@@ -83,7 +85,8 @@
                 </div>  
                 <div class="c2">
                     <button class="boton" type="submit"> Registrar</button>
-                </div>  
+                </div> 
+                
             </div>
             <div class="Ventanae" id="elimi">                           
                 <h1>El registro fue un éxito!</h1>
@@ -91,10 +94,29 @@
                   <button type="submit" id="Confirmar">Confirmar</button>
             </div>
             
+            {% if form.non_field_errors %}
+            <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              {{ form.non_field_errors }}
+              
+            </div>
+            {% endif %}
+                <div class="alert">
+            {% for i in form.errors %} <p>Error en el campo {{i}} </p>{% endfor %} 
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {% if form.errors %}
+                <p>Por favor, verifique si ha ingresado los datos de manera correcta</p>
+            </div>
+        {% endif %}
+        
+            
         </form>
         
     </div>
+    
 </div>
+
+
 
 </div>
 {% endblock content %}

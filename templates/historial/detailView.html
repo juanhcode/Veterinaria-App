@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+<!-- <link rel="stylesheet" href="{% static 'styles/historial.css' %}"> --> 
+<link rel="stylesheet" href="/static/styles/detailView.css">
+
+<script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
+    <section class="header">
+      <h2 class="ventas">Historial Clinico</h2>
+      <div class="content-fondo">
+        <div class="formulario">
+            <form method="post">
+                <h2 class="titulo">Vista Detalle</h2><br>
+                {% csrf_token %} 
+
+                <div id="formularioHistorial">
+                    <h3>1.Datos de la mascota y dueño/responsable:</h3>
+                    <div class="campo1">
+                        <label>Nombre mascota:</label>
+                        
+                    </div>
+                    
+                    
+                    <div class="campo2">
+                        <label>Cedula dueño/responsable:</label>
+                    </div>
+                    
+                    <h3>2. Anamnesis:</h3>
+                    <div class="areatext">
+                      <p></p>
+                    </div>
+                    
+                    <div class="campo3">
+                        <label>Vacunas:</label>
+                    </div>
+                    
+                    <h3>3. Examen fisico:</h3>
+                    <div class="areatext">
+                    </div>
+
+                    <div class="campo4">
+                        <label>Peso:</label>
+                    </div>
+
+                    <div class="campo4">
+                        <label>Temperatura:</label>
+                    </div>
+
+                    <div class="campo4">
+                        <label>Frecuencia cardiaca:</label>
+                    </div>
+
+                    <h3>4. Detalles de la visita:</h3>
+                    <div class="areatext">
+                    </div>
+
+                    <h3>5. Diagnostico:</h3>
+                    <div class="areatext">
+                    </div>
+
+                    <h3>6. Patología:</h3>
+                    <div class="areatext">
+                    </div>
+
+                    <h3>7. Tratamiento:</h3>
+                    <div class="areatext">
+                    </div>
+                </div>
+
+                {% for i in form.errors %} {{i}} {% endfor %} 
+                {% if form.errors %}
+                <p>error!</p>
+                {% endif %}
+
+            
+            </form>
+        </div>
+
+    </div>
+    </section>
+    
+    
+{% endblock content %}

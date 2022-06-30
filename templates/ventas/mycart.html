@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Mi Carro
+{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="/static/styles/myCart.css">
+<div class="container">
+    <div class="row">
+        <p class="itemsCar">Items en mi carro <p>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in carro.productocarro_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ c.producto.nombre }}</td>
+                    <td>{{ c.rate }}</td>
+                    <td>{{ c.cantidad }}</td>
+                    <td>{{ c.subtotal }}</td>
+                    <td>
+                        <a class="mas" href="{% url 'ventas_app:EditarCarro' c.id %}?action=inc">+</a>
+                        <a class="menos" href="{% url 'ventas_app:EditarCarro' c.id %}?action=dcr">-</a>
+                        <a class="multi" href="{% url 'ventas_app:EditarCarro' c.id %}?action=rmv">x</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <td class="total1">
+                    <p class="total">Total</p>
+                    <p class="carroTotal">{{ carro.total }}</p>
+                    {% if carro.productocarro_set.all %}
+                    <p class="vaciarCarro"><a href="{% url 'ventas_app:VaciarCarro' %}">Vaciar Carro</a></p>
+                    {% endif %}
+                </td>
+                {% if carro.productocarro_set.all %}
+                <td class="generar">
+                    <p class="generarFac"><a href="{% url 'ventas_app:Facturacion' %}">Generar Factura</a></p>
+                </td>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

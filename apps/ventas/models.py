@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from apps.users.models import Vendedor, Duenio
 
@@ -27,15 +28,45 @@ class Producto(models.Model):
         return  str(self.id) + ' ' +self.nombre 
 
 
-class Factura(models.Model):
-
-    fecha = models.DateField('Fecha', auto_now_add=True)
-    total = models.PositiveIntegerField('Total factura')
-    duenio = models.ForeignKey(Duenio, on_delete=models.CASCADE)
-    producto = models.ManyToManyField(Producto)
+class Carro(models.Model):
+    cliente = models.ForeignKey(Vendedor, on_delete=models.SET_NULL, null=True, blank=True)
+    total = models.PositiveIntegerField()
+    created_at = models.DateTimeField('Fecha', auto_now_add=True)
 
     def __str__(self):
-        return  str(self.fecha) + ' / ' + str(self.id)
+        return "Carro: " + str(self.id) + ' - ' + "Fecha:" + str(self.created_at)
+
+
+class ProductoCarro(models.Model):
+    carro = models.ForeignKey(Carro, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE,  null=True, blank=True)
+    rate = models.PositiveIntegerField()
+    cantidad = models.PositiveIntegerField()
+    subtotal = models.PositiveIntegerField()
+
+    def __str__(self):
+        return "Carro: " + str(self.carro.id) + "Producto en carro" + str(self.id)
+
+
+class Pedido(models.Model):
+    carro = models.OneToOneField(Carro, on_delete=models.CASCADE)
+    identificacion_factura = models.CharField('Identificacion Factura', max_length=20, unique=True)
+    cedula = models.CharField('Cedula', max_length=10, unique=True)
+    telefono = models.CharField('Telefono', max_length=10,null=True, unique=True)
+    direccion = models.CharField('Direccion', max_length=30,)
+    pedido_por = models.CharField(max_length=100)
+    subtotal = models.PositiveIntegerField()
+    descuento = models.PositiveIntegerField()
+    total = models.PositiveIntegerField(null=True, blank=True)
+    creado_el = models.DateField(auto_now_add=True)
+
+    objects = VentasManager()
+
+    def __str__(self):
+        return "Pedido: " + str(self.id) + ' - ' + 'Fecha: ' + str(self.creado_el) 
+
+    
+    
 
 
    

@@ -14,56 +14,46 @@
 
                         <div class="campo">
                             <label>Nombre</label>
-                            <input class="nomalinp" type="text">
+                            {{ form.nombre }}
                         </div>
                         
                         
-                        <div class="campo2">
+                        <div class="campo">
                             <label>Raza</label>
-                            <input class="nomalinp" type="text">
+                            {{ form.raza }}
                         </div>
                         
                         <div class="campo">
                             <label>Especie</label>
-                            <input class="nomalinp" type="text">
+                            {{ form.especie }}
                         </div>
-                        
-                        <div class="campoRadio">
-                            <input type="radio" name="sexo" id="hembra" value="hembra">
-                            <label for="hembra">Hembra</label>
-                            <input type="radio" name="sexo" id="macho" value="macho">
-                            <label for="macho">Macho</label>
+                        <div class="campo">
+                            <label>Sexo</label>
+                            {{ form.sexo }}
+                        </div>
+                        <div class="campo">
+                            <label>Edad</label>
+                            {{ form.edad }}
                         </div>
 
                         <div class="campo">
-                            <label>Edad</label>
-                            <input class="nomalinp" type="text">
-                        </div>
-
-                        <div class="campo2">
                             <label>Color</label>
-                            <input class="nomalinp" type="text">
+                            {{ form.color }}
                         </div>
 
-                        <div class="campoRadio">
+                        <div class="campo">
                             <label>¿Castrado?</label>
-                            <input type="radio" name="castrado" id="si" value="si">
-                            <label for="si">Si</label>
-                            <input type="radio" name="castrado" id="no" value="no">
-                            <label for="no">No</label>
+                            {{ form.castrado }}
                         </div>
 
-                        <div class="campoRadio">
-                            <input type="radio" name="estado" id="vivo" value="vivo">
-                            <label for="vivo">Vivo</label>
-                            <input type="radio" name="estado" id="muerto" value="muerto">
-                            <label for="muerto">Muerto</label>
-                            
+                        <div class="campo">
+                            <label>Estado</label>
+                            {{ form.estado }}
                         </div>
                         
                         <div class="campo3">
                             <label>Cedula/Responsable</label>
-                            <input class="nomalinp" type="number">
+                            {{ form.duenio }}
                         </div>
                         
                     </div>

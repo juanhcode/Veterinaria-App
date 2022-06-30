@@ -1,29 +1,40 @@
-from email.headerregistry import Group
+from tkinter import Widget
 from django import forms
 from django.forms import Textarea, TextInput, NumberInput
 
-from apps.users.models import Vendedor
-from .models import Producto
+from .models import Producto, Pedido
 
 
 class ProductoRegisterForm(forms.ModelForm):
-    '''
-    def __init__(self, *args, **kwargs):
-        self.fields['vendedor'].queryset = Vendedor.objects.all()'''
-
-    #vendedor = forms.ModelChoiceField(queryset=Vendedor.objects.all())
 
     class Meta:
         model = Producto
         fields = ('identificacion','nombre', 'descripcion', 'precio', 'iva', 'stock', 'vendedor')
         widgets = {
-            'identificacion':NumberInput(),
-            'nombre': TextInput(),
-            'descripcion': Textarea(attrs={'cols': 20, 'rows': 2, 'style':'resize:none;', 'id':'descripcionInput'}),
-            'precio': NumberInput(),
-            'iva': NumberInput(),
-            'stock': NumberInput(),
+            'identificacion':forms.NumberInput(),
+            'nombre': forms.TextInput(),
+            'descripcion': forms.Textarea(attrs={'cols': 20, 'rows': 2, 'style':'resize:none;', 'id':'descripcionInput'}),
+            'precio': forms.NumberInput(),
+            'iva': forms.NumberInput(),
+            'stock': forms.NumberInput(),
             'vendedor': forms.Select()
         }
 
 
+class FacturaForm(forms.ModelForm):
+    class Meta:
+        model = Pedido
+        fields = (
+            'identificacion_factura',
+            'pedido_por',
+            'cedula',
+            'telefono',
+            'direccion'
+        )
+        widgets = {
+            'identificacion_factura':forms.TextInput(),
+            'pedido_por': forms.TextInput(),
+            'cedula': forms.NumberInput(),
+            'telefono': forms.NumberInput(),
+            'direccion': forms.TextInput(),
+        }

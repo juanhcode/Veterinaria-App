@@ -17,12 +17,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     nombre = models.CharField('Nombre', max_length=20,null=True)
     apellidos = models.CharField('Apellidos', max_length=50,null=True)
-    cedula = models.CharField('Cedula', max_length=12, unique=True)
+    cedula = models.CharField('Cedula', max_length=10, unique=True)
     fecha_ingreso = models.DateField('Fecha de Ingreso', null=True)
     edad = models.PositiveIntegerField('Edad',null=True)
     sexo = models.CharField('Sexo', choices=GENERO,max_length=1,null=True)
-    correo = models.EmailField('Correo Electronico',null=True)
-    telefono = models.CharField('Telefono', max_length=10,null=True)
+    correo = models.EmailField('Correo Electronico',null=True, unique=True)
+    telefono = models.CharField('Telefono', max_length=10,null=True, unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
 
@@ -80,6 +80,7 @@ class Duenio(models.Model):
     cedula = models.CharField('Cedula',max_length=10, unique=True)
     edad = models.PositiveIntegerField('Edad')
     sexo = models.CharField('Sexo', max_length=1, choices=GENERO)
+    direccion = models.CharField('Direccion', max_length=30, blank=False)
 
     class Meta:
         db_table = 'Duenios'
@@ -119,4 +120,4 @@ class Mascota(models.Model):
         verbose_name_plural = 'Mascotas'
 
     def __str__(self):
-        return self.nombre + ' ' + self.especie
+        return self.nombre

@@ -57,7 +57,8 @@ INSTALLED_APPS = [
     #Apps
     'apps.users',
     'apps.veterinario',
-    'apps.ventas'
+    'apps.ventas',
+    'apps.prueba',
 ]
 
 MIDDLEWARE = [
@@ -105,6 +106,12 @@ DATABASES = {
         'DATABASE_PORT' : '5432',
     }
 }
+
+DATABASE_ROUTERS = [
+    'database_routers.auth_router.AuthRouter',
+    'database_routers.apps_router.AppsRouter',
+    'database_routers.prueba_router.PruebaRouter'
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

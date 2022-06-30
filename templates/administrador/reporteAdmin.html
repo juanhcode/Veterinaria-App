@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Dashboard
+{% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/Administrador/botones.css' %}">
+<div class="contenedor">
+
+        <div class="contenedor-botones">
+            <a href="{% url 'ventas_app:reporteUnoPDF' %}" class="boton">Reporte 10 productos mas Vendidos</a>
+            <a href="{% url 'ventas_app:reporteDosPDF' %}" class="boton">Reporte clientes con mayor facturacion</a>
+            <a href="{% url 'ventas_app:reporteTres' %}" class="boton">Reporte ventas por rango de fechas</a>
+        </div>
+    </div>
+
+{% endblock content %}
