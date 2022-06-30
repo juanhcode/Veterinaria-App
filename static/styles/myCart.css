@@ -54,21 +54,6 @@ tr,td{
 tr .total1{
     font-size: 20px;
     font-weight: bold;
-<<<<<<< HEAD
-    position: absolute;
-    left: 43.5%;
-    top: 49%;
-}
-
-.carroTotal{
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    left: 51.2%;
-    top: 42%;
-}
-.vaciarCarro{
-=======
     position: relative;
     top: 30%;
     border-width: 0px;
@@ -76,7 +61,6 @@ tr .total1{
 } 
 tr .total{
     margin: 10px;
->>>>>>> a2992d547085b4fb065891aa94fe07c92af07afb
     font-size: 17px;
     position: fixed;
     left: 44.6%;

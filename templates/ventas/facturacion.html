@@ -40,8 +40,24 @@
         <form action="" method="post">
             {% csrf_token %}
             <div class="campo">
+                <label>Id factura:</label>
+                {{ form.identificacion_factura }}
+            </div>
+            <div class="campo">
                 <label>Pedido por:</label>
-                <input type="text">
+                {{ form.pedido_por }}
+            </div>
+            <div class="campo">
+                <label>Cedula:</label>
+                {{ form.cedula }}
+            </div>
+            <div class="campo">
+                <label>Telefono:</label>
+                {{ form.telefono }}
+            </div>
+            <div class="campo">
+                <label>Direccion:</label>
+                {{ form.direccion }}
             </div>
             <button type="submit">Continuar</button>
             <img src="/static/assets/factura.png" alt="">

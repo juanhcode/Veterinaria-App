@@ -7,8 +7,6 @@ urlpatterns = [
     path('formulario/',views.ProductoCreateView.as_view(),name='formulario'),
     path('update/<pk>/',views.ProductoUpdateView.as_view(),name='update'),
     path('delete/<pk>/',views.ProductoDeleteView.as_view(),name='delete'),
-    path('facturas/',views.FacturasView.as_view(),name='facturas'),
-    path('facturasFormulario/',views.FacturasFormularioView.as_view(),name='formularioFacturas'),
 
     path('add-to-cart-<int:pro_id>/',views.AgregarAlCarro.as_view(),name='agregarCarro'),
     path('my-cart/',views.CarroView.as_view(),name='MiCarro'),
