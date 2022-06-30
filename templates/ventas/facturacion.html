@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="/static/styles/facturacion.css">
 <div class="container">
     <div class="col1">
-        <p class="producto"> Productos en el carro</p>
+        <p class="producto"> Productos en el carro </p>
         <a class="actCarro" href="{% url 'ventas_app:MiCarro' %}">Actualizar carro</a>
         <table>
             <thead>
@@ -40,27 +40,27 @@
         <form action="" method="post">
             {% csrf_token %}
             <div class="campo">
-                <label>Id factura:</label>
+                <label class="idFactura">Id factura:</label>
                 {{ form.identificacion_factura }}
             </div>
             <div class="campo">
-                <label>Pedido por:</label>
+                <label class="pedidoP" >Pedido por:</label>
                 {{ form.pedido_por }}
             </div>
             <div class="campo">
-                <label>Cedula:</label>
+                <label class="cde">Cedula:</label>
                 {{ form.cedula }}
             </div>
             <div class="campo">
-                <label>Telefono:</label>
+                <label class="tele">Telefono:</label>
                 {{ form.telefono }}
             </div>
             <div class="campo">
-                <label>Direccion:</label>
+                <label class="direc">Direccion:</label>
                 {{ form.direccion }}
             </div>
             <button type="submit">Continuar</button>
-            <img src="/static/assets/factura.png" alt="">
+            <img class="imagen" src="/static/assets/factura.png" alt="">
         </form>
     </div>
 </div>
