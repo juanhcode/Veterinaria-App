@@ -108,10 +108,6 @@ DATABASES = {
     'database2':{
         'ENGINE':'django.db.backends.sqlite3',
         'NAME':'prueba_db',
-    },
-    'database3':{
-        'ENGINE':'django.db.backends.sqlite3',
-        'NAME':'prueba_db2',
     }
 }
 

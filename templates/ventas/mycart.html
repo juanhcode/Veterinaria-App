@@ -29,21 +29,21 @@
                     <td>
                         <a class="mas" href="{% url 'ventas_app:EditarCarro' c.id %}?action=inc">+</a>
                         <a class="menos" href="{% url 'ventas_app:EditarCarro' c.id %}?action=dcr">-</a>
-                        <a class="multi" href="{% url 'ventas_app:EditarCarro' c.id %}?action=rmv">X</a>
+                        <a class="multi" href="{% url 'ventas_app:EditarCarro' c.id %}?action=rmv">x</a>
                     </td>
                 </tr>
                 {% endfor %}
-                <p class="total1">
+                <td class="total1">
                     <p class="total">Total</p>
                     <p class="carroTotal">{{ carro.total }}</p>
                     {% if carro.productocarro_set.all %}
                     <p class="vaciarCarro"><a href="{% url 'ventas_app:VaciarCarro' %}">Vaciar Carro</a></p>
                     {% endif %}
-                </p>
+                </td>
                 {% if carro.productocarro_set.all %}
-                <tr>
+                <td class="generar">
                     <p class="generarFac"><a href="{% url 'ventas_app:Facturacion' %}">Generar Factura</a></p>
-                </tr>
+                </td>
                 {% endif %}
             </tbody>
         </table>

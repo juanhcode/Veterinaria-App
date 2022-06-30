@@ -35,7 +35,15 @@ class ProductoCreateView(PermissionRequiredMixin, FormView):
     #validacion de los datos
     def form_valid(self, form):
         
-        form.save()
+        Producto.objects.create(
+            identificacion = form.cleaned_data['identificacion'],
+            nombre = form.cleaned_data['nombre'],
+            descripcion = form.cleaned_data['descripcion'],
+            precio = form.cleaned_data['precio'],
+            iva = form.cleaned_data['iva'],
+            stock = form.cleaned_data['stock'],
+            vendedor = form.cleaned_data['vendedor'],
+        )
     
         return super(ProductoCreateView, self).form_valid(form)
     
