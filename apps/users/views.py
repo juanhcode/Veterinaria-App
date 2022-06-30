@@ -35,9 +35,11 @@ class ListViewAdministrador(PermissionRequiredMixin ,TemplateView):
     login_url = reverse_lazy('user_app:login')
 
 
-class HomeVerUsuarios(TemplateView):
-
+class HomeVerUsuarios(PermissionRequiredMixin, TemplateView):
     template_name = 'administrador/listado_usuarios_home.html'
+    permission_required = 'users.view_administrador'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
 
 #para crear superusuarios se utiliza el FormView ya que esta clase de usuarios es mas exigente
@@ -191,8 +193,11 @@ class LogoutView(View):
             )   
         )
 
-class ListViewReporteUsuarios(TemplateView):
+class ListViewReporteUsuarios(PermissionRequiredMixin, TemplateView):
     template_name = 'administrador/reporteAdmin.html'
+    permission_required = 'users.view_administrador'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
 
 class ListViewVerAdmins(PermissionRequiredMixin, ListView):

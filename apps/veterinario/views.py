@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView, FormView, ListView
+from django.views.generic import TemplateView, FormView, ListView, DetailView
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
@@ -15,9 +15,6 @@ from apps.users.models import Duenio, Mascota
 class ListViewVeterinario(LoginRequiredMixin, TemplateView):
     template_name = 'veterinaria/home.html'
     login_url = reverse_lazy('user_app:login')
-
-class ListViewLogin(TemplateView):
-    template_name = 'login/Inicio.html'
 
 class ListViewHistorial(PermissionRequiredMixin, ListView):
     template_name = 'historial/historial.html'
@@ -131,5 +128,15 @@ class CreateFormularioMascotas(PermissionRequiredMixin, FormView):
 
         return super(CreateFormularioMascotas, self).form_valid(form)
 
-class DetailViewHistorial(TemplateView):
+class DetailViewHistorial(PermissionRequiredMixin, DetailView):
     template_name = 'historial/detailView.html'
+    permission_required = 'users.view_historialclinico'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+    model = HistorialClinico
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(DetailViewHistorial, self).get_context_data(**kwargs)
+    #     context['historialClinico'] = HistorialClinico.objects.all()
+    #     return context
