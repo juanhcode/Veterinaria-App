@@ -3,6 +3,8 @@
 *{
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
+    overflow:visible;
+    word-wrap: inherit;
 }
 
 section{
@@ -11,8 +13,8 @@ section{
 
 /* --- ACTUALIZAR CARRO --- */
 .producto{
-    position: absolute;
-    top: 48%;
+    position: relative;
+    top: 58%;
     left: 36%;
     width: 200%;
     font-size: 25px;
@@ -20,7 +22,7 @@ section{
     font-weight: bold;
 }
 .actCarro{
-    position: absolute;
+    position: relative;
     top: 53%;
     left: 29%;
     width: 200%;
@@ -35,7 +37,7 @@ table{
     font-size: 18px;
     margin-top: 2%;
     border-radius: 12px;
-    position: absolute;
+    position: relative;
     left: 35%;
     top: 45%;
     margin-left: -100px;
@@ -69,15 +71,14 @@ tr,td{
 
 .col2 {
     font-size: 20px;
-    position: absolute;
-    left: 29%;
-    top: 190px;
+    position: relative;
+    left: -190%;
+    top: 10px;
 }
 
 .factura{
-    position: absolute;
-    left: 27%;
-    top: -68%;
+    position: relative;
+    left: -7%;
     font-weight: bold;
     font-size: 25px;
     margin: 25px;
@@ -98,6 +99,9 @@ button{
 }
 
 input{
+    position: relative;
+    left: 35%;
+    width: 100%;
     border: 1px solid #A2ABC2;
     background: #FFFFFF;
     width: 350px;
@@ -108,7 +112,7 @@ input{
 /* --- IMAGEN FACTURA --- */
 
 img{
-    position: absolute;
-    left: 118%;
+    position: relative;
+    left: 198%;
     top: -30%;
 }
