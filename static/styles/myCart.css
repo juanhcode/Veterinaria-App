@@ -74,20 +74,22 @@ tr .carroTotal{
     margin: 10px;
     font-size: 17px;
     position: relative;
-    top: -28.5%;
+    top: -32.5%;
     left: 450.9%;
 }
 tr .vaciarCarro{
     position: relative;
-    top: -63.5%; 
+    top: -67.1%; 
     left: 754.5%;
     font-size: 10px;
 
 }
  .vaciarCarro a{
+    width: 149%;
+    display: inline-flex;
     font-size: 15px;
     font-weight: normal;
-    color: #553CFB;    
+    color: #553CFB; 
 }
 
 .generar{
@@ -105,7 +107,7 @@ td .generarFac{
     border: 0px;
     position: relative;
     left: 120%;
-    top: 14%;
+    top: 16%;
 }
 td .generarFac a{
     color: aliceblue;
