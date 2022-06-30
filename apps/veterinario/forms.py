@@ -53,7 +53,7 @@ class HistorialRegisterForm(forms.ModelForm):
             'examen_fisico': forms.Textarea(attrs={'cols': 100, 'rows': 4, 'style':'resize:none;', 'id':'examen_fisicoInput'},),
             'frecuencia_cardiaca': forms.NumberInput(),
             'diagnostico': forms.Textarea(attrs={'cols': 100, 'rows': 4, 'style':'resize:none;', 'id':'diagnosticoInput'},),
-            'vacunas': forms.Textarea(attrs={'cols': 100, 'rows': 4, 'style':'resize:none;', 'id':'vacunasInput'},),
+            'vacunas': forms.TextInput(),
             'tratamiento': forms.Textarea(attrs={'cols': 100, 'rows': 4, 'style':'resize:none;', 'id':'tratamientoInput'},),
             'temperatura': forms.NumberInput(),
             'detalles_visita':forms.Textarea(attrs={'cols': 100, 'rows': 4, 'style':'resize:none;', 'id':'tratamientoInput'},),

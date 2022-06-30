@@ -85,21 +85,6 @@ class ProductoDeleteView(PermissionRequiredMixin, DeleteView):
 class Error403View(TemplateView):
     template_name = 'ventas/error403.html'
 
-class FacturasView(TemplateView):
-    template_name = 'ventas/facturas.html'
-
-class FacturasFormularioView(TemplateView):
-    template_name = 'ventas/formularioFactura.html'
-    # success_url = reverse_lazy('ventas_app:facturas')
-    # permission_required = 'ventas.add_factura'
-    # permission_denied_message = 'No tienes permisos'
-    # login_url = reverse_lazy('user_app:login')
-
-    # def form_valid(self, form):
-        
-    #     form.save()
-    
-    #     return super(FacturasFormularioView, self).form_valid(form)
 
 #------------------------------------------------Logica carrito de ventas/facturacion ----------------------------------
 
