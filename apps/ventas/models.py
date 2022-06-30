@@ -27,11 +27,6 @@ class Producto(models.Model):
     def __str__(self):
         return  str(self.id) + ' ' +self.nombre 
 
-    def get_pk(self):
-        return reverse('ventas_app:agregarcarro',
-            kwargs={'pk':self.id}
-        ) 
-
 
 class Factura(models.Model):
     numero_factura = models.PositiveBigIntegerField('Numero Factura', unique=True, default=0)

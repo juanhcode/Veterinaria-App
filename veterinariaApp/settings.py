@@ -57,7 +57,8 @@ INSTALLED_APPS = [
     #Apps
     'apps.users',
     'apps.veterinario',
-    'apps.ventas'
+    'apps.ventas',
+    'apps.prueba',
 ]
 
 MIDDLEWARE = [
@@ -101,10 +102,24 @@ DATABASES = {
         'NAME': get_secret('DB_NAME'),
         'USER' : get_secret('USER'),
         'PASSWORD' : get_secret('PASSWORD'),
-        'HOST' : get_secret('HOST'),
-        'DATABASE_PORT' : get_secret('PORT'),
+        'HOST' : 'localhost',
+        'DATABASE_PORT' : '5432',
+    },
+    'database2':{
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME':'prueba_db',
+    },
+    'database3':{
+        'ENGINE':'django.db.backends.sqlite3',
+        'NAME':'prueba_db2',
     }
 }
+
+DATABASE_ROUTERS = [
+    'database_routers.auth_router.AuthRouter',
+    'database_routers.apps_router.AppsRouter',
+    'database_routers.prueba_router.PruebaRouter'
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
