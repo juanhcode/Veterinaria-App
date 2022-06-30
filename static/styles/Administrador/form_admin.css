@@ -74,12 +74,13 @@
 }
 /* ---------------celda con el boton registrar---------- */
 .c2{
-    margin-top: 8em;
-    width: 100%;
-    margin-left: -30%;
+
+    /* margin-top: 8em;
+    /* width: 100%; */
+    /* margin-left: -30%; */
     
     /*border: 1px black solid;*/
-    /*background-color: yellow;*/
+    /* background-color: yellow; */
     
 }
 .c2 button
@@ -181,16 +182,15 @@ select{
 /* ---------------Boton Registrar---------- */
 .boton
 {
-    
-    height: 50px; /*alto*/
-    width: 300px; /*ancho*/
-    
+    position: relative;
+    left: -89%;
+    top: 51%;
+    height: 50px;
+    width: 300px;
     border: 3px solid rgb(0, 34, 109);
     border-radius: 10px;
     background-color: white;
     font-family: 'Poppins', Courier, monospace;
-    font-size: 24px;
-
     
 }
 
