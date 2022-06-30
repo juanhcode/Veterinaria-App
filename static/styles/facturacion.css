@@ -57,11 +57,12 @@ tr,td{
     text-align: center;
 }
 .total {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    position: absolute;
-    left: 52%;
-    top: 70%;
+    position: relative;
+    left: 79%;
+    top: 18%;
+    border: none;
 }
 
 /* --- GENERADOR DE FACTURA --- */

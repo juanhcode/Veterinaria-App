@@ -51,35 +51,39 @@ tr,td{
     text-align: center;
 }
 
-.total {
+tr .total1{
     font-size: 20px;
     font-weight: bold;
-    position: absolute;
-    left: 43.5%;
-    top: 42%;
-}
-
-.carroTotal{
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    left: 51.2%;
-    top: 42%;
-}
-.vaciarCarro{
+    position: relative;
+    top: 30%;
+    border-width: 0px;
+    border-top: 0px;
+} 
+tr .total{
+    margin: 10px;
     font-size: 17px;
-    position: absolute;
-    left: 60%;
-    top: 42%;
+    position: fixed;
+    left: 44.6%;
 }
-
-.vaciarCarro a{
+tr .carroTotal{
+    margin: 10px;
+    font-size: 17px;
+    position: fixed;
+    left: 51.9%;
+}
+tr .vaciarCarro a{
+    position:relative;
+    left: 535%;
+    font-size: 15px;
+    font-weight: normal;
     color: #553CFB;
 }
-
-.generarFac{
-    width: 12%;
-    padding: 15px;
+.generar{
+    border: 0px;
+}
+td .generarFac{
+    width: 160%;
+    padding: 8px;
     border-radius: 5px;
     font-style: normal;
     font-size: 20px;
@@ -87,22 +91,18 @@ tr,td{
     background-color: #553CFB;
     color: aliceblue;
     border: 0px;
-    position: absolute;
-    top: 51%;
-    left: 43%;
+    position: relative;
+    left: 120%;
+    top: 144%;
 }
-.generarFac a{
+td .generarFac a{
     color: aliceblue;
-}
+} 
 
 /* --- BOTONES DE MAS MENOS Y MULTI --- */
+
 .mas{
-    position: absolute;
-    left: 52%;
-    top: 49.5%;
-    margin: 10px;
-    width: 4.5%;
-    padding: 4px;
+    padding: 5px;
     border-radius: 5px;
     font-weight: bold;
     font-size: 20px;
@@ -110,16 +110,10 @@ tr,td{
     background-color: #553CFB;
     color: aliceblue;
     border: 0px;
-    margin-left: 33.5%;
 }
 
 .menos{
-    position: absolute;
-    left: 60%;
-    top: 49.5%;
-    margin: 10px;
-    width: 4.5%;
-    padding: 4px;
+    padding: 5px;
     border-radius: 5px;
     font-weight: bold;
     font-size: 20px;
@@ -127,16 +121,10 @@ tr,td{
     background-color: #553CFB;
     color: aliceblue;
     border: 0px;
-    margin-left: 30.5%;
 }
 
 .multi{
-    position: absolute;
-    left: 68%;
-    top: 49.5%;
-    margin: 10px;
-    width: 4.5%;
-    padding: 4px;
+    padding: 5px;
     border-radius: 5px;
     font-weight: bold;
     font-size: 20px;
@@ -144,5 +132,4 @@ tr,td{
     background-color: #553CFB;
     color: aliceblue;
     border: 0px;
-    margin-left: 27.5%;
 }
