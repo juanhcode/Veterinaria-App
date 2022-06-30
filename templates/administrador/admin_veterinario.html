@@ -77,16 +77,24 @@
                         {{ form.fecha_ingreso }}
                         </div>
 
-                        {% for i in form.errors %} {{i}} {% endfor %} 
                         {% if form.errors %}
-                        <p>error!</p>
+                        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                        <script src="/static/scripts/sweetAlert.js"></script>
+                        <div class="alertE" role="alert">
+                        <h4 id="mensajeE">Error! {% for i in form.errors %} {{i}} {% endfor %}</h4> 
+                      </div>
+                          
                         {% endif %}
                 </div>  
                 <div class="c2">
                         <button class="boton" type="submit"> Registrar</button>
                 </div>
             </div>
-        
+            <div class="Ventanae" id="elimi">                           
+                <h1>El registro fue un éxito!</h1>
+                  <br>
+                  <button type="submit" id="Confirmar">Confirmar</button>
+            </div>
         </form>
         
     </div>
