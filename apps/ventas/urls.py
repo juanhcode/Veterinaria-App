@@ -18,5 +18,4 @@ urlpatterns = [
     path('reporte1pdf/',views.Reporte10PMV.as_view(),name='reporteUnoPDF'),
     path('reporte2pdf/',views.Reporte10PMC.as_view(),name='reporteDosPDF'),
     path('reporte3pdf/',views.ReporteRangoFechas.as_view(),name='reporteTres'),
-    path('reporte3topdf/',views.ReporteRangoPDF.as_view(),name='reporteTresPDF'),
 ]
