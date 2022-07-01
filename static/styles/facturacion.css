@@ -14,7 +14,7 @@ section{
 /* --- ACTUALIZAR CARRO --- */
 .producto{
     position: relative;
-    top: 100%;
+    top: 50%;
     left: 36%;
     width: 200%;
     font-size: 25px;
@@ -23,7 +23,7 @@ section{
 }
 .actCarro{
     position: relative;
-    top: 100%;
+    top: 50%;
     left: 39%;
     width: 200%;
     font-size: 20px;
@@ -38,7 +38,7 @@ table{
     margin-top: 2%;
     border-radius: 12px;
     position: relative;
-    top: 25em;
+    top: 23em;
     left: 90%;
     margin-left: -100px;
     margin-top: 100px;
@@ -71,11 +71,13 @@ tr,td{
 
 /* --- GENERADOR DE FACTURA --- */
 
+
 .col2 {
     font-size: 20px;
     position: relative;
-    left: -190%;
+    left: -350%;
     top: 10px;
+    margin-top: 10px;
 }
 
 .factura{
@@ -84,12 +86,12 @@ tr,td{
     left: -7%;
     font-weight: bold;
     font-size: 25px;
-    margin: 25px;
+    margin: 10px;
 }
 
 button{
     position: absolute;
-    top: 63%;
+    top: 36%;
     left: 19%;
     margin: 20px;
     width: 40%;
@@ -114,11 +116,11 @@ label{
 } 
 .idFactura{
     position: absolute;
-    top: -14%;
+    top: -120px;
 }
 #id_identificacion_factura {
     position: absolute;
-    top: 15%;
+    top: 3%;
     left: 50%;
     margin: -13px;
     width: 320px;
@@ -134,7 +136,7 @@ label{
 }
 #id_pedido_por{
     position: absolute;
-    top: 24%;
+    top: 10%;
     left: 50%;
     margin: -13px;
     width: 320px;
@@ -146,11 +148,11 @@ label{
 }
 .cde{
     position: absolute;
-    top: 5%;
+    top: 2%;
 }
 #id_cedula{
     position: absolute;
-    top: 34%;
+    top: 17%;
     left: 50%;
     margin: -13px;
     width: 320px;
@@ -162,11 +164,11 @@ label{
 }
 .tele{
     position: absolute;
-    top: 15%;
+    top: 9%;
 }
 #id_telefono{
     position: absolute;
-    top: 42%;
+    top: 23%;
     left: 46%;
     width: 320px;
     height: 40px;
@@ -177,11 +179,11 @@ label{
 }
 .direc{
     position: absolute;
-    top: 26%;
+    top: 16%;
 }
 #id_direccion{
     position: absolute;
-    top: 53%;
+    top: 30%;
     left: 46%;
     width: 320px;
     height: 40px;

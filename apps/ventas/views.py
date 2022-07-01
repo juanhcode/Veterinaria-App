@@ -242,6 +242,9 @@ class FacturacionView(PermissionRequiredMixin, CreateView):
             return redirect('ventas_app:ventas')
         return super().form_valid(form)
 
+class FacturasView(TemplateView):
+    template_name = 'ventas/facturas.html'
+
 #------------------------------------------Fin Logica carrito de ventas/facturacion----------------------------------
 
 
