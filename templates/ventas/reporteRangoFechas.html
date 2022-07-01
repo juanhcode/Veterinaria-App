@@ -2,18 +2,18 @@
 {% load static%}
 {% block title %}Modificar Producto{% endblock title %}
 {% block content %}
-
+<link rel="stylesheet" href="/static/styles/Administrador/reporteRangoFechas.css">
 <h1>Lista de pedidos por fecha</h1>
 
 <p>
     <form action="" method="get">
         {% csrf_token %}
-        <label >
+        <label class="desde" >
             Desde:
             <input type="date" name="fecha1" id="fecha1">
         </label>
         <br>
-        <label>
+        <label class="hasta">
             Hasta:
             <input type="date" name="fecha2" id="fecha2">
         </label>
@@ -21,7 +21,6 @@
 
         <button type="submit">Consultar</button>
     </form>
-    <a href="{% url 'ventas_app:reporteTresPDF' %}">Generar reporte</a>
 </p>
 
 <ul>
