@@ -85,26 +85,14 @@ class ProductoDeleteView(PermissionRequiredMixin, DeleteView):
 class Error403View(TemplateView):
     template_name = 'ventas/error403.html'
 
-class FacturasView(TemplateView):
-    template_name = 'ventas/facturas.html'
-
-class FacturasFormularioView(TemplateView):
-    template_name = 'ventas/formularioFactura.html'
-    # success_url = reverse_lazy('ventas_app:facturas')
-    # permission_required = 'ventas.add_factura'
-    # permission_denied_message = 'No tienes permisos'
-    # login_url = reverse_lazy('user_app:login')
-
-    # def form_valid(self, form):
-        
-    #     form.save()
-    
-    #     return super(FacturasFormularioView, self).form_valid(form)
 
 #------------------------------------------------Logica carrito de ventas/facturacion ----------------------------------
 
-class AgregarAlCarro(TemplateView):
+class AgregarAlCarro(PermissionRequiredMixin, TemplateView):
     template_name = 'ventas/agregarCarro.html'
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -150,7 +138,12 @@ class AgregarAlCarro(TemplateView):
         return context 
 
 
-class EditarCarroView(View):
+class EditarCarroView(PermissionRequiredMixin, View):
+
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
     def get(self, request, *args, **kwargs):
         cp_id = self.kwargs['cp_id']
         action = request.GET.get("action")
@@ -196,8 +189,11 @@ class VaciarCarroView(View):
 
 
 
-class CarroView(TemplateView):
+class CarroView(PermissionRequiredMixin, TemplateView):
     template_name = 'ventas/mycart.html'
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -212,10 +208,14 @@ class CarroView(TemplateView):
         return context
 
 
-class FacturacionView(CreateView):
+class FacturacionView(PermissionRequiredMixin, CreateView):
     template_name = 'ventas/facturacion.html'
     form_class = FacturaForm
     success_url = reverse_lazy('ventas_app:ventas')
+
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -248,7 +248,12 @@ class FacturacionView(CreateView):
 #------------------------------------------Modulo de reportes--------------------------------------------------------
 
 #Top 10 productos mas vendidos
-class Reporte10PMV(View):
+class Reporte10PMV(PermissionRequiredMixin, View):
+
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
     def get(self, request, *args, **kwargs):
 
         sqlquery = ''' select vp.id, vp.nombre, sum(vpc.cantidad)
@@ -274,7 +279,12 @@ class Reporte10PMV(View):
 
 
 #Top 10 personas con mas compras
-class Reporte10PMC(View):
+class Reporte10PMC(PermissionRequiredMixin, View):
+
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
     def get(self, request, *args, **kwargs):
 
         sqlquery = ''' select 1 as id, count(id),pedido_por
@@ -300,9 +310,12 @@ class Reporte10PMC(View):
         return response
 
 
-class ReporteRangoFechas(ListView):
+class ReporteRangoFechas(PermissionRequiredMixin, ListView):
     template_name = 'ventas/reporteRangoFechas.html'
     context_object_name = 'fechas'
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
     def get_queryset(self):
 
@@ -322,20 +335,20 @@ class ReporteRangoFechas(ListView):
 
 
 #Reporte de ragos a pdf
-class ReporteRangoPDF(View):
+# class ReporteRangoPDF(View):
 
-    def get(self, request, *args, **kwargs):
+#     def get(self, request, *args, **kwargs):
 
-        template = get_template('ventas/reporteRangoFechas.html')
-        context = {'title':'Rango Fechas'}
-        html = template.render(context)
-        response = HttpResponse(content_type='application/pdf')
-        # create a pdf
-        pisa_status = pisa.CreatePDF(
-           html, dest=response)
-        # if error then show some funny view
-        if pisa_status.err:
-           return HttpResponse('We had some errors <pre>' + html + '</pre>')
-        return response
+#         template = get_template('ventas/reporteRangoFechas.html')
+#         context = {'title':'Rango Fechas'}
+#         html = template.render(context)
+#         response = HttpResponse(content_type='application/pdf')
+#         # create a pdf
+#         pisa_status = pisa.CreatePDF(
+#            html, dest=response)
+#         # if error then show some funny view
+#         if pisa_status.err:
+#            return HttpResponse('We had some errors <pre>' + html + '</pre>')
+#         return response
         
 

@@ -175,3 +175,47 @@ select{
     width: 260px; /*ancho*/
 }
 
+.alertE{
+    position: absolute;
+    width: 205px;
+    height: 36px;
+    vertical-align:middle;
+    border-radius: 10px;
+    top: 700px;
+    left: 319px;
+    background: rgba(209, 18, 18, 0.58);
+}
+#mensajeE{
+    position: absolute;
+    top: 8px;
+    left: 11px;
+}
+
+.Ventanae{
+    top: 230px;
+    background: #ffffff;
+    width: 28%;
+    color:rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 33px;
+    min-height: 200px;
+    border-radius: 22px;
+    position: absolute;
+    left: 40%;
+    border:1px solid rgb(0, 0, 0);
+    opacity:8;
+    transition: all 5s;
+    display: block;
+}
+
+#Confirmar{
+    padding: 1.5%;
+    margin-right: 4%;
+    font-size: 15px;
+    border: 2px var(--color-light);
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #553CFB;
+    color: aliceblue;
+}

@@ -7,8 +7,6 @@ urlpatterns = [
     path('formulario/',views.ProductoCreateView.as_view(),name='formulario'),
     path('update/<pk>/',views.ProductoUpdateView.as_view(),name='update'),
     path('delete/<pk>/',views.ProductoDeleteView.as_view(),name='delete'),
-    path('facturas/',views.FacturasView.as_view(),name='facturas'),
-    path('facturasFormulario/',views.FacturasFormularioView.as_view(),name='formularioFacturas'),
 
     path('add-to-cart-<int:pro_id>/',views.AgregarAlCarro.as_view(),name='agregarCarro'),
     path('my-cart/',views.CarroView.as_view(),name='MiCarro'),
@@ -20,5 +18,4 @@ urlpatterns = [
     path('reporte1pdf/',views.Reporte10PMV.as_view(),name='reporteUnoPDF'),
     path('reporte2pdf/',views.Reporte10PMC.as_view(),name='reporteDosPDF'),
     path('reporte3pdf/',views.ReporteRangoFechas.as_view(),name='reporteTres'),
-    path('reporte3topdf/',views.ReporteRangoPDF.as_view(),name='reporteTresPDF'),
 ]
