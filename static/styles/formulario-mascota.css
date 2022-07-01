@@ -34,7 +34,7 @@ input[type=number] { -moz-appearance:textfield; }
     height:500px; /*alto*/
     width:800px; /*ancho*/
     display: flex;
-    margin-left: 10%;
+    margin:auto;
     border-radius: 10px;
 }
 
@@ -42,11 +42,12 @@ input[type=number] { -moz-appearance:textfield; }
     width: 40%;
     margin: 10px;
     display: inline-block;
+    
 }
 
 .campo2{
     display: inline-block;
-    width: 35%;
+    width: 40%;
     margin: 10px;
 }
 
@@ -55,8 +56,49 @@ input[type=number] { -moz-appearance:textfield; }
     padding-left: 10px;
 }
 
+.campoEdad{
+    width: 40%;
+    margin: 10px;
+    display: inline-block;
+    margin-right: 6px;
+}
+.campoCastrado{
+    display: inline-block;
+    margin: 10px;
+    margin-right: 30px;
+}
+
+.campoCastrado select{
+    width: 130px;
+}
+
 label{
     padding-right: 10px;
+}
+
+.campo input{
+    border: 1px solid #A2ABC2;
+    background: #FFFFFF;
+    width: 150px;
+    padding-left: 8px;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.campoEdad input{
+    border: 1px solid #A2ABC2;
+    background: #FFFFFF;
+    width: 150px;
+    padding-left: 8px;
+    border-radius: 5px;
+    height: 40px;
+    margin-left: 13px;
+}
+
+select{
+    display: inline-block;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
 
