@@ -88,11 +88,13 @@
                 </div> 
                 
             </div>
+            {% if success %}
             <div class="Ventanae" id="elimi">                           
                 <h1>El registro fue un éxito!</h1>
                   <br>
-                  <button type="submit" id="Confirmar">Confirmar</button>
-            </div>
+                  <button id="Confirmar" onclick="cerrar()">Cerrar</button>
+            </div>  
+            {% endif %}
             
             {% if form.non_field_errors %}
             <div class="alert">
@@ -103,7 +105,7 @@
             {% endif %}
                 <div class="alert">
             {% for i in form.errors %} <p>Error en el campo {{i}} </p>{% endfor %} 
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <!-- <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
             {% if form.errors %}
                 <p>Por favor, verifique si ha ingresado los datos de manera correcta</p>
             </div>
@@ -116,7 +118,7 @@
     
 </div>
 
-
+<script src="{% static 'scripts/formulariosadmin.js' %}"></script>
 
 </div>
 {% endblock content %}
