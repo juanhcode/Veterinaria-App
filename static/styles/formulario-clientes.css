@@ -130,19 +130,26 @@ input{
 }
 
 .alertE{
-    position: absolute;
+    position: relative;
     width: 205px;
     height: 36px;
     vertical-align:middle;
     border-radius: 10px;
-    top: 700px;
-    left: 319px;
-    background: rgba(209, 18, 18, 0.58);
+    top: -4px;
+    left: 511px;
+    background: #f5c2c7;
+}
+#alet{
+    position: relative;
+    top: -1px;
+    left: 149px;
+    width: 40px;
+    height: 40px;
 }
 #mensajeE{
-    position: absolute;
-    top: 8px;
-    left: 11px;
+    position: relative;
+    top: -34px;
+    left: -53px;
 }
 
 .Ventanae{
