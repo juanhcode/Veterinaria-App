@@ -56,13 +56,16 @@
                         <img id="alet" src="/static/assets/alert.png"> <h4 id="mensajeE">Error! {% for i in form.errors %} {{i}} {% endfor %}</h4> 
                       </div>
                     {% endif %}
-
                     <button type="submit" class="btn">Guardar</button>
+
+                    {% if success %}
                     <div class="Ventanae" id="elimi">                           
                         <h1>El registro fue un éxito!</h1>
                           <br>
-                          <button type="submit" id="Confirmar">Confirmar</button>
-                    </div>
+                          <button id="Confirmar" onclick="cerrar()">Cerrar</button>
+                    </div>  
+                    {% endif %}
+                    
                 </form>
             </div>
 
@@ -72,6 +75,7 @@
         </div>
 </body>
 <script src="{% static 'scripts/formulariosVenta.js' %}"></script>
+<script src="{% static 'scripts/formulariosadmin.js' %}"></script>
 {% endblock content %}
 
 

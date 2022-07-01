@@ -88,11 +88,13 @@
                 </div> 
                 
             </div>
+            {% if success %}
             <div class="Ventanae" id="elimi">                           
                 <h1>El registro fue un éxito!</h1>
                   <br>
-                  <button type="submit" id="Confirmar">Confirmar</button>
-            </div>
+                  <button id="Confirmar" onclick="cerrar()">Cerrar</button>
+            </div>  
+            {% endif %}
             
             {% if form.non_field_errors %}
             <div class="alert1">
@@ -101,17 +103,6 @@
               
             </div>
             {% endif %}
-            {% for i in form.errors %}
-
-            
-
-            {% endfor %}
-                        
-            {% if form.errors %}
-                
-            </div>
-        {% endif %}
-        
             
         </form>
         
@@ -119,7 +110,7 @@
     
 </div>
 
-
+<script src="{% static 'scripts/formulariosadmin.js' %}"></script>
 
 </div>
 {% endblock content %}
