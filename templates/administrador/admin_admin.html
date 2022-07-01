@@ -79,7 +79,7 @@
                             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                             <script src="/static/scripts/sweetAlert.js"></script>
                             <div class="alertE" role="alert">
-                            <h4 id="mensajeE">Error! {% for i in form.errors %} {{i}} {% endfor %}</h4> 
+                            <img id="alet" src="/static/assets/alert.png"><h4 id="mensajeE">{% for i in form.errors %} {{i}} {% endfor %}</h4> 
                           </div>
                           {% endif %}
                 </div>  
@@ -95,17 +95,20 @@
             </div>
             
             {% if form.non_field_errors %}
-            <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              {{ form.non_field_errors }}
+            <div class="alert1">
+            <img id="alet" src="/static/assets/alert.png"><h4 id="mensajeE">{{ form.non_field_errors }}</h4>
+              
               
             </div>
             {% endif %}
-                <div class="alert">
-            {% for i in form.errors %} <p>Error en el campo {{i}} </p>{% endfor %} 
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {% for i in form.errors %}
+
+            
+
+            {% endfor %}
+                        
             {% if form.errors %}
-                <p>Por favor, verifique si ha ingresado los datos de manera correcta</p>
+                
             </div>
         {% endif %}
         
