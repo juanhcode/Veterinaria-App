@@ -5,6 +5,7 @@ app_name = 'ventas_app'
 urlpatterns = [
     path('inventario/',views.ListaProductosViewTrg.as_view(),name='ventas'),
     path('formulario/',views.ProductoCreateView.as_view(),name='formulario'),
+    path('facturas/',views.FacturasView.as_view(),name='facturas'),
     path('update/<pk>/',views.ProductoUpdateView.as_view(),name='update'),
     path('delete/<pk>/',views.ProductoDeleteView.as_view(),name='delete'),
 
@@ -18,5 +19,4 @@ urlpatterns = [
     path('reporte1pdf/',views.Reporte10PMV.as_view(),name='reporteUnoPDF'),
     path('reporte2pdf/',views.Reporte10PMC.as_view(),name='reporteDosPDF'),
     path('reporte3pdf/',views.ReporteRangoFechas.as_view(),name='reporteTres'),
-    path('reporte3topdf/',views.ReporteRangoPDF.as_view(),name='reporteTresPDF'),
 ]

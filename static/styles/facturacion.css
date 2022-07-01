@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
 *{
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     overflow:visible;
     word-wrap: inherit;
 }
-
 section{
     display:flex;
 }
-
 /* --- ACTUALIZAR CARRO --- */
 .producto{
     position: relative;
@@ -29,17 +26,16 @@ section{
     font-size: 20px;
     color: #553CFB;
 }
-
 /* --- ESTILOS DE LA TABLA --- */
-
 table{
     border-collapse: collapse;
     font-size: 18px;
     margin-top: 2%;
     border-radius: 12px;
     position: relative;
-    left: 35%;
-    top: 45%;
+    top: 25em;
+    top: 23em;
+    left: 90%;
     margin-left: -100px;
     margin-top: 100px;
 }
@@ -51,7 +47,6 @@ th{
     border-left: 0px;
  
 }
-
 tr{
     text-align:center;
 }
@@ -59,6 +54,7 @@ tr,td{
     text-align: center;
 }
 .total {
+    width: 875%;
     font-size: 18px;
     font-weight: bold;
     position: relative;
@@ -68,20 +64,27 @@ tr,td{
 }
 
 /* --- GENERADOR DE FACTURA --- */
+.col1{
+    height: 500px;
+}
 
 .col2 {
     font-size: 20px;
     position: relative;
-    left: -190%;
+    left: -350%;
     top: 10px;
+    margin-top: 10px;
+    height: 500px;
 }
 
 .factura{
     position: relative;
+    top: -9%;
     left: -7%;
     font-weight: bold;
     font-size: 25px;
     margin: 25px;
+    margin: 10px;
 }
 
 button{
@@ -97,11 +100,92 @@ button{
     border: 0px;
     margin-left: 35%;
 }
-
-input{
-    position: relative;
-    left: 35%;
-    width: 100%;
+label{
+    color: #757575;
+    text-align: left;
+    font-size: 18px;
+    padding: 40px !important;
+    margin-top: 100px;
+    height: 40px;
+    width: 200px;
+} 
+.idFactura{
+    position: absolute;
+    top: -14%;
+    top: -120px;
+}
+#id_identificacion_factura {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    margin: -13px;
+    width: 320px;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-size: 18px;
+    border: 1px solid #A2ABC2;
+} 
+.pedidoP{
+    position: absolute;
+    top: -9%;
+}
+#id_pedido_por{
+    position: absolute;
+    top: 101px;
+    left: 50%;
+    margin: -13px;
+    width: 320px;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-size: 18px;
+    border: 1px solid #A2ABC2;
+}
+.cde{
+    position: absolute;
+    top: 4%;
+}
+#id_cedula{
+    position: absolute;
+    top: 165px;
+    left: 50%;
+    margin: -13px;
+    width: 320px;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-size: 18px;
+    border: 1px solid #A2ABC2;
+}
+.tele{
+    position: absolute;
+    top: 17%;
+}
+#id_telefono{
+    position: absolute;
+    top: 217px;
+    left: 46%;
+    width: 320px;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-size: 18px;
+    border: 1px solid #A2ABC2;
+}
+.direc{
+    position: absolute;
+    top: 30%;
+}
+#id_direccion{
+    position: absolute;
+    top: 282px;
+    left: 46%;
+    width: 320px;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-size: 18px;
     border: 1px solid #A2ABC2;
     background: #FFFFFF;
     width: 350px;
@@ -110,9 +194,8 @@ input{
 }
 
 /* --- IMAGEN FACTURA --- */
-
-img{
-    position: relative;
-    left: 198%;
-    top: -30%;
+.imagen {
+    position: absolute;
+    left: 210%;
+    top: 30%;
 }

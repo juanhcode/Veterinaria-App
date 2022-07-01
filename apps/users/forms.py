@@ -77,13 +77,12 @@ class UserRegisterFormAdministrador(forms.ModelForm):
         elif len(self.cleaned_data['password1']) < 5:
             self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
 
-            #validacion si la contrasenia 2 es diferente a la 1
 
     def clean(self):
         cleaned_data = super(UserRegisterFormAdministrador, self).clean
         cedula = self.cleaned_data['cedula']
         telefono = self.cleaned_data['telefono']
-        
+        correo = self.cleaned_data['correo']
 
         if len(cedula) > 10:
             print('Entre en el if')
@@ -91,6 +90,12 @@ class UserRegisterFormAdministrador(forms.ModelForm):
 
         elif len(telefono) > 10:
             raise forms.ValidationError('El campo de telefono solo permite hasta 10 numeros')
+        
+        elif Administrador.objects.filter(cedula=cedula).exists():
+            raise forms.ValidationError("Esta cedula ya a sido registrada")
+
+        elif Administrador.objects.filter(correo=correo).exists():
+            raise forms.ValidationError("Este correo ya a sido registrado")
         
         return self.cleaned_data
 
