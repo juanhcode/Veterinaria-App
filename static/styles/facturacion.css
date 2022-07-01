@@ -14,7 +14,7 @@ section{
 /* --- ACTUALIZAR CARRO --- */
 .producto{
     position: relative;
-    top: 100%;
+    top: 58%;
     left: 36%;
     width: 200%;
     font-size: 25px;
@@ -23,8 +23,8 @@ section{
 }
 .actCarro{
     position: relative;
-    top: 100%;
-    left: 39%;
+    top: 53%;
+    left: 29%;
     width: 200%;
     font-size: 20px;
     color: #553CFB;
@@ -38,8 +38,8 @@ table{
     margin-top: 2%;
     border-radius: 12px;
     position: relative;
-    top: 25em;
-    left: 90%;
+    left: 35%;
+    top: 45%;
     margin-left: -100px;
     margin-top: 100px;
 }
@@ -59,13 +59,11 @@ tr,td{
     text-align: center;
 }
 .total {
-    width: 1060%;
     font-size: 18px;
     font-weight: bold;
     position: relative;
     left: 79%;
     top: 18%;
-    display: inline-block;
     border: none;
 }
 
@@ -80,7 +78,6 @@ tr,td{
 
 .factura{
     position: relative;
-    top: -6%;
     left: -7%;
     font-weight: bold;
     font-size: 25px;
@@ -88,9 +85,6 @@ tr,td{
 }
 
 button{
-    position: absolute;
-    top: 63%;
-    left: 19%;
     margin: 20px;
     width: 40%;
     padding: 5px;
@@ -103,97 +97,22 @@ button{
     border: 0px;
     margin-left: 35%;
 }
-label{
-    color: #757575;
-    text-align: left;
-    font-size: 18px;
-    padding: 40px !important;
-    margin-top: 100px !important;
-    height: 40px;
-    width: 200px;
-} 
-.idFactura{
-    position: absolute;
-    top: -14%;
-}
-#id_identificacion_factura {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    margin: -13px;
-    width: 320px;
-    height: 40px;
-    border-radius: 8px;
-    padding-left: 16px;
-    font-size: 18px;
+
+input{
+    position: relative;
+    left: 35%;
+    width: 100%;
     border: 1px solid #A2ABC2;
-} 
-.pedidoP{
-    position: absolute;
-    top: -5%;
+    background: #FFFFFF;
+    width: 350px;
+    border-radius: 5px;
+    margin-left: 5px;
 }
-#id_pedido_por{
-    position: absolute;
-    top: 24%;
-    left: 50%;
-    margin: -13px;
-    width: 320px;
-    height: 40px;
-    border-radius: 8px;
-    padding-left: 16px;
-    font-size: 18px;
-    border: 1px solid #A2ABC2;
-}
-.cde{
-    position: absolute;
-    top: 5%;
-}
-#id_cedula{
-    position: absolute;
-    top: 34%;
-    left: 50%;
-    margin: -13px;
-    width: 320px;
-    height: 40px;
-    border-radius: 8px;
-    padding-left: 16px;
-    font-size: 18px;
-    border: 1px solid #A2ABC2;
-}
-.tele{
-    position: absolute;
-    top: 15%;
-}
-#id_telefono{
-    position: absolute;
-    top: 42%;
-    left: 46%;
-    width: 320px;
-    height: 40px;
-    border-radius: 8px;
-    padding-left: 16px;
-    font-size: 18px;
-    border: 1px solid #A2ABC2;
-}
-.direc{
-    position: absolute;
-    top: 26%;
-}
-#id_direccion{
-    position: absolute;
-    top: 53%;
-    left: 46%;
-    width: 320px;
-    height: 40px;
-    border-radius: 8px;
-    padding-left: 16px;
-    font-size: 18px;
-    border: 1px solid #A2ABC2;
-}
+
 /* --- IMAGEN FACTURA --- */
 
-.imagen {
-    position: absolute;
-    left: 210%;
-    top: 30%;
+img{
+    position: relative;
+    left: 198%;
+    top: -30%;
 }
