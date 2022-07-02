@@ -104,10 +104,6 @@ DATABASES = {
         'PASSWORD' : get_secret('PASSWORD'),
         'HOST' : 'localhost',
         'DATABASE_PORT' : '5432',
-    },
-    'database2':{
-        'ENGINE':'django.db.backends.sqlite3',
-        'NAME':'prueba_db',
     }
 }
 

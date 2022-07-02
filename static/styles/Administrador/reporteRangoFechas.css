@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+label{
+    margin: 10px;
+}
+.desde{
+    position: relative;
+    top: 6em;
+    left: 16em;
+}
+
+.hasta{
+    position: relative;
+    top: 7em;
+    left: 16em;
+}
+
+input{
+    width: 192px;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-size: 18px;
+    border: 1px solid #A2ABC2;
+}
+
+button{
+    width: 15%;
+    padding: 5px;
+    border-radius: 5px;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+    margin-left: 35%;
+    position: relative;
+    top: 9em;
+    left: 2em;
+}
+
+table{
+    border-collapse: collapse;
+    width: 400px;
+    position: relative;
+    top: 12em;
+    text-align: center;
+}
+th{
+    border: 2px solid black;
+    border-left: 0px;
+    border-right: 0px;
+}
+td
+{
+    border: 1px solid #A2ABC2;
+    border-left: 0px;
+    border-right: 0px;
+}
+/* .encabezadoFec{
+    font-weight: bold;
+    width: 100%;
+}
+
+.tituloFecha{
+    font-weight: bold;
+}
+
+li{
+    display: flex;
+}
+.rangoFechas{
+    position: relative;
+    top: 50%;
+} */
