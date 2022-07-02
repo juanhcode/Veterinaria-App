@@ -168,3 +168,10 @@ text {
     background-color: #553CFB;
     color: aliceblue;
 }
+
+.mensaje_exitoso{
+    background-color: #D1E7DD;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}

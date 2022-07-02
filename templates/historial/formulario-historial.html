@@ -10,6 +10,14 @@
                     <h2 class="titulo">Registrar Historia Clinica</h2><br>
                     {% csrf_token %} 
 
+                    {% if messages %}
+                    <div class="mensaje_exitoso">
+                        {% for m in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ m }}</li>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
                     <div id="formularioHistorial">
                         <h3>1.Datos de la mascota y veterinario:</h3>
                         <div class="campo1">
@@ -83,11 +91,6 @@
                     {% endif %}
 
                     <button type="submit" class="btn">Guardar</button>
-                    <div class="Ventanae" id="elimi">                           
-                        <h1>El registro fue un éxito!</h1>
-                          <br>
-                          <button type="submit" id="Confirmar">Confirmar</button>
-                    </div>
                 </form>
             </div>
 

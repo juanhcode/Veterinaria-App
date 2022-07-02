@@ -29,6 +29,7 @@ input[type=number] { -moz-appearance:textfield; }
     margin-right: 0px;
 }
 
+
 .content-fondo
 {
     height:500px; /*alto*/
@@ -218,4 +219,11 @@ select{
     font-family: 'Poppins', sans-serif;
     background-color: #553CFB;
     color: aliceblue;
+}
+
+.mensaje_exitoso{
+    background-color: #D1E7DD;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
 }

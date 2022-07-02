@@ -10,6 +10,15 @@
             <a class="agregar" href="{% url 'veterinaria_app:formulario-cliente' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
         </nav>
     </section>
+    <form method="get">
+      <div class="buscar">
+          {% csrf_token %}
+          <input type="text" name="kword" class="t" id="kword" placeholder="Ingrese la cedula">
+          <button class="lupa" type="submit"><img src="/static/assets/lupa.png"></button> 
+        </div>
+      </form>
+    <br>
+    <br>
      <table>
       <thead>
 
@@ -37,6 +46,14 @@
           <td>{{ d.edad|truncatechars:20 }}</td>
           <td>{{ d.sexo|truncatechars:20 }}</td>
         </tr>
+
+
+        {% empty %}
+                <div class="alert">
+                  <span span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                  No se han encontrado resultados.
+                </div>
+
         {% endfor %}
       </tbody>
       </table>

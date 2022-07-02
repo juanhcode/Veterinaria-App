@@ -169,7 +169,12 @@ input{
     top: 8px;
     left: 11px;
 }
-
+.mensaje_exitoso{
+    background-color: #D1E7DD;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
 .Ventanae{
     top: 230px;
     background: #ffffff;
