@@ -231,7 +231,6 @@ class FacturacionView(PermissionRequiredMixin, CreateView):
     template_name = 'ventas/facturacion.html'
     form_class = FacturaForm
     success_url = reverse_lazy('ventas_app:ventas')
-
     permission_required = 'ventas.view_producto'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
