@@ -20,6 +20,18 @@ class ProductoRegisterForm(forms.ModelForm):
             'vendedor': forms.Select()
         }
 
+    def clean(self):
+        cleaned_data = super(ProductoRegisterForm, self).clean
+        identificacion = self.cleaned_data['identificacion']
+        
+        if Producto.objects.filter(identificacion=identificacion).exists():
+            print('entre en el if vendedor')
+            raise forms.ValidationError("Este id ya a sido registrado")
+        
+        return self.cleaned_data
+
+        
+
 
 class FacturaForm(forms.ModelForm):
     class Meta:

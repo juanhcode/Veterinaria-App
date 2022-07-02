@@ -88,13 +88,10 @@
                                     
                                     
                                     {% if form.errors %}
-                            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                            <script src="/static/scripts/sweetAlert.js"></script>
-                            <div class="alertE" role="alert">
-                                <img id="alet" src="/static/assets/alert.png"><h4 id="mensajeE">Error! {% for i in form.errors %} {{i}} {% endfor %}</h4> 
-                          </div>
+                                    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                    <script src="/static/scripts/sweetAlert.js"></script>
                           
-                        {% endif %}
+                                    {% endif %}
                             </div>  
                             <div class="c2">
                                 <button class="boton" type="submit"> Registrar</button>

@@ -305,10 +305,10 @@ class Reporte10PMC(PermissionRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
 
-        sqlquery = ''' select 1 as id, count(id),pedido_por
-            from ventas_pedido
-            group by pedido_por
-            order by count(id) desc limit 10
+        sqlquery = ''' select count(cedula), pedido_por, 1 as id
+        from ventas_pedido
+        group by cedula, pedido_por
+        order by count(cedula) desc limit 10
         '''
 
         compradores = Pedido.objects.raw(sqlquery)
