@@ -32,10 +32,12 @@ table{
    
 }
 th{
+    
     padding: 10px;
     text-align:center;
     border-right: 0px;
     border-left: 0px;
+ 
 }
 
 tr{
@@ -61,37 +63,40 @@ tr .total1{
     top: 30%;
     border-width: 0px;
     border-top: 0px;
-    left: -220px;
 } 
 tr .total{
+    margin: 10px;
     font-size: 17px;
     position: relative;
-    left: 229.6%;
+    left: 290.6%;
 }
 tr .carroTotal{
+    margin: 10px;
     font-size: 17px;
     position: relative;
     top: -32.5%;
-    left: 328.9%;
+    left: 450.9%;
 }
 tr .vaciarCarro{
     position: relative;
-    top: -63.5%; 
+    top: -67.1%; 
     left: 754.5%;
     font-size: 10px;
 
 }
  .vaciarCarro a{
+    width: 149%;
+    display: inline-flex;
     font-size: 15px;
     font-weight: normal;
-    color: #553CFB;    
+    color: #553CFB; 
 }
 
 .generar{
     border: 0px;
 }
 td .generarFac{
-    width: 200%;
+    width: 160%;
     padding: 8px;
     border-radius: 5px;
     font-style: normal;
@@ -102,7 +107,7 @@ td .generarFac{
     border: 0px;
     position: relative;
     left: 120%;
-    top: 14%;
+    top: 16%;
 }
 td .generarFac a{
     color: aliceblue;

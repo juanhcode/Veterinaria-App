@@ -1,0 +1,29 @@
+.error{
+    margin-top: 15%;
+    width: 100%;
+    height: 330px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+}
+
+.texto a{
+    color: #7380ec;
+}
+
+.imagen-content
+{
+    height:300px; /*alto*/
+    width: 300px;
+    margin-top: 0;
+    margin-right: 0;
+    
+}
+
+.imagen
+{
+    height:300px; /*alto*/
+    width: 260px; /*ancho*/
+}

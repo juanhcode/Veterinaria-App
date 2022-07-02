@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles/home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/error403.css">
+    <title>Error</title>
 </head>
 <body>
-    <h1>No esta autorizado para acceder a este modulo.</h1>
+    <div class="error">
+            <div class="texto">
+                <h1>No esta autorizado para acceder a este modulo...</h1><br>
+                <h2>Por favor, comuniquese con el administrador o un superior. </h2><br><br>
+                <a href="{% url 'veterinaria_app:home' %}">Volver al Inicio de la Veterinaria</a>
+            </div>
+    
+            <div class="imagen-content">
+                <img class="imagen" src="/static/assets/Sad-Cat.png" alt="Gato tristón">
+            </div>
+    </div>
+    
 </body>
 </html>
+
