@@ -21,7 +21,29 @@ class ResponsableRegisterForm(forms.ModelForm):
             'edad': forms.NumberInput(),
             'sexo': forms.Select(),
             'direccion': forms.TextInput()
-        }
+        } 
+
+    def clean(self):
+        cleaned_data = super(ResponsableRegisterForm, self).clean
+        cedula = self.cleaned_data['cedula']
+        telefono = self.cleaned_data['telefono']
+
+        if len(cedula) > 10:
+            print('Entre en el if')
+            raise forms.ValidationError('El campo de cedula solo permite hasta 10 numeros')
+
+        elif len(telefono) > 10:
+            raise forms.ValidationError('El campo de telefono solo permite hasta 10 numeros')
+
+        elif Duenio.objects.filter(cedula=cedula).exists():
+            print('entre en el if vendedor')
+            raise forms.ValidationError("Esta cedula ya a sido registrada")
+        
+        elif Duenio.objects.filter(telefono=telefono).exists():
+            print('entre en el if vendedor')
+            raise forms.ValidationError("Este telefono ya a sido registrado")
+        
+        return self.cleaned_data
 
 
 class MascotaRegisterForm(forms.ModelForm):

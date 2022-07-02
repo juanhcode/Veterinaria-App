@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import authenticate
-from .models import Administrador, Vendedor, Veterinario
+from .models import Administrador, User, Vendedor, Veterinario
 
 from django.forms import DateInput, EmailInput, NumberInput, TextInput
 
@@ -69,35 +69,40 @@ class UserRegisterFormAdministrador(forms.ModelForm):
             'fecha_ingreso': forms.DateInput(),
         }
 
-    #validacion si la contrasenia 2 es diferente a la 1
-    def clean_password2(self):
-        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-            self.add_error('password2','Las contrasenias no son iguales')
-        #Verificando que la contrasenia tenga mas de 5 caracteres    
-        elif len(self.cleaned_data['password1']) < 5:
-            self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
-
-
     def clean(self):
         cleaned_data = super(UserRegisterFormAdministrador, self).clean
         cedula = self.cleaned_data['cedula']
         telefono = self.cleaned_data['telefono']
+        password1 = self.cleaned_data['password1']
+        password2 = self.cleaned_data['password2']
         correo = self.cleaned_data['correo']
 
-        if len(cedula) > 10:
+        if password1 != password2:
+            raise forms.ValidationError('Las contrasenias no son iguales')
+
+        #Verificando que la contrasenia tenga mas de 5 caracteres    
+        elif len(password1) < 5:
+            raise forms.ValidationError('Las contrasenias deben tener mas de 5 digitos')
+
+        elif len(cedula) > 10:
             print('Entre en el if')
             raise forms.ValidationError('El campo de cedula solo permite hasta 10 numeros')
 
         elif len(telefono) > 10:
             raise forms.ValidationError('El campo de telefono solo permite hasta 10 numeros')
-        
-        elif Administrador.objects.filter(cedula=cedula).exists():
-            raise forms.ValidationError("Esta cedula ya a sido registrada")
 
-        elif Administrador.objects.filter(correo=correo).exists():
+        elif User.objects.filter(cedula=cedula).exists():
+            print('entre en el if vendedor')
+            raise forms.ValidationError("Esta cedula ya a sido registrada")
+        
+        elif User.objects.filter(correo=correo).exists():
             raise forms.ValidationError("Este correo ya a sido registrado")
+            
+        elif User.objects.filter(telefono=telefono).exists():
+            raise forms.ValidationError("Este telefono ya a sido registrado")
         
         return self.cleaned_data
+
 
     
 class UserRegisterFormVendedor(forms.ModelForm):
@@ -108,7 +113,7 @@ class UserRegisterFormVendedor(forms.ModelForm):
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder':'Constraseña'
+                'placeholder':'Contraseña'
             }
         )
     )
@@ -118,7 +123,7 @@ class UserRegisterFormVendedor(forms.ModelForm):
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder':'Repetir Constraseña'
+                'placeholder':'Repetir Contraseña'
             }
         )
     )
@@ -137,41 +142,39 @@ class UserRegisterFormVendedor(forms.ModelForm):
         widget=forms.NumberInput(
         )
     )
-
-    # #validacion si la cedula ya esta registrada
-    # def clean_username(self):
-    #     cleaned_data = super(UserRegisterFormVendedor, self).clean
-    #     cedu = self.cleaned_data['cedula']
        
-
-    #     return self.cleaned_data
-
-    #validacion si la contrasenia 2 es diferente a la 1
-    def clean_password2(self):
-        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-            self.add_error('password2','Las contrasenias no son iguales')
-        #Verificando que la contrasenia tenga mas de 5 caracteres    
-        elif len(self.cleaned_data['password1']) < 5:
-            self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
-
-            #validacion si la contrasenia 2 es diferente a la 1
 
     def clean(self):
         cleaned_data = super(UserRegisterFormVendedor, self).clean
         cedula = self.cleaned_data['cedula']
         telefono = self.cleaned_data['telefono']
-        
+        password1 = self.cleaned_data['password1']
+        password2 = self.cleaned_data['password2']
+        correo = self.cleaned_data['correo']
 
-        if len(cedula) > 10:
+        if password1 != password2:
+            raise forms.ValidationError('Las contrasenias no son iguales')
+
+        #Verificando que la contrasenia tenga mas de 5 caracteres    
+        elif len(password1) < 5:
+            raise forms.ValidationError('Las contrasenias deben tener mas de 5 digitos')
+
+        elif len(cedula) > 10:
             print('Entre en el if')
             raise forms.ValidationError('El campo de cedula solo permite hasta 10 numeros')
 
         elif len(telefono) > 10:
             raise forms.ValidationError('El campo de telefono solo permite hasta 10 numeros')
 
-        elif Vendedor.objects.filter(cedula=cedula).exists():
-            print('entre en el if vendedor')
+        elif User.objects.filter(cedula=cedula).exists():
+            print('entre en el if User')
             raise forms.ValidationError("Esta cedula ya a sido registrada")
+        
+        elif User.objects.filter(correo=correo).exists():
+            raise forms.ValidationError("Este correo ya a sido registrado")
+            
+        elif User.objects.filter(telefono=telefono).exists():
+            raise forms.ValidationError("Este telefono ya a sido registrado")
         
         return self.cleaned_data
 
@@ -210,7 +213,7 @@ class UserRegisterFormVeterinario(forms.ModelForm):
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder':'Constraseña'
+                'placeholder':'Contraseña'
             }
         )
     )
@@ -220,7 +223,7 @@ class UserRegisterFormVeterinario(forms.ModelForm):
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                'placeholder':'Repetir Constraseña'
+                'placeholder':'Repetir Contraseña'
             }
         )
     )
@@ -240,28 +243,37 @@ class UserRegisterFormVeterinario(forms.ModelForm):
         )
     )
 
-    #validacion si la contrasenia 2 es diferente a la 1
-    def clean_password2(self):
-        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-            self.add_error('password2','Las contrasenias no son iguales')
-        #Verificando que la contrasenia tenga mas de 5 caracteres    
-        elif len(self.cleaned_data['password1']) < 5:
-            self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
-
-            #validacion si la contrasenia 2 es diferente a la 1
-
     def clean(self):
         cleaned_data = super(UserRegisterFormVeterinario, self).clean
         cedula = self.cleaned_data['cedula']
         telefono = self.cleaned_data['telefono']
-        
+        password1 = self.cleaned_data['password1']
+        password2 = self.cleaned_data['password2']
+        correo = self.cleaned_data['correo']
 
-        if len(cedula) > 10:
+        if password1 != password2:
+            raise forms.ValidationError('Las contrasenias no son iguales')
+
+        #Verificando que la contrasenia tenga mas de 5 caracteres    
+        elif len(password1) < 5:
+            raise forms.ValidationError('Las contrasenias deben tener mas de 5 digitos')
+
+        elif len(cedula) > 10:
             print('Entre en el if')
             raise forms.ValidationError('El campo de cedula solo permite hasta 10 numeros')
 
         elif len(telefono) > 10:
             raise forms.ValidationError('El campo de telefono solo permite hasta 10 numeros')
+
+        elif User.objects.filter(cedula=cedula).exists():
+            print('entre en el if vendedor')
+            raise forms.ValidationError("Esta cedula ya a sido registrada")
+        
+        elif User.objects.filter(correo=correo).exists():
+            raise forms.ValidationError("Este correo ya a sido registrado")
+            
+        elif User.objects.filter(telefono=telefono).exists():
+            raise forms.ValidationError("Este telefono ya a sido registrado")
         
         return self.cleaned_data
 
@@ -292,20 +304,6 @@ class UserRegisterFormVeterinario(forms.ModelForm):
             'fecha_ingreso': DateInput(),
             'titulo': TextInput(),
         }
-
-    
-
-    #validacion si la contrasenia 2 es diferente a la 1
-    def clean_password2(self):
-        if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-            self.add_error('password2','Las contrasenias no son iguales')
-        #Verificando que la contrasenia tenga mas de 5 caracteres    
-        elif len(self.cleaned_data['password1']) < 5:
-            self.add_error('password1','Las contrasenias deben tener mas de 5 digitos')
-
-
-
-
 
 
 #heredamos del Form normal ya que no dependemos de ningun modelo

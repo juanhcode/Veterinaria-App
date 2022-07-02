@@ -76,7 +76,7 @@ class Duenio(models.Model):
 
     nombre = models.CharField('Nombre',max_length=20)
     apellidos = models.CharField('Apellidos',max_length=20)
-    telefono = models.CharField('Telefono',max_length=12)
+    telefono = models.CharField('Telefono',max_length=12, unique=True)
     cedula = models.CharField('Cedula',max_length=10, unique=True)
     edad = models.PositiveIntegerField('Edad')
     sexo = models.CharField('Sexo', max_length=1, choices=GENERO)

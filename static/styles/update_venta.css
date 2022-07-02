@@ -166,3 +166,26 @@ input{
     background-color: #553CFB;
     color: aliceblue;
 }
+
+.alertE{
+    position: relative;
+    width: 205px;
+    height: 36px;
+    vertical-align:middle;
+    border-radius: 10px;
+    top: -4px;
+    left: 511px;
+    background: #f5c2c7;
+}
+#alet{
+    position: relative;
+    top: -1px;
+    left: 149px;
+    width: 40px;
+    height: 40px;
+}
+#mensajeE{
+    position: relative;
+    top: -34px;
+    left: -53px;
+}

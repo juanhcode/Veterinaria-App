@@ -51,8 +51,8 @@ class ProductoCarro(models.Model):
 class Pedido(models.Model):
     carro = models.OneToOneField(Carro, on_delete=models.CASCADE)
     identificacion_factura = models.CharField('Identificacion Factura', max_length=20, unique=True)
-    cedula = models.CharField('Cedula', max_length=10, unique=True)
-    telefono = models.CharField('Telefono', max_length=10,null=True, unique=True)
+    cedula = models.CharField('Cedula', max_length=10)
+    telefono = models.CharField('Telefono', max_length=10,null=True)
     direccion = models.CharField('Direccion', max_length=30,)
     pedido_por = models.CharField(max_length=100)
     subtotal = models.PositiveIntegerField()

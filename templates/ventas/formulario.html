@@ -57,13 +57,20 @@
         </div>
     </div>
         
-        {% for i in form.errors %} {{i}} {% endfor %} 
-        {% if form.errors %}
-        <p>error!</p>
-        {% endif %}
-
-        <button type="submit" class="btn">Guardar</button>
-
+    {% if form.errors %}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/static/scripts/sweetAlert.js"></script>
+    {% endif %}
+    
+    {% if form.non_field_errors %}
+    <div class="alertE" role="alert">
+      <img id="alet" src="/static/assets/alert.png"><h4 id="mensajeE">{{ form.non_field_errors }}</h4>
+      
+      
+    </div>
+    {% endif %}
+    
+    <button type="submit" class="btn">Guardar</button>
       </form>
     </div>
     <div class="imagen-content">
