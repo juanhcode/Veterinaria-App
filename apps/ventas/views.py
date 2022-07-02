@@ -261,7 +261,6 @@ class FacturacionView(PermissionRequiredMixin, CreateView):
             return redirect('ventas_app:ventas')
         return super().form_valid(form)
 
-
 #------------------------------------------Fin Logica carrito de ventas/facturacion----------------------------------
 
 
