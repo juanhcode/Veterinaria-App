@@ -28,6 +28,12 @@ input[type=number] { -moz-appearance:textfield; }
     margin-left: 0px;
     margin-right: 0px;
 }
+.mensaje_exitoso{
+    background-color: #D1E7DD;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
 
 .content-fondo
 {

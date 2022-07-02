@@ -1,7 +1,7 @@
 from multiprocessing import context
 from urllib import request
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView,ListView, DeleteView, UpdateView, FormView, View, CreateView
 
@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 
 from .models import Carro, Pedido, Producto, ProductoCarro
 
-from apps.users.models import Duenio, Vendedor
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .forms import FacturaForm, ProductoRegisterForm
 
@@ -24,13 +24,14 @@ from django.template import Context
 #Views del apartado ventas
 
 
-class ProductoCreateView(PermissionRequiredMixin, FormView):
+class ProductoCreateView(PermissionRequiredMixin, SuccessMessageMixin, FormView):
     form_class = ProductoRegisterForm
     template_name = 'ventas/formulario.html'
-    success_url = reverse_lazy('ventas_app:ventas')
+    success_url = '.'
     permission_required = 'ventas.add_producto'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    success_message = 'El registro fue agregado con exito'
 
     #validacion de los datos
     def form_valid(self, form):
@@ -81,6 +82,24 @@ class ProductoDeleteView(PermissionRequiredMixin, DeleteView):
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
+
+class FacturasView(PermissionRequiredMixin, ListView):
+    template_name = 'ventas/facturas.html'
+    model = Pedido
+    paginate_by = 5
+    permission_required = 'ventas.view_producto'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+    def get_queryset(self):
+        #aqui obtengo el input del html a traves de un get
+        palabra_clave = self.request.GET.get("kword", "")
+        lista = Pedido.objects.filter(
+            #Buscamos por cadena, ejemplo= si buscamos jo el icontains se encargara de buscar todos los nombres
+            #que contangan la j y la o al principio
+            cedula__icontains=palabra_clave
+        )
+        return lista
 
 class Error403View(TemplateView):
     template_name = 'ventas/error403.html'
@@ -241,9 +260,6 @@ class FacturacionView(PermissionRequiredMixin, CreateView):
         else:
             return redirect('ventas_app:ventas')
         return super().form_valid(form)
-
-class FacturasView(TemplateView):
-    template_name = 'ventas/facturas.html'
 
 #------------------------------------------Fin Logica carrito de ventas/facturacion----------------------------------
 

@@ -14,12 +14,8 @@
        <thead>
          <tr class="propiedad">
            <th>ID</th>
-           <th>Nombre del producto</th>
-           <th>Id del producto</th>
-           <th>Descripcion</th>
-           <th>Stock</th>
-           <th>Iva</th>
-           <th>Precio</th>
+           <th>Cedula</th>
+           <th>Cliente</th>
            <th>Fecha</th>
            <th>Total</th>
           </tr>
@@ -27,16 +23,48 @@
         <tbody>
           {% for p in object_list %}
           <tr id="valores">
-            <td>{{ p.nombre|truncatechars:30 }}</td>
-            <td>{{ p.descripcion|truncatechars:30 }}</td>
-            <td>{{ p.precio|truncatechars:20 }}</td>
-            <td>{{ p.iva|truncatechars:20 }}</td>
-            <td>{{ p.stock|truncatechars:20 }}</td>
+            <td>{{ p.identificacion_factura|truncatechars:30 }}</td>
+            <td>{{ p.cedula|truncatechars:30 }}</td>
+            <td>{{ p.pedido_por|truncatechars:20 }}</td>
+            <td>{{ p.creado_el|truncatechars:20 }}</td>
+            <td>{{ p.total|truncatechars:20 }}</td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
-      <script src="{% static 'scripts/ventas.js' %}"></script>
+
+
+<!-- inicio de bloque de paginacion -->
+<div class="center">
+
+  <div class="pagination">
+    
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}"><b>&laquo;</b></a>  
+    {% endif %}
+    
+    {% for pagina in paginator.page_range %}
+    {% if pagina == page_obj.number  %}
+    <a class="active" href="?page={{ pagina }}"><b>{{ pagina }}</b></a>
+    {% else %}
+    <a href="?page={{ pagina }}"><b>{{ pagina }}</b></a> 
+    {% endif %}
+    {% endfor %}
+    
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}"><b>&raquo;</b></a>   
+    {% endif %}
+    
+    {% endif %}
+    
+  </div>
+</div>
+  <!-- FIN bloque de paginacion -->
+
+  <script src="{% static 'scripts/ventas.js' %}"></script>
+
+      
       
 {% endblock content %}
       

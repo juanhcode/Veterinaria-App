@@ -32,10 +32,12 @@ table{
    
 }
 th{
+    
     padding: 10px;
     text-align:center;
     border-right: 0px;
     border-left: 0px;
+ 
 }
 
 tr{
@@ -76,15 +78,17 @@ tr .carroTotal{
 }
 tr .vaciarCarro{
     position: relative;
-    top: -63.5%; 
+    top: -67.1%; 
     left: 754.5%;
     font-size: 10px;
 
 }
  .vaciarCarro a{
+    width: 149%;
+    display: inline-flex;
     font-size: 15px;
     font-weight: normal;
-    color: #553CFB;    
+    color: #553CFB; 
 }
 
 .generar{
@@ -102,7 +106,7 @@ td .generarFac{
     border: 0px;
     position: relative;
     left: 120%;
-    top: 14%;
+    top: 16%;
 }
 td .generarFac a{
     color: aliceblue;

@@ -8,14 +8,14 @@ label{
 }
 .desde{
     position: relative;
-    top: 6em;
-    left: 16em;
+    top: 2em;
+    left: 28em;
 }
 
 .hasta{
     position: relative;
-    top: 7em;
-    left: 16em;
+    top: 3em;
+    left: 560px;
 }
 
 input{
@@ -39,7 +39,7 @@ button{
     border: 0px;
     margin-left: 35%;
     position: relative;
-    top: 9em;
+    top: 5em;
     left: 2em;
 }
 
@@ -47,8 +47,9 @@ table{
     border-collapse: collapse;
     width: 400px;
     position: relative;
-    top: 12em;
+    top: 8em;
     text-align: center;
+    left: 26em;
 }
 th{
     border: 2px solid black;
