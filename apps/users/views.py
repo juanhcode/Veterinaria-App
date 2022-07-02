@@ -8,11 +8,14 @@ from django.views.generic import TemplateView,FormView, View, DeleteView, ListVi
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 from .forms import LoginForm, UserRegisterFormAdministrador, UserRegisterFormVendedor, UserRegisterFormVeterinario
 
 from .models import Administrador, Vendedor, Veterinario
 from apps.veterinario.models import HistorialClinico
+
 
 from apps.ventas.models import Producto
 
@@ -43,13 +46,14 @@ class HomeVerUsuarios(PermissionRequiredMixin, TemplateView):
 
 
 #para crear superusuarios se utiliza el FormView ya que esta clase de usuarios es mas exigente
-class VendedorRegisterView(PermissionRequiredMixin, FormView):
+class VendedorRegisterView(PermissionRequiredMixin, SuccessMessageMixin, FormView):
     template_name = 'administrador/admin_vendedor.html'
     form_class = UserRegisterFormVendedor
     success_url = '.'
     permission_required = 'users.add_vendedor'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    success_message = 'El registro fue agregado con exito'
 
     def form_valid(self,form):
 
@@ -90,14 +94,14 @@ class VendedorRegisterView(PermissionRequiredMixin, FormView):
 
 
 #Registrando veterinario
-class VeterinarioRegisterView(PermissionRequiredMixin, FormView):
+class VeterinarioRegisterView(PermissionRequiredMixin, SuccessMessageMixin, FormView):
     template_name = 'administrador/admin_veterinario.html'
     form_class = UserRegisterFormVeterinario
     success_url = '.'
     permission_required = 'users.add_veterinario'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
-
+    success_message = 'El registro fue agregado con exito'
 
     def form_valid(self,form):
 
@@ -139,13 +143,14 @@ class VeterinarioRegisterView(PermissionRequiredMixin, FormView):
 
 
 #Registrando administrador
-class AdminRegisterView(PermissionRequiredMixin, FormView):
+class AdminRegisterView(PermissionRequiredMixin, SuccessMessageMixin, FormView):
     template_name = 'administrador/admin_admin.html'
     form_class = UserRegisterFormAdministrador
     success_url = '.'
     permission_required = 'users.add_administrador'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    success_message = 'El registro fue agregado con exito'
 
     def form_valid(self,form):
 

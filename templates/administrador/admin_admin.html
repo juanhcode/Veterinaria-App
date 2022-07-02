@@ -17,10 +17,17 @@
         <form method="post">
             {% csrf_token %}
             <div class="titulo">
-                
-
             <h1>Registrar Administrador</h1>    
             </div>
+
+            {% if messages %}
+            <div class="mensaje_exitoso">
+                {% for m in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ m }}</li>
+                {% endfor %}
+            </div>
+            {% endif %}
+
             <div class="campos">
                 <div class="c1">
                     <div class="espacio">
@@ -88,13 +95,6 @@
                 </div> 
                 
             </div>
-            {% if success %}
-            <div class="Ventanae" id="elimi">                           
-                <h1>El registro fue un éxito!</h1>
-                  <br>
-                  <button id="Confirmar" onclick="cerrar()">Cerrar</button>
-            </div>  
-            {% endif %}
             
             {% if form.non_field_errors %}
             <div class="alert1">
@@ -110,7 +110,6 @@
     
 </div>
 
-<script src="{% static 'scripts/formulariosadmin.js' %}"></script>
 
 </div>
 {% endblock content %}
