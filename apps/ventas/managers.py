@@ -13,8 +13,19 @@ class VentasManager(models.Manager):
         )
             return resultado
         else:
-            return self.all()[:10]
+            return self.all()
 
+    #Listar rango de fechas
+    def listar_fechas(self, kword, fecha1, fecha2):
+
+        resultado = self.filter(
+            pedido_por__icontains=kword,
+            creado_el__range=(fecha1,fecha2)
+        )
+        return resultado
+
+    def listar_fechas_default(self, kword):
+        self.all()
     
 
 

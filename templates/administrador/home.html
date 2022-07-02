@@ -5,13 +5,12 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'styles/Administrador/botones.css' %}">
-<div class="contenedor">
 
-        <div class="contenedor-botones">
-            <a href="{% url 'user_app:registrarUsuariosHome' %}" class="boton">Registrar Usuario</a>
-            <a href="{% url 'user_app:homeListado' %}" class="boton">Ver Tablas Usuarios</a>
-            <a href="{% url 'user_app:reporteUsuarios' %}" class="boton">Reporte Usuario</a>
-        </div>
-    </div>
+
+        
+<a href="{% url 'user_app:registrarUsuariosHome' %}" class="boton"><b>Registrar Usuario</b></a>
+<a href="{% url 'user_app:homeListado' %}" class="boton"><b>Ver Tablas Usuarios</b></a>
+<a href="{% url 'user_app:reporteUsuarios' %}" class="boton"><b>Reporte Usuario</b></a>
+
 
 {% endblock content %}

@@ -35,9 +35,11 @@ class ListViewAdministrador(PermissionRequiredMixin ,TemplateView):
     login_url = reverse_lazy('user_app:login')
 
 
-class HomeVerUsuarios(TemplateView):
-
+class HomeVerUsuarios(PermissionRequiredMixin, TemplateView):
     template_name = 'administrador/listado_usuarios_home.html'
+    permission_required = 'users.view_administrador'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
 
 #para crear superusuarios se utiliza el FormView ya que esta clase de usuarios es mas exigente
@@ -144,6 +146,13 @@ class AdminRegisterView(PermissionRequiredMixin, FormView):
     permission_required = 'users.add_administrador'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    plus_context = dict()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.plus_context:
+            context['success'] = self.plus_context['pass_to_view_just_after_save_successful']
+        return context
 
     def form_valid(self,form):
 
@@ -159,6 +168,8 @@ class AdminRegisterView(PermissionRequiredMixin, FormView):
             sexo = form.cleaned_data['sexo'],
             telefono = form.cleaned_data['telefono'],
         )
+        self.plus_context['pass_to_view_just_after_save_successful'] = 'Save successful!'
+            
 
         return super(AdminRegisterView, self).form_valid(form)
     
@@ -191,8 +202,11 @@ class LogoutView(View):
             )   
         )
 
-class ListViewReporteUsuarios(TemplateView):
+class ListViewReporteUsuarios(PermissionRequiredMixin, TemplateView):
     template_name = 'administrador/reporteAdmin.html'
+    permission_required = 'users.view_administrador'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
 
 
 class ListViewVerAdmins(PermissionRequiredMixin, ListView):

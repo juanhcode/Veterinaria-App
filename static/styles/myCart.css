@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    overflow: visible;
+    word-wrap: inherit;
+}
+/* .container{
+    
+} */
+section{
+    display:flex;
+    
+}
+
+.itemsCar{
+    width: 290px;
+    font-size: 27px;
+    font-weight: bold;
+}
+/* --- ESTILO DE LA TABLA --- */
+table{
+    border-collapse: collapse;
+    font-size: 18px;
+    margin: 30px;
+    border-radius: 12px;
+    position: relative;
+    left: 100%;
+    top: 5%;
+    /* margin-left: 100%; */
+   
+}
+th{
+    padding: 10px;
+    text-align:center;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+tr{
+    text-align:center;
+}
+td{
+    border: rgb(81, 81, 81) 1px solid;
+    margin: 100px;
+    width: 100px;
+    height: 50px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+tr,td{
+    text-align: center;
+}
+
+tr .total1{
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: 30%;
+    border-width: 0px;
+    border-top: 0px;
+    left: -220px;
+} 
+tr .total{
+    font-size: 17px;
+    position: relative;
+    left: 229.6%;
+}
+tr .carroTotal{
+    font-size: 17px;
+    position: relative;
+    top: -32.5%;
+    left: 328.9%;
+}
+tr .vaciarCarro{
+    position: relative;
+    top: -63.5%; 
+    left: 754.5%;
+    font-size: 10px;
+
+}
+ .vaciarCarro a{
+    font-size: 15px;
+    font-weight: normal;
+    color: #553CFB;    
+}
+
+.generar{
+    border: 0px;
+}
+td .generarFac{
+    width: 200%;
+    padding: 8px;
+    border-radius: 5px;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+    position: relative;
+    left: 120%;
+    top: 14%;
+}
+td .generarFac a{
+    color: aliceblue;
+} 
+
+/* --- BOTONES DE MAS MENOS Y MULTI --- */
+
+.mas{
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+}
+
+.menos{
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+}
+
+.multi{
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    background-color: #553CFB;
+    color: aliceblue;
+    border: 0px;
+}

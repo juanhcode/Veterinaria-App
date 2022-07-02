@@ -8,6 +8,7 @@
     <section class="header">
       <h2 class="ventas">Inventario</h2>
        <nav class="btn">
+          <a class="agregar" href="{% url 'ventas_app:MiCarro' %}"><i class="fa-solid fa-cart-arrow-down"></i>Carro</a>
           <a class="agregar" href="{% url 'ventas_app:formulario' %}"><i class="fa-solid fa-plus"></i>Agregar</a>
         </nav>
     </section>
@@ -81,19 +82,19 @@
     
     {% if is_paginated %}
     {% if page_obj.has_previous %}
-    <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>  
+    <a href="?page={{ page_obj.previous_page_number }}"><b>&laquo;</b></a>  
     {% endif %}
     
     {% for pagina in paginator.page_range %}
     {% if pagina == page_obj.number  %}
-    <a class="active" href="?page={{ pagina }}">{{ pagina }}</a>
+    <a class="active" href="?page={{ pagina }}"><b>{{ pagina }}</b></a>
     {% else %}
-    <a href="?page={{ pagina }}">{{ pagina }}</a> 
+    <a href="?page={{ pagina }}"><b>{{ pagina }}</b></a> 
     {% endif %}
     {% endfor %}
     
     {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>   
+    <a href="?page={{ page_obj.next_page_number }}"><b>&raquo;</b></a>   
     {% endif %}
     
     {% endif %}

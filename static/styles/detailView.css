@@ -43,6 +43,12 @@ input[type=number] { -moz-appearance:textfield; }
 h3{
     text-align: left;
 }
+.separador{
+    border-top: 1px solid #bbbcc2;
+}
+.datosMascota{
+    border: none;
+}
 
 .campo1
 {

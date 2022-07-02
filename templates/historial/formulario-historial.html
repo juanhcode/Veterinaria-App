@@ -11,7 +11,7 @@
                     {% csrf_token %} 
 
                     <div id="formularioHistorial">
-                        <h3>1.Datos de la mascota y dueño/responsable:</h3>
+                        <h3>1.Datos de la mascota y veterinario:</h3>
                         <div class="campo1">
                             <label>Nombre mascota</label>
                             {{ form.mascota }}
@@ -73,13 +73,21 @@
                         </div>
                     </div>
 
-                    {% for i in form.errors %} {{i}} {% endfor %} 
+                    
                     {% if form.errors %}
-                    <p>error!</p>
+                    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                        <script src="/static/scripts/sweetAlert.js"></script>
+                        <div class="alertE" role="alert">
+                        <h4 id="mensajeE">Error! {% for i in form.errors %} {{i}} {% endfor %}</h4> 
+                      </div>
                     {% endif %}
 
                     <button type="submit" class="btn">Guardar</button>
-                
+                    <div class="Ventanae" id="elimi">                           
+                        <h1>El registro fue un éxito!</h1>
+                          <br>
+                          <button type="submit" id="Confirmar">Confirmar</button>
+                    </div>
                 </form>
             </div>
 

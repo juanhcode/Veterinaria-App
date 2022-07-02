@@ -2,7 +2,7 @@ from tkinter import Widget
 from django import forms
 from django.forms import Textarea, TextInput, NumberInput
 
-from .models import Factura, Producto, Pedido
+from .models import Producto, Pedido
 
 
 class ProductoRegisterForm(forms.ModelForm):
@@ -11,12 +11,12 @@ class ProductoRegisterForm(forms.ModelForm):
         model = Producto
         fields = ('identificacion','nombre', 'descripcion', 'precio', 'iva', 'stock', 'vendedor')
         widgets = {
-            'identificacion':NumberInput(),
-            'nombre': TextInput(),
-            'descripcion': Textarea(attrs={'cols': 20, 'rows': 2, 'style':'resize:none;', 'id':'descripcionInput'}),
-            'precio': NumberInput(),
-            'iva': NumberInput(),
-            'stock': NumberInput(),
+            'identificacion':forms.NumberInput(),
+            'nombre': forms.TextInput(),
+            'descripcion': forms.Textarea(attrs={'cols': 20, 'rows': 2, 'style':'resize:none;', 'id':'descripcionInput'}),
+            'precio': forms.NumberInput(),
+            'iva': forms.NumberInput(),
+            'stock': forms.NumberInput(),
             'vendedor': forms.Select()
         }
 
@@ -24,4 +24,17 @@ class ProductoRegisterForm(forms.ModelForm):
 class FacturaForm(forms.ModelForm):
     class Meta:
         model = Pedido
-        fields = ['pedido_por',]
+        fields = (
+            'identificacion_factura',
+            'pedido_por',
+            'cedula',
+            'telefono',
+            'direccion'
+        )
+        widgets = {
+            'identificacion_factura':forms.TextInput(),
+            'pedido_por': forms.TextInput(),
+            'cedula': forms.NumberInput(),
+            'telefono': forms.NumberInput(),
+            'direccion': forms.TextInput(),
+        }

@@ -1,0 +1,24 @@
+<style>
+    table, th, td{
+        border: 1px solid black;
+    }
+</style>
+
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Cantidad Vendida</th>
+    </thead>
+    <tbody>
+        <h1>{{ title }}</h1>
+        {% for p in productocarro %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.sum }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

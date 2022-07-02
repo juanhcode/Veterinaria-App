@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView, FormView, ListView
+from django.views.generic import TemplateView, FormView, ListView, DetailView
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
@@ -16,12 +16,9 @@ class ListViewVeterinario(LoginRequiredMixin, TemplateView):
     template_name = 'veterinaria/home.html'
     login_url = reverse_lazy('user_app:login')
 
-class ListViewLogin(TemplateView):
-    template_name = 'login/Inicio.html'
-
 class ListViewHistorial(PermissionRequiredMixin, ListView):
     template_name = 'historial/historial.html'
-    paginate_by = 3
+    paginate_by = 5
     ordering = 'mascota'
     model = HistorialClinico
     permission_required = 'users.view_historialclinico'
@@ -65,7 +62,7 @@ class ListViewInicioHistorial(PermissionRequiredMixin, TemplateView):
 
 class ListViewVerClienteResponsable(PermissionRequiredMixin, ListView):
     template_name = 'historial/cliente-responsable.html'
-    paginate_by = 3
+    paginate_by = 5
     ordering = 'nombre'
     model = Duenio
     permission_required = 'users.view_duenio'
@@ -75,10 +72,17 @@ class ListViewVerClienteResponsable(PermissionRequiredMixin, ListView):
 class CreateClienteResponsable(PermissionRequiredMixin, FormView):
     template_name = 'historial/formulario-clientes.html'
     form_class = ResponsableRegisterForm
-    success_url = reverse_lazy('veterinaria_app:cliente-responsable')
+    success_url = '.'
     permission_required = 'users.add_duenio'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    plus_context = dict()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.plus_context:
+            context['success'] = self.plus_context['pass_to_view_just_after_save_successful']
+        return context
 
     def form_valid(self,form):
 
@@ -92,13 +96,14 @@ class CreateClienteResponsable(PermissionRequiredMixin, FormView):
             sexo = form.cleaned_data['sexo'],
             telefono = form.cleaned_data['telefono'],
         )
+        self.plus_context['pass_to_view_just_after_save_successful'] = 'Save successful!'
 
         return super(CreateClienteResponsable, self).form_valid(form)
     
 
 class ListViewMascotas(PermissionRequiredMixin, ListView):
     template_name = 'historial/mascotas.html'
-    paginate_by = 3
+    paginate_by = 5
     ordering = 'nombre'
     model = Mascota
     permission_required = 'users.view_mascota'
@@ -109,10 +114,18 @@ class ListViewMascotas(PermissionRequiredMixin, ListView):
 class CreateFormularioMascotas(PermissionRequiredMixin, FormView):
     template_name = 'historial/formulario-mascota.html'
     form_class = MascotaRegisterForm
-    success_url = reverse_lazy('veterinaria_app:mascotas')
+    success_url = '.'
     permission_required = 'users.add_mascota'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    plus_context = dict()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.plus_context:
+            context['success'] = self.plus_context['pass_to_view_just_after_save_successful']
+        return context
+
 
     def form_valid(self,form):
 
@@ -128,8 +141,19 @@ class CreateFormularioMascotas(PermissionRequiredMixin, FormView):
             sexo = form.cleaned_data['sexo'],
             duenio = form.cleaned_data['duenio'],
         )
+        self.plus_context['pass_to_view_just_after_save_successful'] = 'Save successful!'
 
         return super(CreateFormularioMascotas, self).form_valid(form)
 
-class DetailViewHistorial(TemplateView):
+class DetailViewHistorial(PermissionRequiredMixin, DetailView):
     template_name = 'historial/detailView.html'
+    permission_required = 'users.view_historialclinico'
+    permission_denied_message = 'No tienes permisos'
+    login_url = reverse_lazy('user_app:login')
+
+    model = HistorialClinico
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(DetailViewHistorial, self).get_context_data(**kwargs)
+    #     context['historialClinico'] = HistorialClinico.objects.all()
+    #     return context

@@ -8,64 +8,74 @@
 
 <script src="https://kit.fontawesome.com/7fed639e7f.js" crossorigin="anonymous"></script>
     <section class="header">
-      <h2 class="ventas">Historial Clinico</h2>
+      <h2 class="ventas">Historial Clinico De {{ historialclinico.mascota }}</h2>
       <div class="content-fondo">
         <div class="formulario">
             <form method="post">
-                <h2 class="titulo">Vista Detalle</h2><br>
                 {% csrf_token %} 
 
                 <div id="formularioHistorial">
-                    <h3>1.Datos de la mascota y dueño/responsable:</h3>
+                    <h3>1.Datos de la mascota y veterinario:</h3>
                     <div class="campo1">
                         <label>Nombre mascota:</label>
+                        {{ historialclinico.mascota }}
                         
                     </div>
                     
                     
                     <div class="campo2">
-                        <label>Cedula dueño/responsable:</label>
+                        <label>Veterinario:</label>
+                        {{ historialclinico.veterinario }}
                     </div>
                     
-                    <h3>2. Anamnesis:</h3>
+                    <h3 class="separador">2. Anamnesis:</h3>
                     <div class="areatext">
-                      <p></p>
+                      {{ historialclinico.anamnesis }}
                     </div>
                     
                     <div class="campo3">
                         <label>Vacunas:</label>
+                        {{ historialclinico.vacunas }}
                     </div>
                     
-                    <h3>3. Examen fisico:</h3>
+                    <h3 class="separador">3. Examen fisico:</h3>
                     <div class="areatext">
+                        {{ historialclinico.examen_fisico }}
                     </div>
 
                     <div class="campo4">
                         <label>Peso:</label>
+                        {{ historialclinico.peso }}
                     </div>
 
                     <div class="campo4">
                         <label>Temperatura:</label>
+                        {{ historialclinico.temperatura }}
                     </div>
 
                     <div class="campo4">
                         <label>Frecuencia cardiaca:</label>
+                        {{ historialclinico.frecuencia_cardiaca }}
                     </div>
 
-                    <h3>4. Detalles de la visita:</h3>
+                    <h3 class="separador">4. Detalles de la visita:</h3>
                     <div class="areatext">
+                        {{ historialclinico.detalles_visita }}
                     </div>
 
-                    <h3>5. Diagnostico:</h3>
+                    <h3 class="separador">5. Diagnostico:</h3>
                     <div class="areatext">
+                        {{ historialclinico.diagnostico }}
                     </div>
 
-                    <h3>6. Patología:</h3>
+                    <h3 class="separador">6. Patología:</h3>
                     <div class="areatext">
+                        {{ historialclinico.patologia }}
                     </div>
 
-                    <h3>7. Tratamiento:</h3>
+                    <h3 class="separador">7. Tratamiento:</h3>
                     <div class="areatext">
+                        {{ historialclinico.tratamiento }}
                     </div>
                 </div>
 

@@ -7,7 +7,7 @@
   <div class="content-fondo">
     <div class="formulario">
       <form method="post">
-        <h2 class="titulo">Registra tu Producto</h2>
+        <h2 class="titulo">Registra tu Producto </h2>
         {% csrf_token %}
 
         <div id="formularioVentas">
@@ -55,6 +55,13 @@
         {% endif %}
 
         <button type="submit" class="btn">Guardar</button>
+
+        <div class="Ventanae" id="elimi">
+          <form action="" method="post">
+            <h1>El registro fue modificado con éxito! </h1>
+              <button type="submit" id="Confirmar">Confirmar</button>
+            </form>
+        </div>
       </form>
     </div>
     <div class="imagen-content">

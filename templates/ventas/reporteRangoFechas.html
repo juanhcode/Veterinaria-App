@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% load static%}
+{% block title %}Modificar Producto{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="/static/styles/Administrador/reporteRangoFechas.css">
+<h1>Lista de pedidos por fecha</h1>
+
+<p>
+    <form action="" method="get">
+        {% csrf_token %}
+        <label class="desde" >
+            Desde:
+            <input type="date" name="fecha1" id="fecha1">
+        </label>
+        <br>
+        <label class="hasta">
+            Hasta:
+            <input type="date" name="fecha2" id="fecha2">
+        </label>
+        <br>
+
+        <button type="submit">Consultar</button>
+    </form>
+</p>
+<div class="encabezadoFec">
+
+</div>
+<table>
+    <thead>
+    <tr> 
+        <th class="veterinarioT">Comprador</th>
+        <th class="fechaT">fecha</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for f in fechas %}
+    <tr>
+        
+        <td> {{ f.pedido_por }} </td>
+        <td> {{ f.creado_el }} </td>
+        
+    </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<!-- <ul class="rangoFechas">
+    {% for f in fechas %}
+      <li> <p class="tituloFecha">  Comprador: </p> {{ f.pedido_por }} </li>    
+      <li> <p class="tituloFecha">  Fecha: </p>   {{ f.creado_el }}</li>
+    {% endfor %}
+</ul> -->
+
+{% endblock content %}
+
+    
