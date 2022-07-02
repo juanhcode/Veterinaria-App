@@ -23,7 +23,7 @@ class ListViewHistorial(PermissionRequiredMixin, ListView):
     paginate_by = 3
     ordering = 'mascota'
     model = HistorialClinico
-    permission_required = 'users.view_historialclinico'
+    permission_required = 'veterinario.view_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
@@ -42,7 +42,7 @@ class CreateFormularioHistorial(PermissionRequiredMixin, SuccessMessageMixin, Fo
     template_name = 'historial/formulario-historial.html'
     form_class = HistorialRegisterForm
     success_url = '.'
-    permission_required = 'users.create_historialclinico'
+    permission_required = 'veterinario.add_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
     success_message = 'El registro fue agregado con exito'
@@ -69,7 +69,7 @@ class CreateFormularioHistorial(PermissionRequiredMixin, SuccessMessageMixin, Fo
 
 class ListViewInicioHistorial(PermissionRequiredMixin, TemplateView):
     template_name = 'historial/inicio-historial.html'
-    permission_required = 'users.view_historialclinico'
+    permission_required = 'veterinario.view_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
@@ -78,7 +78,7 @@ class ListViewVerClienteResponsable(PermissionRequiredMixin, ListView):
     paginate_by = 3
     ordering = 'nombre'
     model = Duenio
-    permission_required = 'users.view_duenio'
+    permission_required = 'veterinario.view_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
@@ -96,7 +96,7 @@ class CreateClienteResponsable(PermissionRequiredMixin, SuccessMessageMixin, For
     template_name = 'historial/formulario-clientes.html'
     form_class = ResponsableRegisterForm
     success_url = reverse_lazy('veterinaria_app:cliente-responsable')
-    permission_required = 'users.add_duenio'
+    permission_required = 'veterinario.add_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
     success_message = 'El registro fue agregado con exito'
@@ -123,7 +123,7 @@ class ListViewMascotas(PermissionRequiredMixin, ListView):
     paginate_by = 3
     ordering = 'nombre'
     model = Mascota
-    permission_required = 'users.view_mascota'
+    permission_required = 'veterinario.view_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
@@ -142,7 +142,7 @@ class CreateFormularioMascotas(PermissionRequiredMixin, SuccessMessageMixin, For
     template_name = 'historial/formulario-mascota.html'
     form_class = MascotaRegisterForm
     success_url = reverse_lazy('veterinaria_app:mascotas')
-    permission_required = 'users.add_mascota'
+    permission_required = 'veterinario.add_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
     success_message = 'El registro fue agregado con exito'
@@ -166,7 +166,7 @@ class CreateFormularioMascotas(PermissionRequiredMixin, SuccessMessageMixin, For
 
 class DetailViewHistorial(PermissionRequiredMixin, DetailView):
     template_name = 'historial/detailView.html'
-    permission_required = 'users.view_historialclinico'
+    permission_required = 'veterinario.view_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
