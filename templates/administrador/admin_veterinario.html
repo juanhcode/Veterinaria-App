@@ -17,6 +17,13 @@
             <div class="titulo">
             <h1>Registrar Veterinario</h1>    
             </div>
+            {% if messages %}
+            <div class="mensaje_exitoso">
+                {% for m in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ m }}</li>
+                {% endfor %}
+            </div>
+            {% endif %}
             <div class="campos">
                 <div class="c1">
                     <div class="espacio">
@@ -89,11 +96,6 @@
                 <div class="c2">
                         <button class="boton" type="submit"> Registrar</button>
                 </div>
-            </div>
-            <div class="Ventanae" id="elimi">                           
-                <h1>El registro fue un éxito!</h1>
-                  <br>
-                  <button type="submit" id="Confirmar">Confirmar</button>
             </div>
         </form>
         
