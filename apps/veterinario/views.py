@@ -10,6 +10,8 @@ from .forms import HistorialRegisterForm, MascotaRegisterForm, ResponsableRegist
 
 from apps.users.models import Duenio, Mascota
 
+from django.contrib.messages.views import SuccessMessageMixin
+
 # Create your views here.
 
 class ListViewVeterinario(LoginRequiredMixin, TemplateView):
@@ -25,14 +27,25 @@ class ListViewHistorial(PermissionRequiredMixin, ListView):
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
+    def get_queryset(self):
+        #aqui obtengo el input del html a traves de un get
+        palabra_clave = self.request.GET.get("kword", "")
+        lista = HistorialClinico.objects.filter(
+            #Buscamos por cadena, ejemplo= si buscamos jo el icontains se encargara de buscar todos los nombres
+            #que contangan la j y la o al principio
+            veterinario__cedula__icontains=palabra_clave
+        )
+        return lista
 
-class CreateFormularioHistorial(PermissionRequiredMixin, FormView):
+
+class CreateFormularioHistorial(PermissionRequiredMixin, SuccessMessageMixin, FormView):
     template_name = 'historial/formulario-historial.html'
     form_class = HistorialRegisterForm
-    success_url = reverse_lazy('veterinaria_app:historial')
+    success_url = '.'
     permission_required = 'users.create_historialclinico'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    success_message = 'El registro fue agregado con exito'
 
     def form_valid(self,form):
 
@@ -69,13 +82,25 @@ class ListViewVerClienteResponsable(PermissionRequiredMixin, ListView):
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
-class CreateClienteResponsable(PermissionRequiredMixin, FormView):
+    def get_queryset(self):
+        #aqui obtengo el input del html a traves de un get
+        palabra_clave = self.request.GET.get("kword", "")
+        lista = Duenio.objects.filter(
+            #Buscamos por cadena, ejemplo= si buscamos jo el icontains se encargara de buscar todos los nombres
+            #que contangan la j y la o al principio
+            cedula__icontains=palabra_clave
+        )
+        return lista
+
+class CreateClienteResponsable(PermissionRequiredMixin, SuccessMessageMixin, FormView):
     template_name = 'historial/formulario-clientes.html'
     form_class = ResponsableRegisterForm
     success_url = reverse_lazy('veterinaria_app:cliente-responsable')
     permission_required = 'users.add_duenio'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    success_message = 'El registro fue agregado con exito'
+       
 
     def form_valid(self,form):
 
@@ -102,14 +127,25 @@ class ListViewMascotas(PermissionRequiredMixin, ListView):
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
 
+    def get_queryset(self):
+        #aqui obtengo el input del html a traves de un get
+        palabra_clave = self.request.GET.get("kword", "")
+        lista = Mascota.objects.filter(
+            #Buscamos por cadena, ejemplo= si buscamos jo el icontains se encargara de buscar todos los nombres
+            #que contangan la j y la o al principio
+            duenio__cedula__icontains=palabra_clave
+        )
+        return lista
 
-class CreateFormularioMascotas(PermissionRequiredMixin, FormView):
+
+class CreateFormularioMascotas(PermissionRequiredMixin, SuccessMessageMixin, FormView):
     template_name = 'historial/formulario-mascota.html'
     form_class = MascotaRegisterForm
     success_url = reverse_lazy('veterinaria_app:mascotas')
     permission_required = 'users.add_mascota'
     permission_denied_message = 'No tienes permisos'
     login_url = reverse_lazy('user_app:login')
+    success_message = 'El registro fue agregado con exito'
 
     def form_valid(self,form):
 
@@ -136,7 +172,4 @@ class DetailViewHistorial(PermissionRequiredMixin, DetailView):
 
     model = HistorialClinico
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(DetailViewHistorial, self).get_context_data(**kwargs)
-    #     context['historialClinico'] = HistorialClinico.objects.all()
-    #     return context
+    

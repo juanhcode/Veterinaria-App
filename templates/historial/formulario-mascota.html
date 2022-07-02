@@ -8,6 +8,15 @@
             <div class="formulario">
                 <form method="post">
                     <h2 class="titulo">Registrar Mascotas</h2><br>
+
+                    {% if messages %}
+                    <div class="mensaje_exitoso">
+                        {% for m in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ m }}</li>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
                     {% csrf_token %} 
 
                     <div id="formularioClienteResponsable">
@@ -58,6 +67,8 @@
                         
                     </div>
 
+                    <button type="submit" class="btn">Guardar</button>
+
                     
                     {% if form.errors %}
                     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -67,12 +78,6 @@
                       </div>
                     {% endif %}
 
-                    <button type="submit" class="btn">Guardar</button>
-                    <div class="Ventanae" id="elimi">                           
-                        <h1>El registro fue un éxito!</h1>
-                          <br>
-                          <button type="submit" id="Confirmar">Confirmar</button>
-                    </div>
                     
                 </form>
             </div>
