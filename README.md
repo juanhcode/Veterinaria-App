@@ -21,28 +21,28 @@ El sistema veterinaria te da la bienvenida y pone a tu disposición el mejor ser
 <div>
         <img align=top
             src="https://user-images.githubusercontent.com/64670953/177218329-b19669ec-6de3-402c-959e-e71f283e9e5c.svg"
-            alt="" width="100" height="100">
+            alt="" width="80" height="80">
         <img align=top
             src="https://user-images.githubusercontent.com/64670953/177221571-37261f89-d236-47c9-83a1-63b95cabd984.svg"
-            alt="" width="100" height="100">
+            alt="" width="80" height="80">
         <img align=top
             src="https://user-images.githubusercontent.com/64670953/177221862-8f63d42c-12cd-4576-9c83-59347b49a640.svg"
-            alt="" width="100" height="100">
+            alt="" width="80" height="80">
         <img align=top
             src="https://user-images.githubusercontent.com/64670953/177218388-97d51105-d3d1-4d57-bfe7-8f0159be9b82.svg"
-            alt="" width="100" height="100">
+            alt="" width="80" height="80">
         <img align=top
             src="https://user-images.githubusercontent.com/64670953/177218510-1abd1b80-4f8f-4747-bed1-686a615a951a.svg"
-            alt="" width="100" height="100">
+            alt="" width="80" height="80">
         <img align=top
             src="https://user-images.githubusercontent.com/64670953/177219374-5e35286a-40ac-42ff-b78a-9d52e0e87f8d.svg"
-            alt="" width="100" height="100">
+            alt="" width="80" height="80">
         <img align=top
             src="https://user-images.githubusercontent.com/64670953/177219384-4e73a831-312a-40da-8cea-b9c1ca1421ab.svg"
-            alt="" width="100" height="100">
+            alt="" width="80" height="80">
         <img align=top
             src="https://user-images.githubusercontent.com/64670953/177219380-ae9cb771-fede-4d76-ac4d-f65e9b75b744.svg"
-            alt="" width="100" height="100">
+            alt="" width="80" height="80">
 <div>
   
 ## Installation
